@@ -1,0 +1,18 @@
+{
+    "name": "Beat",
+    "rootNamespace": "",
+    "references": [
+        "GUID:baa1bb4f598258f4c9112292cf08b022",
+        "GUID:7a6b3c333839b274fbc8e17a6e88534a",
+        "GUID:550c0817ab00bc2408c8897b7c284667"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

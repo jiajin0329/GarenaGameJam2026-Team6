@@ -1,0 +1,18 @@
+{
+    "name": "Level",
+    "rootNamespace": "",
+    "references": [
+        "GUID:baa1bb4f598258f4c9112292cf08b022",
+        "GUID:ad66770f2194ebe489b45f8fce40dfce",
+        "GUID:550c0817ab00bc2408c8897b7c284667"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

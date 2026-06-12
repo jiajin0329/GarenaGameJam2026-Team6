@@ -1,0 +1,19 @@
+{
+    "name": "FX",
+    "rootNamespace": "",
+    "references": [
+        "GUID:baa1bb4f598258f4c9112292cf08b022",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e",
+        "GUID:6f136eb59047f3a47b396cdcb6e07d36"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
