@@ -1,276 +1,284 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
+using System.Collections;
 
+/// <summary>
+/// 掛在每個角色視窗（CharacterPanel）根物件上。
+/// 子物件結構：
+///   CharacterPanel
+///     ├─ dialogue (TMP_Text)
+///     ├─ optionA  (CanvasGroup + DraggableOption)
+///     └─ optionB  (CanvasGroup + DraggableOption)
+/// </summary>
 public class DialogueChoiceController : MonoBehaviour
 {
-    [Header("逐字顯示")]
+    // ── Inspector 綁定 ──────────────────────────────────────────────
+    [Header("子物件參考")]
     [SerializeField] private TMP_Text dialogueText;
-    [SerializeField] private float typingSpeed = 0.05f;
+    [SerializeField] private CanvasGroup optionAGroup;
+    [SerializeField] private CanvasGroup optionBGroup;
+    [SerializeField] private DraggableOption optionADrag;
+    [SerializeField] private DraggableOption optionBDrag;
 
-    [Header("選項動畫母物件")]
-    [SerializeField] private Animator choiceAnimator;
-
-    [Header("選項物件")]
-    [SerializeField] private RectTransform choiceA;
-    [SerializeField] private RectTransform choiceB;
-
-    [Header("選項文字")]
-    [SerializeField] private TMP_Text choiceAText;
-    [SerializeField] private TMP_Text choiceBText;
-
-    [Header("特效管理")]
+    [Header("VFX")]
     [SerializeField] private AK_VFX_Manager vfxManager;
 
-    [Header("淡出設定")]
-    [SerializeField] private float fadeDuration = 0.5f;
+    [Header("動畫")]
+    [SerializeField] private Animator panelAnimator;          // 控制整個視窗的 Animator
 
-    // Canvas 參考
-    private Canvas rootCanvas;
-    private Coroutine typingCoroutine;
+    [Header("參數")]
+    [SerializeField] private float typewriterInterval = 0.04f; // 逐字速度（秒/字）
+    [SerializeField] private float fadeOutDuration = 0.4f;  // Option 淡出時長
 
-    // 拖曳狀態
-    private RectTransform draggingRect = null;
-    private Vector2 dragOffset;
+    // ── 私有狀態 ────────────────────────────────────────────────────
+    private Coroutine activeCoroutine;
+    private bool waitingForChoice;
 
-    // 是否啟用輸入（由 CharacterViewSwitcher 控制）
-    private bool isActive = false;
+    // ── Animator 參數名稱（需與 Animator 視窗一致） ─────────────────
+    private static readonly int ANIM_LOAD_IN = Animator.StringToHash("LoadIn");
+    private static readonly int ANIM_DEACTIVATE = Animator.StringToHash("Deactivate");
 
-    // 已放開的選項（不可再拖）
-    private readonly HashSet<RectTransform> droppedChoices = new HashSet<RectTransform>();
-
-    // 選項原始位置
-    private Vector2 choiceAOriginPos;
-    private Vector2 choiceBOriginPos;
-
-    // ────────────────────────────────────────
+    // ═══════════════════════════════════════════════════════════════
     #region Unity Lifecycle
 
-    private void Awake()
+    private void Start()
     {
-        rootCanvas = GetComponentInParent<Canvas>();
-        if (rootCanvas != null && !rootCanvas.isRootCanvas)
-            rootCanvas = rootCanvas.rootCanvas;
-
-        if (choiceA != null) choiceAOriginPos = choiceA.anchoredPosition;
-        if (choiceB != null) choiceBOriginPos = choiceB.anchoredPosition;
-    }
-
-    private void Update()
-    {
-        if (isActive) HandleDrag();
+        // 遊戲開始時隱藏兩個 option，等 PlayDialogue 呼叫後才顯示
+        HideOptionsImmediate();
     }
 
     #endregion
 
-    // ────────────────────────────────────────
-    #region 公開接口
+    // ═══════════════════════════════════════════════════════════════
+    #region 公開 API（供 CharacterViewSwitcher 呼叫）
 
-    /// <summary>
-    /// 設定問題文字並開始逐字顯示，顯示完畢後自動觸發 LoadIn 動畫
-    /// </summary>
-    public void SetQuestionText(string text)
-    {
-        if (typingCoroutine != null)
-            StopCoroutine(typingCoroutine);
-        typingCoroutine = StartCoroutine(TypeRoutine(text));
-    }
+    /// <summary>由 CharacterViewSwitcher 在切換完成後呼叫，啟動對話流程</summary>
+    public void Activate() { }   // 切換後由 PlayDialogue 驅動，這裡保留給未來擴充
 
-    /// <summary>
-    /// 設定選項A的顯示文字
-    /// </summary>
-    public void SetSelection1Text(string text)
-    {
-        if (choiceAText != null)
-            choiceAText.text = text;
-    }
-
-    /// <summary>
-    /// 設定選項B的顯示文字
-    /// </summary>
-    public void SetSelection2Text(string text)
-    {
-        if (choiceBText != null)
-            choiceBText.text = text;
-    }
-
-    /// <summary>
-    /// 由 CharacterViewSwitcher 呼叫，啟用此 Controller
-    /// </summary>
-    public void Activate()
-    {
-        isActive = true;
-        ResetChoices();
-    }
-
-    /// <summary>
-    /// 由 CharacterViewSwitcher 呼叫，停用此 Controller
-    /// </summary>
+    /// <summary>離開此視窗前清理狀態</summary>
     public void Deactivate()
     {
-        isActive = false;
-
-        if (typingCoroutine != null)
+        if (activeCoroutine != null)
         {
-            StopCoroutine(typingCoroutine);
-            typingCoroutine = null;
+            StopCoroutine(activeCoroutine);
+            activeCoroutine = null;
         }
 
-        draggingRect = null;
+        waitingForChoice = false;
+
+        // 隱藏 Options、清空文字
+        SetOptionVisible(optionAGroup, false);
+        SetOptionVisible(optionBGroup, false);
+        dialogueText.text = string.Empty;
+
+        // 通知 DraggableOption 停止監聽
+        optionADrag?.SetInteractable(false);
+        optionBDrag?.SetInteractable(false);
+
+        if (panelAnimator) panelAnimator.SetTrigger(ANIM_DEACTIVATE);
     }
 
     /// <summary>
-    /// 兩個選項同時播放 SlashVFX
+    /// 主要對話入口。
+    /// <param name="text">要顯示的對話內容</param>
+    /// <param name="optionAText">選項 A 文字（可為 null 表示不顯示）</param>
+    /// <param name="optionBText">選項 B 文字（可為 null 表示不顯示）</param>
     /// </summary>
-    public void TriggerBothSlash()
+    public void PlayDialogue(string text, string optionAText = null, string optionBText = null)
     {
-        TriggerSlashOn(choiceA);
-        TriggerSlashOn(choiceB);
-    }
-
-    /// <summary>
-    /// 重置選項狀態（回原位、alpha=0、清除拖曳記錄）
-    /// </summary>
-    public void ResetChoices()
-    {
-        droppedChoices.Clear();
-        ResetChoice(choiceA, choiceAOriginPos);
-        ResetChoice(choiceB, choiceBOriginPos);
+        if (activeCoroutine != null) StopCoroutine(activeCoroutine);
+        activeCoroutine = StartCoroutine(DialogueSequence(text, optionAText, optionBText));
     }
 
     #endregion
 
-    // ────────────────────────────────────────
-    #region 逐字顯示
+    // ═══════════════════════════════════════════════════════════════
+    #region 核心流程
 
-    private IEnumerator TypeRoutine(string text)
+    private IEnumerator DialogueSequence(string text, string optionAText, string optionBText)
     {
-        dialogueText.text = "";
+        // 1) 先把 Options 隱藏、禁用互動、位置歸零
+        SetOptionVisible(optionAGroup, false);
+        SetOptionVisible(optionBGroup, false);
+        optionADrag?.SetInteractable(false);
+        optionBDrag?.SetInteractable(false);
+        optionADrag?.ResetPosition();   // ← 確保每次重新播放時位置歸零
+        optionBDrag?.ResetPosition();
 
+        // 2) 逐字顯示對話文字
+        yield return StartCoroutine(TypewriterRoutine(text));
+
+        // 3) 設定 Option 文字（若有）
+        SetOptionLabel(optionADrag, optionAText);
+        SetOptionLabel(optionBDrag, optionBText);
+
+        // 4) 播放 LoadIn 動畫讓 Options 出現（CanvasGroup 0→1 由 AnimationClip 驅動）
+
+        
+
+        if (!string.IsNullOrEmpty(optionAText))
+        {
+            SetOptionVisible(optionAGroup, true);
+            optionAGroup.alpha = 0f;   // 讓 Animator clip 從 0 開始推到 1
+        }
+        if (!string.IsNullOrEmpty(optionBText))
+        {
+            SetOptionVisible(optionBGroup, true);
+            optionBGroup.alpha = 0f;
+        }
+
+        if (panelAnimator != null) panelAnimator.enabled = true;
+        if (panelAnimator) panelAnimator.SetTrigger(ANIM_LOAD_IN);
+
+        // 等待動畫播完（用 AnimationClip 長度或固定等待）
+        yield return new WaitForSeconds(GetAnimationLength("LoadIn"));
+
+        // 5) 啟用拖曳互動
+        bool hasOptions = !string.IsNullOrEmpty(optionAText) || !string.IsNullOrEmpty(optionBText);
+        if (hasOptions)
+        {
+            waitingForChoice = true;
+
+            if (!string.IsNullOrEmpty(optionAText)) optionADrag?.SetInteractable(true);
+            if (!string.IsNullOrEmpty(optionBText)) optionBDrag?.SetInteractable(true);
+
+            // 設定回呼
+            optionADrag?.SetOnDropped(() => OnOptionDropped(optionAGroup, optionBGroup, optionADrag, optionBDrag));
+            optionBDrag?.SetOnDropped(() => OnOptionDropped(optionBGroup, optionAGroup, optionBDrag, optionADrag));
+
+            // 等待玩家選擇（waitingForChoice 由 OnOptionDropped 設為 false）
+            yield return new WaitUntil(() => !waitingForChoice);
+        }
+
+        activeCoroutine = null;
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    /// <summary>玩家放開 option 後的處理</summary>
+    /// <param name="chosen">被選中的那個 CanvasGroup</param>
+    /// <param name="other">另一個 CanvasGroup</param>
+    private void OnOptionDropped(
+        CanvasGroup chosenGroup, CanvasGroup otherGroup,
+        DraggableOption chosenDrag, DraggableOption otherDrag)
+    {
+        if (!waitingForChoice) return;   // 防止雙重觸發
+        waitingForChoice = false;
+
+        // 停用兩個互動
+        chosenDrag?.SetInteractable(false);
+        otherDrag?.SetInteractable(false);
+
+        StartCoroutine(ResolveChoice(chosenGroup, otherGroup, chosenDrag, otherDrag));
+    }
+
+    private IEnumerator ResolveChoice(
+        CanvasGroup chosenGroup, CanvasGroup otherGroup,
+        DraggableOption chosenDrag, DraggableOption otherDrag)
+    {
+        if (panelAnimator != null) panelAnimator.enabled = false;
+
+        // 被選中的 → 先彈回原位，再淡出到 0
+        chosenDrag?.ResetPosition();
+        yield return StartCoroutine(FadeOut(chosenGroup, fadeOutDuration));
+
+        // 另一個 → 先彈回原位，再 SpawnSlashVFX，再淡出到 0
+        otherDrag?.ResetPosition();
+
+        if (vfxManager != null && otherDrag != null)
+        {
+            Vector2 worldPos = GetWorldPosition(otherDrag.transform as RectTransform);
+            vfxManager.SpawnSlashVFX(worldPos);
+        }
+
+        yield return new WaitForSeconds(0.15f);   // 稍等讓 VFX 顯現
+        yield return StartCoroutine(FadeOut(otherGroup, fadeOutDuration));
+    }
+
+    #endregion
+
+    // ═══════════════════════════════════════════════════════════════
+    #region 輔助方法
+
+    private IEnumerator TypewriterRoutine(string text)
+    {
+        dialogueText.text = string.Empty;
         foreach (char c in text)
         {
             dialogueText.text += c;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-
-        choiceAnimator.SetTrigger("LoadIn");
-    }
-
-    #endregion
-
-    // ────────────────────────────────────────
-    #region 拖曳邏輯
-
-    private void HandleDrag()
-    {
-        var mouse = Mouse.current;
-        if (mouse == null) return;
-
-        Vector2 mouseScreenPos = mouse.position.value;
-
-        if (mouse.leftButton.wasPressedThisFrame)
-            TryBeginDrag(mouseScreenPos);
-
-        if (mouse.leftButton.isPressed && draggingRect != null)
-        {
-            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                    draggingRect.parent as RectTransform,
-                    mouseScreenPos,
-                    GetCanvasCamera(),
-                    out Vector2 localPoint))
-            {
-                draggingRect.localPosition = localPoint + dragOffset;
-            }
-        }
-
-        if (mouse.leftButton.wasReleasedThisFrame && draggingRect != null)
-        {
-            RectTransform other = (draggingRect == choiceA) ? choiceB : choiceA;
-            OnChoiceDropped(draggingRect, other);
-            draggingRect = null;
+            yield return new WaitForSeconds(typewriterInterval);
         }
     }
 
-    private void TryBeginDrag(Vector2 mouseScreenPos)
+    private IEnumerator FadeOut(CanvasGroup group, float duration)
     {
-        foreach (var rect in new[] { choiceA, choiceB })
-        {
-            if (rect == null || !rect.gameObject.activeInHierarchy) continue;
-            if (droppedChoices.Contains(rect)) continue;
+        if (group == null) yield break;
 
-            if (RectTransformUtility.RectangleContainsScreenPoint(
-                    rect, mouseScreenPos, GetCanvasCamera()))
-            {
-                draggingRect = rect;
-
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                    draggingRect.parent as RectTransform,
-                    mouseScreenPos,
-                    GetCanvasCamera(),
-                    out Vector2 localPoint);
-
-                dragOffset = (Vector2)rect.localPosition - localPoint;
-                break;
-            }
-        }
-    }
-
-    private void OnChoiceDropped(RectTransform dragged, RectTransform other)
-    {
-        droppedChoices.Add(dragged);
-        StartCoroutine(FadeOut(dragged));
-        TriggerSlashOn(other);
-    }
-
-    private Camera GetCanvasCamera()
-    {
-        if (rootCanvas.renderMode == RenderMode.ScreenSpaceOverlay)
-            return null;
-        return rootCanvas.worldCamera != null ? rootCanvas.worldCamera : Camera.main;
-    }
-
-    #endregion
-
-    // ────────────────────────────────────────
-    #region 特效 & 淡出
-
-    private void TriggerSlashOn(RectTransform target)
-    {
-        if (target == null) return;
-        vfxManager.SpawnSlashVFX(target.position);
-    }
-
-    private IEnumerator FadeOut(RectTransform target)
-    {
-        if (target == null) yield break;
-
-        CanvasGroup cg = target.GetComponent<CanvasGroup>();
-        if (cg == null) cg = target.gameObject.AddComponent<CanvasGroup>();
-
+        float start = group.alpha;
         float elapsed = 0f;
-        while (elapsed < fadeDuration)
+        while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            cg.alpha = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
+            group.alpha = Mathf.Lerp(start, 0f, elapsed / duration);
             yield return null;
         }
-
-        cg.alpha = 0f;
+        group.alpha = 0f;
+        group.blocksRaycasts = false;
+        group.interactable = false;
     }
 
-    private void ResetChoice(RectTransform rect, Vector2 originPos)
+    private static void SetOptionVisible(CanvasGroup group, bool visible)
     {
-        if (rect == null) return;
+        if (group == null) return;
+        group.alpha = visible ? 1f : 0f;
+        group.blocksRaycasts = visible;
+        group.interactable = visible;
+    }
 
-        rect.anchoredPosition = originPos;
+    /// <summary>
+    /// 遊戲開始時用：保持 GameObject Active（讓 DraggableOption.Awake 能記錄原始位置），
+    /// 但把 alpha 設為 0 且禁用 raycast，視覺上不可見且無法互動。
+    /// </summary>
+    private void HideOptionsImmediate()
+    {
+        if (optionAGroup != null)
+        {
+            optionAGroup.alpha = 0f;
+            optionAGroup.blocksRaycasts = false;
+        }
+        if (optionBGroup != null)
+        {
+            optionBGroup.alpha = 0f;
+            optionBGroup.blocksRaycasts = false;
+        }
+    }
 
-        CanvasGroup cg = rect.GetComponent<CanvasGroup>();
-        if (cg == null) cg = rect.gameObject.AddComponent<CanvasGroup>();
-        cg.alpha = 0f;
+    private static void SetOptionLabel(DraggableOption drag, string label)
+    {
+        if (drag == null || label == null) return;
+        var tmp = drag.GetComponentInChildren<TMP_Text>();
+        if (tmp) tmp.text = label;
+    }
 
-        rect.gameObject.SetActive(true);
+    /// <summary>取得 Animator 中指定 clip 的長度，找不到時回傳 0.5f</summary>
+    private float GetAnimationLength(string clipName)
+    {
+        if (panelAnimator == null) return 0.5f;
+        foreach (var clip in panelAnimator.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == clipName) return clip.length;
+        }
+        return 0.5f;
+    }
+
+    /// <summary>將 RectTransform 的中心轉換為世界座標（用於 VFX Spawn）</summary>
+    private static Vector2 GetWorldPosition(RectTransform rt)
+    {
+        if (rt == null) return Vector2.zero;
+        var corners = new Vector3[4];
+        rt.GetWorldCorners(corners);
+        // 四個角的平均 = 中心
+        return (corners[0] + corners[1] + corners[2] + corners[3]) / 4f;
     }
 
     #endregion

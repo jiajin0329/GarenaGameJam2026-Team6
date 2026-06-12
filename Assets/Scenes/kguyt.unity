@@ -536,8 +536,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
+  m_sharedMaterial: {fileID: 9149729844595431794, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -624,7 +624,6 @@ GameObject:
   m_Component:
   - component: {fileID: 276782136}
   - component: {fileID: 276782137}
-  - component: {fileID: 276782138}
   m_Layer: 5
   m_Name: EveryScreen
   m_TagString: Untagged
@@ -671,22 +670,6 @@ MonoBehaviour:
   controllerA: {fileID: 787394272}
   controllerB: {fileID: 582100276}
   controllerC: {fileID: 302436131}
---- !u!114 &276782138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276782135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b7a8002eee9e3468c944823fd775e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueChoiceTester
-  controller: {fileID: 582100276}
-  testQuestion: "\u9019\u662F\u4E00\u6BB5\u6E2C\u8A66\u5C0D\u8A71\uFF0C\u9010\u5B57\u986F\u793A\u4E2D..."
-  testSelection1: "\u9078\u64C7 A"
-  testSelection2: "\u9078\u64C7 B"
 --- !u!1 &302436129
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,14 +720,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueChoiceController
   dialogueText: {fileID: 1234560570}
-  typingSpeed: 0.05
-  choiceAnimator: {fileID: 1105423197}
-  choiceA: {fileID: 1952774749}
-  choiceB: {fileID: 1455255095}
-  choiceAText: {fileID: 0}
-  choiceBText: {fileID: 0}
+  optionAGroup: {fileID: 1952774751}
+  optionBGroup: {fileID: 1455255097}
+  optionADrag: {fileID: 1952774752}
+  optionBDrag: {fileID: 1455255098}
   vfxManager: {fileID: 10242140295846690, guid: 5be9adfa4a5a82f4c8169eb0870fb2b6, type: 3}
-  fadeDuration: 0.5
+  panelAnimator: {fileID: 1105423197}
+  typewriterInterval: 0.04
+  fadeOutDuration: 0.4
 --- !u!1 &304125136
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,7 +939,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1305,7 +1288,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1401,14 +1384,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueChoiceController
   dialogueText: {fileID: 556391678}
-  typingSpeed: 0.05
-  choiceAnimator: {fileID: 1278003444}
-  choiceA: {fileID: 1570143456}
-  choiceB: {fileID: 1942547349}
-  choiceAText: {fileID: 0}
-  choiceBText: {fileID: 0}
+  optionAGroup: {fileID: 1570143460}
+  optionBGroup: {fileID: 1942547353}
+  optionADrag: {fileID: 1570143461}
+  optionBDrag: {fileID: 1942547354}
   vfxManager: {fileID: 10242140295846690, guid: 5be9adfa4a5a82f4c8169eb0870fb2b6, type: 3}
-  fadeDuration: 0.5
+  panelAnimator: {fileID: 1278003444}
+  typewriterInterval: 0.04
+  fadeOutDuration: 0.4
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1487,7 @@ GameObject:
   - component: {fileID: 767462135}
   - component: {fileID: 767462136}
   - component: {fileID: 767462137}
+  - component: {fileID: 767462138}
   m_Layer: 5
   m_Name: AnswerB
   m_TagString: Untagged
@@ -1552,6 +1536,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &767462138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767462134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
 --- !u!1 &787394270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,14 +1598,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueChoiceController
   dialogueText: {fileID: 495809084}
-  typingSpeed: 0.05
-  choiceAnimator: {fileID: 129104362}
-  choiceA: {fileID: 1153280354}
-  choiceB: {fileID: 767462135}
-  choiceAText: {fileID: 0}
-  choiceBText: {fileID: 0}
+  optionAGroup: {fileID: 1153280356}
+  optionBGroup: {fileID: 767462137}
+  optionADrag: {fileID: 1153280357}
+  optionBDrag: {fileID: 767462138}
   vfxManager: {fileID: 848719289}
-  fadeDuration: 0.5
+  panelAnimator: {fileID: 129104362}
+  typewriterInterval: 0.04
+  fadeOutDuration: 0.4
 --- !u!114 &848719289 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 10242140295846690, guid: 5be9adfa4a5a82f4c8169eb0870fb2b6, type: 3}
@@ -1680,8 +1676,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
+  m_sharedMaterial: {fileID: 9149729844595431794, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2155,6 +2151,7 @@ GameObject:
   - component: {fileID: 1153280354}
   - component: {fileID: 1153280355}
   - component: {fileID: 1153280356}
+  - component: {fileID: 1153280357}
   m_Layer: 5
   m_Name: AnswerA
   m_TagString: Untagged
@@ -2203,6 +2200,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1153280357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153280353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
 --- !u!1 &1234560568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,7 +2303,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2528,6 +2537,7 @@ GameObject:
   - component: {fileID: 1455255095}
   - component: {fileID: 1455255096}
   - component: {fileID: 1455255097}
+  - component: {fileID: 1455255098}
   m_Layer: 5
   m_Name: AnswerB
   m_TagString: Untagged
@@ -2576,6 +2586,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1455255098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455255094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
 --- !u!1 &1570143455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,6 +2609,7 @@ GameObject:
   - component: {fileID: 1570143456}
   - component: {fileID: 1570143459}
   - component: {fileID: 1570143460}
+  - component: {fileID: 1570143461}
   m_Layer: 5
   m_Name: AnswerA
   m_TagString: Untagged
@@ -2635,6 +2658,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1570143461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570143455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
 --- !u!1 &1594670675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,8 +2879,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
+  m_sharedMaterial: {fileID: 9149729844595431794, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2981,8 +3016,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: B
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
+  m_sharedMaterial: {fileID: 9149729844595431794, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3145,6 +3180,7 @@ GameObject:
   - component: {fileID: 1942547349}
   - component: {fileID: 1942547352}
   - component: {fileID: 1942547353}
+  - component: {fileID: 1942547354}
   m_Layer: 5
   m_Name: AnswerB
   m_TagString: Untagged
@@ -3193,6 +3229,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1942547354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942547348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
 --- !u!1 &1950633855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3252,8 +3300,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: B
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
+  m_sharedMaterial: {fileID: 9149729844595431794, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3341,6 +3389,7 @@ GameObject:
   - component: {fileID: 1952774749}
   - component: {fileID: 1952774750}
   - component: {fileID: 1952774751}
+  - component: {fileID: 1952774752}
   m_Layer: 5
   m_Name: AnswerA
   m_TagString: Untagged
@@ -3389,6 +3438,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1952774752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952774748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
 --- !u!1 &2002620149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3598,8 +3659,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: B
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
+  m_sharedMaterial: {fileID: 9149729844595431794, guid: 6fa00fa91deed5c45b8c80f3d5c9e404, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
