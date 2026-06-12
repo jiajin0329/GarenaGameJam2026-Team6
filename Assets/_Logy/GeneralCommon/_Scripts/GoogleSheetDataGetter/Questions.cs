@@ -23,6 +23,18 @@ public class Questions
 
     public string characterName => _characterName;
     public string characterQuestionType => _characterQuestionType;
-    public string characterQuestionContext  => _characterQuestionContext;
+    public string characterQuestionContext => _characterQuestionContext;
     public string rightAnswer => _rightAnswer;
+
+    public static class QuestionType
+    {
+        public const string characterName = "_characterName";
+        public const string characterNickName = "_characterNickName";
+        public const string birthday = "_birthday";
+        public const string starSign = "_starSign";
+        public const string likeFood = "_likeFood";
+        public const string hateFood = "_hateFood";
+        public const string hobby1 = "_hobby1";
+        public const string hobby2 = "_hobby2";
+    }
 }

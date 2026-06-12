@@ -42,7 +42,7 @@ namespace GarenaGameJam2026Team6
 
             if (_callQuestion)
             {
-                question.Answer("1+1", "2");
+                question.AnswerCorrect();
                 _callQuestion = false;
             }
         }

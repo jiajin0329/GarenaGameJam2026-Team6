@@ -1,3 +1,4 @@
+using Logy.UnityCommon;
 using UnityEngine;
 
 namespace GarenaGameJam2026Team6
@@ -16,5 +17,11 @@ namespace GarenaGameJam2026Team6
 
         [field: SerializeField]
         public int questionCount { get; private set; } = 15;
+
+        [SerializeField]
+        public GoogleSheetDataGetterQuestions questions;
+
+        [SerializeField]
+        public GoogleSheetDataGetterWrongAnswers wrongAnswers;
     }
 }

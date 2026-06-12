@@ -92,6 +92,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Level::GarenaGameJam2026Team6.LevelManager
   <_config>k__BackingField: {fileID: 11400000, guid: c97a33dd4602bad47a1e68d80d78dc0b, type: 2}
+  _callQuestion: 0
+  <beat>k__BackingField:
+    _beatModel:
+      <bpm>k__BackingField: 0
+      <beatInterval>k__BackingField: 0
+      <oneTimeBeatAmount>k__BackingField: 0
+      <timer>k__BackingField: 0
+  <question>k__BackingField:
+    _model:
+      <questionInterval>k__BackingField: 0
+      <timer>k__BackingField: 0
+      <questionCount>k__BackingField: 0
+      <isLastQuestionNoAnser>k__BackingField: 0
+    _questions: {fileID: 11400000, guid: b94d10a2d0f71fd4a88aef729b0818a2, type: 2}
+    _wrongAnswers: {fileID: 11400000, guid: cc92dcc15397c1f4b9598b09b34ee294, type: 2}
 --- !u!1 &2339847948732731480
 GameObject:
   m_ObjectHideFlags: 0
