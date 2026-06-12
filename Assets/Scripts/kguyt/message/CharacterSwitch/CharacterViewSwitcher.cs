@@ -22,45 +22,44 @@ public class CharacterViewSwitcher : MonoBehaviour
     [SerializeField] private DialogueChoiceController controllerB;
     [SerializeField] private DialogueChoiceController controllerC;
 
+    [Header("頭像 Images（A / B / C）")]
+    [SerializeField] private RectTransform avatarA;
+    [SerializeField] private RectTransform avatarB;
+    [SerializeField] private RectTransform avatarC;
+
+    [Header("頭像縮放設定")]
+    [SerializeField] private float avatarScaleSelected = 1.5f;
+    [SerializeField] private float avatarScaleNormal = 1.0f;
+    [SerializeField] private float avatarScaleDuration = 0.25f;
+
     // ── 常數 ────────────────────────────────────────────────────────
-    private readonly float[] targetPositions = { 637f, 0f, -637f };
+    private readonly float[] targetPositions = { 643f, 0f, -648f };
 
     // ── 私有狀態 ────────────────────────────────────────────────────
     private DialogueChoiceController currentController;
     private bool isSwitching;
 
     // ── Input Actions（新版 Input System） ──────────────────────────
-    private InputAction key1, key2, key3, keyTest;
+    private InputAction keyTest;
 
     // ═══════════════════════════════════════════════════════════════
     #region Unity Lifecycle
 
     private void Awake()
     {
-        key1 = new InputAction("SwitchA", binding: "<Keyboard>/1");
-        key2 = new InputAction("SwitchB", binding: "<Keyboard>/2");
-        key3 = new InputAction("SwitchC", binding: "<Keyboard>/3");
         keyTest = new InputAction("TestDialogue", binding: "<Keyboard>/t");
     }
 
     private void OnEnable()
-    {
-        key1.performed += _ => TrySwitchTo(0);
-        key2.performed += _ => TrySwitchTo(1);
-        key3.performed += _ => TrySwitchTo(2);
+    {       
         keyTest.performed += _ => TriggerTestDialogue();
 
-        key1.Enable();
-        key2.Enable();
-        key3.Enable();
+        
         keyTest.Enable();
     }
 
     private void OnDisable()
-    {
-        key1.Disable();
-        key2.Disable();
-        key3.Disable();
+    {        
         keyTest.Disable();
     }
 
@@ -116,11 +115,10 @@ public class CharacterViewSwitcher : MonoBehaviour
     {
         isSwitching = true;
 
-        // 停用前一個 Controller
         if (currentController != null)
             currentController.Deactivate();
 
-        // 滑動 AllScreen
+        // 滑動動畫（原有邏輯）
         Vector2 startPos = uiParent.anchoredPosition;
         Vector2 endPos = new Vector2(targetPositions[index], startPos.y);
         float elapsed = 0f;
@@ -134,7 +132,16 @@ public class CharacterViewSwitcher : MonoBehaviour
         }
         uiParent.anchoredPosition = endPos;
 
-        // 切換 currentController
+        // ── 新增：同步縮放所有頭像 ──────────────────────────
+        RectTransform[] avatars = { avatarA, avatarB, avatarC };
+        for (int i = 0; i < avatars.Length; i++)
+        {
+            if (avatars[i] == null) continue;
+            float targetScale = (i == index) ? avatarScaleSelected : avatarScaleNormal;
+            StartCoroutine(ScaleAvatarCoroutine(avatars[i], targetScale));
+        }
+        // ────────────────────────────────────────────────────
+
         currentController = index switch
         {
             0 => controllerA,
@@ -170,4 +177,21 @@ public class CharacterViewSwitcher : MonoBehaviour
     }
 
     #endregion
+
+    private IEnumerator ScaleAvatarCoroutine(RectTransform avatar, float targetScale)
+    {
+        Vector3 startScale = avatar.localScale;
+        Vector3 endScale = Vector3.one * targetScale;
+        float elapsed = 0f;
+
+        while (elapsed < avatarScaleDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.SmoothStep(0f, 1f, elapsed / avatarScaleDuration);
+            avatar.localScale = Vector3.Lerp(startScale, endScale, t);
+            yield return null;
+        }
+
+        avatar.localScale = endScale;
+    }
 }
