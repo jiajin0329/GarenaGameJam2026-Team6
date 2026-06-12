@@ -1,0 +1,16 @@
+{
+    "name": "GoogleSheetDataGetter",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d43b33882419c564abfaad43a7ef9639"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
