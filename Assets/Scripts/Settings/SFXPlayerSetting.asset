@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00490b17c3522e4b9df37e259a36490, type: 3}
+  m_Name: SFXPlayerSetting
+  m_EditorClassIdentifier: FX::Logy.UnityCommonV01.SFXPlayerSetting
+  <type>k__BackingField: 0
+  <audioClipSettings>k__BackingField:
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 0
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: d9cddce5f0a81ac4a83657e71d2217b5, type: 3}
+      <volume>k__BackingField: 0.1
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 1
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 0851e0d30e2b4824590d6e8e392b6a3f, type: 3}
+      <volume>k__BackingField: 0.2
