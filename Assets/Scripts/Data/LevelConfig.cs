@@ -9,6 +9,12 @@ namespace GarenaGameJam2026Team6
         public int bpm { get; private set; } = 120;
 
         [field: SerializeField]
-        public int oneTimeBeatCount { get; private set; } = 4;
+        public int oneTimeBeatAmount { get; private set; } = 4;
+
+        [field: SerializeField]
+        public int questionIntervalBeatAmount { get; private set; } = 8;
+
+        [field: SerializeField]
+        public int questionCount { get; private set; } = 15;
     }
 }

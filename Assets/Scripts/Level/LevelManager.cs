@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace GarenaGameJam2026Team6
@@ -8,21 +7,44 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public LevelConfig _config { get; private set; }
 
-        private Beat _beat;
+        [SerializeField]
+        private bool _callQuestion = false;
 
-        public void AddOnBeatEvent(Action _action) => _beat.AddOnBeatEvent(_action);
-        public void RemoveOnBeatEvent(Action _action) => _beat.RemoveOnBeatEvent(_action);
-        public void AddOnOneTimeBeatEvent(Action _action) => _beat.AddOnOneTimeBeatEvent(_action);
-        public void RemoveOnOneTimeBeatEvent(Action _action) => _beat.RemoveOnOneTimeBeatEvent(_action);
+        [field: SerializeField]
+        public Beat beat { get; private set; }
+
+        [field: SerializeField]
+        public Question question { get; private set; }
+
+        private bool _isEnable = true;
 
         public override void Initialize()
         {
-            _beat = new(_config);
+            beat = new(_config);
+            question = new(_config);
+
+            beat.AddBeatListener(question.TryQuestion);
+            beat.AddOneTimeBeatListener(question.TryQuestion);
+
+            beat.AddBeatListener(question.TryQuestionFinish);
+            beat.AddOneTimeBeatListener(question.TryQuestionFinish);
+
+            question.AddQuestionFinsihListener(() => _isEnable = false);
         }
 
         private void Update()
         {
-            _beat.Tick(Time.deltaTime);
+            if (!_isEnable)
+                return;
+
+            beat.Tick(Time.deltaTime);
+            question.Tick(Time.deltaTime);
+
+            if (_callQuestion)
+            {
+                question.Answer("1+1", "2");
+                _callQuestion = false;
+            }
         }
     }
 }
