@@ -23,6 +23,8 @@ namespace Logy.UnityCommon
         [SerializeField]
         private T[] _dataArray;
 
+        public T[] dataArray => _dataArray;
+
         public void Initialize()
         {
             if (_loadGoogleSheetOnInitialize)

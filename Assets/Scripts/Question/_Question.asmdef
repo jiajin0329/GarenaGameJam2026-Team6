@@ -2,7 +2,8 @@
     "name": "Question",
     "rootNamespace": "",
     "references": [
-        "GUID:550c0817ab00bc2408c8897b7c284667"
+        "GUID:550c0817ab00bc2408c8897b7c284667",
+        "GUID:87ec7da8a192fb54dab88842925907af"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
