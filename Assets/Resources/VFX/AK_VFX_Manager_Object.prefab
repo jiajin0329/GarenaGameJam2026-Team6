@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 8727100069807669402}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1175.8105, y: 417.8895, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,10 +45,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AK_VFX_Manager
   SlashVFX: {fileID: 4146487805790285754, guid: 3c86adcebc6568342a39e14ec0d17ff3, type: 3}
-  Half_L: {fileID: 0}
-  Half_R: {fileID: 0}
-  angularForce: 50
-  blowForceX: 30
-  blowForceY: 900
-  flyDirection: 60
-  slashObjectTest: {fileID: 0}
