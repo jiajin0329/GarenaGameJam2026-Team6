@@ -33,7 +33,7 @@ public class CharacterViewSwitcher : MonoBehaviour
     [SerializeField] private float avatarScaleDuration = 0.25f;
 
     // ── 常數 ────────────────────────────────────────────────────────
-    private readonly float[] targetPositions = { 648f, 0f, -648f };
+    private readonly float[] targetPositions = { 643f, 0f, -648f };
 
     // ── 私有狀態 ────────────────────────────────────────────────────
     private DialogueChoiceController currentController;
