@@ -624,6 +624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 276782136}
   - component: {fileID: 276782137}
+  - component: {fileID: 276782138}
   m_Layer: 5
   m_Name: EveryScreen
   m_TagString: Untagged
@@ -667,6 +668,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterViewSwitcher
   uiParent: {fileID: 276782136}
   transitionDuration: 0.4
+  controllerA: {fileID: 787394272}
+  controllerB: {fileID: 582100276}
+  controllerC: {fileID: 302436131}
+--- !u!114 &276782138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276782135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b7a8002eee9e3468c944823fd775e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueChoiceTester
+  controller: {fileID: 582100276}
+  testQuestion: "\u9019\u662F\u4E00\u6BB5\u6E2C\u8A66\u5C0D\u8A71\uFF0C\u9010\u5B57\u986F\u793A\u4E2D..."
+  testSelection1: "\u9078\u64C7 A"
+  testSelection2: "\u9078\u64C7 B"
 --- !u!1 &302436129
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +741,8 @@ MonoBehaviour:
   choiceAnimator: {fileID: 1105423197}
   choiceA: {fileID: 1952774749}
   choiceB: {fileID: 1455255095}
+  choiceAText: {fileID: 0}
+  choiceBText: {fileID: 0}
   vfxManager: {fileID: 10242140295846690, guid: 5be9adfa4a5a82f4c8169eb0870fb2b6, type: 3}
   fadeDuration: 0.5
 --- !u!1 &304125136
@@ -1383,6 +1405,8 @@ MonoBehaviour:
   choiceAnimator: {fileID: 1278003444}
   choiceA: {fileID: 1570143456}
   choiceB: {fileID: 1942547349}
+  choiceAText: {fileID: 0}
+  choiceBText: {fileID: 0}
   vfxManager: {fileID: 10242140295846690, guid: 5be9adfa4a5a82f4c8169eb0870fb2b6, type: 3}
   fadeDuration: 0.5
 --- !u!1 &619394800
@@ -1479,6 +1503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 767462135}
   - component: {fileID: 767462136}
+  - component: {fileID: 767462137}
   m_Layer: 5
   m_Name: AnswerB
   m_TagString: Untagged
@@ -1515,6 +1540,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767462134}
   m_CullTransparentMesh: 1
+--- !u!225 &767462137
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767462134}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &787394270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,6 +1606,8 @@ MonoBehaviour:
   choiceAnimator: {fileID: 129104362}
   choiceA: {fileID: 1153280354}
   choiceB: {fileID: 767462135}
+  choiceAText: {fileID: 0}
+  choiceBText: {fileID: 0}
   vfxManager: {fileID: 848719289}
   fadeDuration: 0.5
 --- !u!114 &848719289 stripped
@@ -2115,6 +2154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1153280354}
   - component: {fileID: 1153280355}
+  - component: {fileID: 1153280356}
   m_Layer: 5
   m_Name: AnswerA
   m_TagString: Untagged
@@ -2151,6 +2191,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153280353}
   m_CullTransparentMesh: 1
+--- !u!225 &1153280356
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153280353}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1234560568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,6 +2527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1455255095}
   - component: {fileID: 1455255096}
+  - component: {fileID: 1455255097}
   m_Layer: 5
   m_Name: AnswerB
   m_TagString: Untagged
@@ -2511,6 +2564,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455255094}
   m_CullTransparentMesh: 1
+--- !u!225 &1455255097
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455255094}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1570143455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,6 +2586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1570143456}
   - component: {fileID: 1570143459}
+  - component: {fileID: 1570143460}
   m_Layer: 5
   m_Name: AnswerA
   m_TagString: Untagged
@@ -2557,6 +2623,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570143455}
   m_CullTransparentMesh: 1
+--- !u!225 &1570143460
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570143455}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1594670675
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,6 +3144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942547349}
   - component: {fileID: 1942547352}
+  - component: {fileID: 1942547353}
   m_Layer: 5
   m_Name: AnswerB
   m_TagString: Untagged
@@ -3102,6 +3181,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942547348}
   m_CullTransparentMesh: 1
+--- !u!225 &1942547353
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942547348}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1950633855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,6 +3340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1952774749}
   - component: {fileID: 1952774750}
+  - component: {fileID: 1952774751}
   m_Layer: 5
   m_Name: AnswerA
   m_TagString: Untagged
@@ -3285,6 +3377,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952774748}
   m_CullTransparentMesh: 1
+--- !u!225 &1952774751
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952774748}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2002620149
 GameObject:
   m_ObjectHideFlags: 0
