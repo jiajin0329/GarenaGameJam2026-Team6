@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace GarenaGameJam2026Team6
 {
     public class BeatService
@@ -20,7 +18,15 @@ namespace GarenaGameJam2026Team6
             _model.ClearTimer();
             _beatCount++;
 
-            if (_beatCount == _model.oneTimeBeatCount)
+            if (_beatCount == _model.oneTimeBeatAmount)
+                return false;
+
+            return true;
+        }
+
+        public bool CanFirstBeat()
+        {
+            if (_beatCount != 1)
                 return false;
 
             return true;
@@ -28,7 +34,7 @@ namespace GarenaGameJam2026Team6
 
         public bool CanOneTimeBeat()
         {
-            if (_beatCount != _model.oneTimeBeatCount)
+            if (_beatCount != _model.oneTimeBeatAmount)
                 return false;
 
             _beatCount = 0;

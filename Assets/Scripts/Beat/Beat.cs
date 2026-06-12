@@ -3,23 +3,26 @@ using UnityEngine;
 
 namespace GarenaGameJam2026Team6
 {
+    [Serializable]
     public class Beat
     {
+        [SerializeField]
         private BeatModel _beatModel;
+
         private BeatView _beatView;
         private BeatService _beatService;
 
         private Action _onBeatEvent;
-        public void AddOnBeatEvent(Action _action) => _onBeatEvent += _action;
-        public void RemoveOnBeatEvent(Action _action) => _onBeatEvent -= _action;
+        public void AddBeatListener(Action _action) => _onBeatEvent += _action;
+        public void RemoveBeatListener(Action _action) => _onBeatEvent -= _action;
 
         private Action _onOneTimeBeatEvent;
-        public void AddOnOneTimeBeatEvent(Action _action) => _onOneTimeBeatEvent += _action;
-        public void RemoveOnOneTimeBeatEvent(Action _action) => _onOneTimeBeatEvent -= _action;
+        public void AddOneTimeBeatListener(Action _action) => _onOneTimeBeatEvent += _action;
+        public void RemoveOneTimeBeatListener(Action _action) => _onOneTimeBeatEvent -= _action;
 
         public Beat(LevelConfig _levelConfig)
         {
-            _beatModel = new(_levelConfig.bpm, _levelConfig.oneTimeBeatCount);
+            _beatModel = new(_levelConfig.bpm, _levelConfig.oneTimeBeatAmount);
             _beatView = new();
             _beatService = new BeatService(_beatModel);
         }
