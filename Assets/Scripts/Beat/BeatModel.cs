@@ -1,18 +1,27 @@
+using System;
 using UnityEngine;
 
 namespace GarenaGameJam2026Team6
 {
+    [Serializable]
     public class BeatModel
     {
+        [field: SerializeField]
         public int bpm { get; private set; }
+
+        [field: SerializeField]
         public float beatInterval { get; private set; }
-        public int oneTimeBeatCount { get; private set; }
+
+        [field: SerializeField]
+        public int oneTimeBeatAmount { get; private set; }
+
+        [field: SerializeField]
         public float timer { get; private set; }
 
-        public BeatModel(int _bpm, int _oneTimeBeatCount)
+        public BeatModel(int _bpm, int _oneTimeBeatAmount)
         {
             bpm = _bpm;
-            oneTimeBeatCount = _oneTimeBeatCount;
+            oneTimeBeatAmount = _oneTimeBeatAmount;
             beatInterval = 60f / _bpm;
         }
 
@@ -23,7 +32,7 @@ namespace GarenaGameJam2026Team6
 
         public void ClearTimer()
         {
-            timer = 0f;
+            timer -= beatInterval;
         }
     }
 }
