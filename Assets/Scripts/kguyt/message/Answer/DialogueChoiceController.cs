@@ -30,6 +30,7 @@ public class DialogueChoiceController : MonoBehaviour
     [Header("參數")]
     [SerializeField] private float typewriterInterval = 0.04f; // 逐字速度（秒/字）
     [SerializeField] private float fadeOutDuration = 0.4f;  // Option 淡出時長
+    [SerializeField] private float fadeInDuration = 0.3f;  // Option 淡入時長
 
     // ── 私有狀態 ────────────────────────────────────────────────────
     private Coroutine activeCoroutine;
@@ -37,7 +38,6 @@ public class DialogueChoiceController : MonoBehaviour
 
     // ── Animator 參數名稱（需與 Animator 視窗一致） ─────────────────
     private static readonly int ANIM_LOAD_IN = Animator.StringToHash("LoadIn");
-    private static readonly int ANIM_DEACTIVATE = Animator.StringToHash("Deactivate");
 
     // ═══════════════════════════════════════════════════════════════
     #region Unity Lifecycle
@@ -76,7 +76,6 @@ public class DialogueChoiceController : MonoBehaviour
         optionADrag?.SetInteractable(false);
         optionBDrag?.SetInteractable(false);
 
-        if (panelAnimator) panelAnimator.SetTrigger(ANIM_DEACTIVATE);
     }
 
     /// <summary>
@@ -113,26 +112,29 @@ public class DialogueChoiceController : MonoBehaviour
         SetOptionLabel(optionADrag, optionAText);
         SetOptionLabel(optionBDrag, optionBText);
 
-        // 4) 播放 LoadIn 動畫讓 Options 出現（CanvasGroup 0→1 由 AnimationClip 驅動）
-
-        
-
+        // 4) 程式碼 FadeIn 讓 Options 出現（不走 Animator，避免 enabled 重啟導致 clip 跳過）
         if (!string.IsNullOrEmpty(optionAText))
         {
-            SetOptionVisible(optionAGroup, true);
-            optionAGroup.alpha = 0f;   // 讓 Animator clip 從 0 開始推到 1
+            optionAGroup.alpha = 0f;
+            optionAGroup.blocksRaycasts = false;
+            optionAGroup.interactable = false;
         }
         if (!string.IsNullOrEmpty(optionBText))
         {
-            SetOptionVisible(optionBGroup, true);
             optionBGroup.alpha = 0f;
+            optionBGroup.blocksRaycasts = false;
+            optionBGroup.interactable = false;
         }
 
-        if (panelAnimator != null) panelAnimator.enabled = true;
-        if (panelAnimator) panelAnimator.SetTrigger(ANIM_LOAD_IN);
+        // 通知視窗 Animator 播 LoadIn（視窗本身的進場動畫，不控制 option alpha）
+        if (panelAnimator != null && panelAnimator.enabled)
+            panelAnimator.SetTrigger(ANIM_LOAD_IN);
 
-        // 等待動畫播完（用 AnimationClip 長度或固定等待）
-        yield return new WaitForSeconds(GetAnimationLength("LoadIn"));
+        // 同步淡入兩個 option
+        yield return StartCoroutine(FadeInOptions(
+            !string.IsNullOrEmpty(optionAText) ? optionAGroup : null,
+            !string.IsNullOrEmpty(optionBText) ? optionBGroup : null,
+            fadeInDuration));
 
         // 5) 啟用拖曳互動
         bool hasOptions = !string.IsNullOrEmpty(optionAText) || !string.IsNullOrEmpty(optionBText);
@@ -176,8 +178,6 @@ public class DialogueChoiceController : MonoBehaviour
         CanvasGroup chosenGroup, CanvasGroup otherGroup,
         DraggableOption chosenDrag, DraggableOption otherDrag)
     {
-        if (panelAnimator != null) panelAnimator.enabled = false;
-
         // 被選中的 → 先彈回原位，再淡出到 0
         chosenDrag?.ResetPosition();
         yield return StartCoroutine(FadeOut(chosenGroup, fadeOutDuration));
@@ -191,7 +191,7 @@ public class DialogueChoiceController : MonoBehaviour
             vfxManager.SpawnSlashVFX(worldPos);
         }
 
-        yield return new WaitForSeconds(0.15f);   // 稍等讓 VFX 顯現
+        yield return new WaitForSeconds(0.15f);
         yield return StartCoroutine(FadeOut(otherGroup, fadeOutDuration));
     }
 
@@ -207,6 +207,32 @@ public class DialogueChoiceController : MonoBehaviour
         {
             dialogueText.text += c;
             yield return new WaitForSeconds(typewriterInterval);
+        }
+    }
+
+    /// <summary>同時將兩個 option CanvasGroup 從 0 淡入到 1，null 代表跳過</summary>
+    private IEnumerator FadeInOptions(CanvasGroup groupA, CanvasGroup groupB, float duration)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, elapsed / duration);
+            if (groupA != null) groupA.alpha = alpha;
+            if (groupB != null) groupB.alpha = alpha;
+            yield return null;
+        }
+        if (groupA != null)
+        {
+            groupA.alpha = 1f;
+            groupA.blocksRaycasts = true;
+            groupA.interactable = true;
+        }
+        if (groupB != null)
+        {
+            groupB.alpha = 1f;
+            groupB.blocksRaycasts = true;
+            groupB.interactable = true;
         }
     }
 

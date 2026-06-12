@@ -163,7 +163,7 @@ public class CharacterViewSwitcher : MonoBehaviour
         Debug.Log("[Test] 觸發測試對話");
         PlayDialogue(
             text: "我們今晚一起去哪？",
-            characterIndex: 1,
+            characterIndex: Random.Range(0, 3),
             optionAText: "去看電影吧",
             optionBText: "不了，我有事"
         );
