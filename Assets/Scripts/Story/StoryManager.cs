@@ -44,6 +44,13 @@ public class StoryManager : MonoBehaviour
     {
         for (int i = 0; i < conLoading.Length; i++)
         {
+            string readingLine = conLoading[i];
+            if (readingLine.StartsWith("Comm/"))
+            {
+                //it's command
+                ReadCommand(readingLine);
+            }
+
             NextConversationFlags = false;
             conSpeaking = "";
             for (int j = 0; j < conLoading[i].Length; j++)
@@ -55,6 +62,21 @@ public class StoryManager : MonoBehaviour
             //fin loading
             yield return new WaitUntil(()=> NextConversationFlags);
         }
+    }
+
+    public void ReadCommand(string str)
+    {
+        switch (str)
+        {
+            case "Comm/story_Start":
+                Story_Start();
+                break;
+        }
+    }
+
+    public void Story_Start()
+    {
+
     }
 
     public void ReadNextLine()
