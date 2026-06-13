@@ -89,7 +89,8 @@ public class ChatacterShowLogic : MonoBehaviour
         }
         yield return new WaitForSeconds(0.25f);
         characterShowImage.sprite = sprtie;
-       yield return null;
+        characterShowImage.SetNativeSize();
+        yield return null;
     }
 
     public void LoadCharacterInfomation(int characterIndedx)
