@@ -42,10 +42,10 @@ namespace GarenaGameJam2026Team6
         public void AddCalculateRemainingTimeListener(Action<float> _listener) => _service.calculateRemainingTimeEvent += _listener;
         public void RemoveCalculateRemainingTimeListener(Action<float> _listener) => _service.calculateRemainingTimeEvent -= _listener;
 
-        public void Initialize(LevelConfig _levelConfig, Affinity[] _affinityArrary, CancellationToken _cancellationToken)
+        public void Initialize(LevelConfig _levelConfig, AffinityManager _affinityManager, CancellationToken _cancellationToken)
         {
             _model = new(_levelConfig);
-            _service = new(_model, _levelConfig, _affinityArrary);
+            _service = new(_model, _levelConfig, _affinityManager);
             this._cancellationToken = _cancellationToken;
 
             _view.Initialize();

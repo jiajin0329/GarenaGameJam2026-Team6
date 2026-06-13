@@ -37,8 +37,6 @@ namespace GarenaGameJam2026Team6
 
         private void Awake()
         {
-            endType = EndType.CharacterCEnd;
-
             switch (endType)
             {
                 case EndType.AllCharacterEnd:
