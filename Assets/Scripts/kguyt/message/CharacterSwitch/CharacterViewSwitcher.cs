@@ -53,6 +53,8 @@ public class CharacterViewSwitcher : MonoBehaviour
     [SerializeField]
     private DraggableOption draggableOptionB3;
 
+    public ChatacterShowLogic CharacterShowLogic;
+
     public void AddOneTimeAnswerA1Listener(Action _listener) => draggableOptionA1.oneTimeAnswerEvnet += _listener;
     public void AddOneTimeAnswerB1Listener(Action _listener) => draggableOptionB1.oneTimeAnswerEvnet += _listener;
 
@@ -83,7 +85,6 @@ public class CharacterViewSwitcher : MonoBehaviour
 
     private void OnEnable()
     {
-        keyTest.performed += _ => TriggerTestDialogue();
 
 
         keyTest.Enable();
@@ -143,6 +144,9 @@ public class CharacterViewSwitcher : MonoBehaviour
     private IEnumerator SwitchAndPlay(string text, int index,
                                       string optionAText, string optionBText)
     {
+        CharacterShowLogic.SetCharacterImage(index);
+        CharacterShowLogic.currentCharacterIndex = index;
+
         // 先滑動到目標角色
         yield return StartCoroutine(SwitchCoroutine(index));
 
@@ -197,25 +201,6 @@ public class CharacterViewSwitcher : MonoBehaviour
 
     #endregion
 
-    // ═══════════════════════════════════════════════════════════════
-    #region 測試
-
-    /// <summary>
-    /// 按 T 觸發：切換到角色 B（index=1），顯示測試對話和兩個選項。
-    /// 模擬你提到的「我們今晚一起去哪, 1」情境。
-    /// </summary>
-    private void TriggerTestDialogue()
-    {
-        Debug.Log("[Test] 觸發測試對話");
-        PlayDialogue(
-            text: "我們今晚一起去哪？",
-            characterIndex: UnityEngine.Random.Range(0, 3),
-            optionAText: "去看電影吧",
-            optionBText: "不了，我有事"
-        );
-    }
-
-    #endregion
 
     private IEnumerator ScaleAvatarCoroutine(RectTransform avatar, float targetScale)
     {
