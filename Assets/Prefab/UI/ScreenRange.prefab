@@ -973,6 +973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
+  characterViewSwitcher: {fileID: 0}
+  isAnswerA: 0
 --- !u!1 &3263673270438854921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,6 +1407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
+  characterViewSwitcher: {fileID: 0}
+  isAnswerA: 0
 --- !u!1 &3737142149008161619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1768,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
+  characterViewSwitcher: {fileID: 0}
+  isAnswerA: 0
 --- !u!1 &4442334193380733113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,6 +2015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
+  characterViewSwitcher: {fileID: 0}
+  isAnswerA: 0
 --- !u!1 &4781163512052532368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,6 +2725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
+  characterViewSwitcher: {fileID: 0}
+  isAnswerA: 0
 --- !u!1 &6613661569579922394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,6 +2812,18 @@ MonoBehaviour:
   avatarScaleSelected: 1.5
   avatarScaleNormal: 1
   avatarScaleDuration: 0.25
+  OnOptionATrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOptionBTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  draggableOptionA1: {fileID: 8796817856677053712}
+  draggableOptionB1: {fileID: 1157024869847027007}
+  draggableOptionA2: {fileID: 8963336774598201273}
+  draggableOptionB2: {fileID: 2041403400268880865}
+  draggableOptionA3: {fileID: 4039004683209578201}
+  draggableOptionB3: {fileID: 2869108523045689422}
 --- !u!1 &6833999614463543581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3661,6 +3683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae80ec689cc8114297bcfe2022730b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
+  characterViewSwitcher: {fileID: 0}
+  isAnswerA: 0
 --- !u!1 &8977501691704268228
 GameObject:
   m_ObjectHideFlags: 0
