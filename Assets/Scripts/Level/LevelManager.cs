@@ -1,3 +1,4 @@
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -26,6 +27,8 @@ namespace GarenaGameJam2026Team6
         private bool _isEnable = false;
         private float _deltaTime = 0f;
 
+        private CancellationToken _destroyCancellationToken;
+
         public override void Initialize()
         {
             beat.Initialize(_config);
@@ -35,9 +38,10 @@ namespace GarenaGameJam2026Team6
             affinityArrary[1] = new(0f, _config.affinityMax);
             affinityArrary[2] = new(0f, _config.affinityMax);
 
-            question.Initialize(_config, affinityArrary);
+            _destroyCancellationToken = destroyCancellationToken;
+            question.Initialize(_config, affinityArrary, _destroyCancellationToken);
 
-            _timer = new(_config);
+            _timer.Initialize(_config);
 
             beat.AddBeatListener(question.TryAskQuestion);
             beat.AddOneTimeBeatListener(question.TryAskQuestion);
@@ -45,14 +49,17 @@ namespace GarenaGameJam2026Team6
             beat.AddBeatListener(question.TryQuestionFinish);
             beat.AddOneTimeBeatListener(question.TryQuestionFinish);
 
+            question.AddAskQuestionListener(beat.ResetBeat);
             question.AddQuestionFinsihListener(() => _isEnable = false);
+
+            question.AddCalculateRemainingTimeListener(_timer.GetRemainingTime);
 
             StartGame().Forget();
         }
 
         private async UniTask StartGame()
         {
-            await UniTask.Delay((int)(_config.startGameDelay * 1000f), cancellationToken: destroyCancellationToken);
+            await UniTask.Delay((int)(_config.startGameDelay * 1000f), cancellationToken: _destroyCancellationToken);
             _isEnable = true;
         }
 

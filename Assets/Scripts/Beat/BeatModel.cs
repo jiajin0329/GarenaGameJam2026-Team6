@@ -43,7 +43,7 @@ namespace GarenaGameJam2026Team6
             timer -= beatInterval;
         }
 
-        public void ClearBeatCount()
+        public void ResetBeatCount()
         {
             beatCount = 0;
         }
