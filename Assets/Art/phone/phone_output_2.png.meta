@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: dd92e02e26f7c354f9ffd5d17ae738e2
+guid: 8a345a856b84e3f449c047dae0f58d1c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1255111988474707911
-    second: phone_output_0
+      213: -4230430598119530800
+    second: phone_output_2_0
+  - first:
+      213: -3929210183525071986
+    second: phone_output_2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,12 +103,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: phone_output_0
+      name: phone_output_2_0
       rect:
         serializedVersion: 2
-        x: 550
+        x: 412
         y: 0
-        width: 885
+        width: 1066
         height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93081addb42f49ee0800000000000000
-      internalID: -1255111988474707911
+      spriteID: 0de5428e8cd7a45c0800000000000000
+      internalID: -4230430598119530800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone_output_2_1
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 524
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e83042be724a879c0800000000000000
+      internalID: -3929210183525071986
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      phone_output_0: -1255111988474707911
+      phone_output_2_0: -4230430598119530800
+      phone_output_2_1: -3929210183525071986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
