@@ -11,7 +11,7 @@ public class DraggableOption : MonoBehaviour,
     IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     // ── 回呼（由 DialogueChoiceController 注入） ────────────────────
-    private Action onDropped;
+    public Action onDropped;
     // ── 狀態 ────────────────────────────────────────────────────────
     private bool interactable = false;
     private Canvas rootCanvas;

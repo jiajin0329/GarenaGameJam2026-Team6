@@ -155,6 +155,9 @@ public class DialogueChoiceController : MonoBehaviour
         activeCoroutine = null;
     }
 
+    [Header("視覺回饋")]
+    [SerializeField] private MaskFlashController maskFlashController;
+
     // ─────────────────────────────────────────────────────────────
     /// <summary>玩家放開 option 後的處理</summary>
     /// <param name="chosen">被選中的那個 CanvasGroup</param>
@@ -174,18 +177,26 @@ public class DialogueChoiceController : MonoBehaviour
     }
 
     /// <summary>
-    /// 玩家選擇後的處理：兩個選項同時往下掉出畫面外，再隱藏並回收位置。
+    /// 玩家選擇後的處理：
+    /// 1) 先設定本次選項對應的 Image 給 MaskFlashController（供外部腳本判定後呼叫 PlayCorrectFlash/PlayWrongFlash）
+    /// 2) 被選中的 → 淡出變透明
+    /// 3) 另一個 → 掉出畫面外
     /// </summary>
     private IEnumerator ResolveChoice(
         CanvasGroup chosenGroup, CanvasGroup otherGroup,
         DraggableOption chosenDrag, DraggableOption otherDrag)
     {
+        // 設定本次要變色的兩個 Image，供外部判定腳本呼叫 PlayCorrectFlash() / PlayWrongFlash()
+        Image chosenImage = chosenDrag != null ? chosenDrag.GetComponent<Image>() : null;
+        Image otherImage = otherDrag != null ? otherDrag.GetComponent<Image>() : null;
+        maskFlashController?.SetOptionImages(chosenImage, otherImage);
+
         // 1) 被選中的 → 淡出變透明
         if (chosenDrag != null)
         {
             yield return StartCoroutine(FadeOut(chosenGroup, fadeOutDuration));
             SetOptionVisible(chosenGroup, false);
-            chosenDrag.ResetPosition();   // 同時歸回位置與旋轉
+            chosenDrag.ResetPosition();
         }
 
         // 2) 另一個 → 掉出畫面外
@@ -193,7 +204,7 @@ public class DialogueChoiceController : MonoBehaviour
         {
             yield return StartCoroutine(DropOutRoutine(otherDrag.transform as RectTransform));
             SetOptionVisible(otherGroup, false);
-            otherDrag.ResetPosition();   // 同時歸回位置與旋轉
+            otherDrag.ResetPosition();
         }
 
         onResolveComplete?.Invoke();
