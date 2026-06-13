@@ -43,8 +43,12 @@ namespace GarenaGameJam2026Team6
 
         public void Answer()
         {
-            timer = questionInterval;
             isLastQuestionNoAnser = false;
+        }
+
+        public void NextQuestion()
+        {
+            timer = questionInterval;
         }
 
         public void LastQuestionNoAnswer()

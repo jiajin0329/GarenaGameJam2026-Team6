@@ -74,21 +74,22 @@ public class DraggableOption : MonoBehaviour,
     public void OnEndDrag(PointerEventData eventData)
     {
         if (!interactable) return;
-        
-            interactable = false;
-            Debug.Log(gameObject.name);
-            onDropped?.Invoke();
 
-        StartCoroutine(InvokeAfterDelay(1.5f));
+        interactable = false;
+        Debug.Log(gameObject.name);
+        onDropped?.Invoke();
 
-    }
-
-    private IEnumerator InvokeAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
         oneTimeAnswerEvnet?.Invoke();
         oneTimeAnswerEvnet = null;
+
+        // StartCoroutine(InvokeAfterDelay(1.5f));
     }
+
+    // private IEnumerator InvokeAfterDelay(float delay)
+    // {
+    //     yield return new WaitForSeconds(delay);
+
+    // }
 
     #endregion
 
