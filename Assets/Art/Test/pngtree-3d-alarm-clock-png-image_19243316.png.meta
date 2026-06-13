@@ -1,0 +1,2041 @@
+fileFormatVersion: 2
+guid: 1c43717e2380d5a40a9d0854c6a3f755
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 196238544215216467
+    second: pngtree-3d-alarm-clock-png-image_19243316_0
+  - first:
+      213: 948968983587106573
+    second: pngtree-3d-alarm-clock-png-image_19243316_1
+  - first:
+      213: 7732455571291071755
+    second: pngtree-3d-alarm-clock-png-image_19243316_2
+  - first:
+      213: 1337512530020177827
+    second: pngtree-3d-alarm-clock-png-image_19243316_3
+  - first:
+      213: 5852059881433326977
+    second: pngtree-3d-alarm-clock-png-image_19243316_4
+  - first:
+      213: 7734340384911297930
+    second: pngtree-3d-alarm-clock-png-image_19243316_5
+  - first:
+      213: 6677285794749692007
+    second: pngtree-3d-alarm-clock-png-image_19243316_6
+  - first:
+      213: -3838377474298422852
+    second: pngtree-3d-alarm-clock-png-image_19243316_7
+  - first:
+      213: 7139023163217993742
+    second: pngtree-3d-alarm-clock-png-image_19243316_8
+  - first:
+      213: 7561488742737581472
+    second: pngtree-3d-alarm-clock-png-image_19243316_9
+  - first:
+      213: 6282346359738743821
+    second: pngtree-3d-alarm-clock-png-image_19243316_10
+  - first:
+      213: 6291764447162072250
+    second: pngtree-3d-alarm-clock-png-image_19243316_11
+  - first:
+      213: -7754024721312995737
+    second: pngtree-3d-alarm-clock-png-image_19243316_12
+  - first:
+      213: -2370695857493436893
+    second: pngtree-3d-alarm-clock-png-image_19243316_13
+  - first:
+      213: -6959643547932463585
+    second: pngtree-3d-alarm-clock-png-image_19243316_14
+  - first:
+      213: -8459731386470187999
+    second: pngtree-3d-alarm-clock-png-image_19243316_15
+  - first:
+      213: 1392076458063499032
+    second: pngtree-3d-alarm-clock-png-image_19243316_16
+  - first:
+      213: 1790943944661290693
+    second: pngtree-3d-alarm-clock-png-image_19243316_17
+  - first:
+      213: 5428606446838964211
+    second: pngtree-3d-alarm-clock-png-image_19243316_18
+  - first:
+      213: 476429329588167877
+    second: pngtree-3d-alarm-clock-png-image_19243316_19
+  - first:
+      213: -5279734215199049109
+    second: pngtree-3d-alarm-clock-png-image_19243316_20
+  - first:
+      213: 7657455955673011511
+    second: pngtree-3d-alarm-clock-png-image_19243316_21
+  - first:
+      213: 6366964096623343960
+    second: pngtree-3d-alarm-clock-png-image_19243316_22
+  - first:
+      213: 6404215615600732742
+    second: pngtree-3d-alarm-clock-png-image_19243316_23
+  - first:
+      213: 2319010867097468773
+    second: pngtree-3d-alarm-clock-png-image_19243316_24
+  - first:
+      213: 6715656658014728798
+    second: pngtree-3d-alarm-clock-png-image_19243316_25
+  - first:
+      213: -8419713784653101860
+    second: pngtree-3d-alarm-clock-png-image_19243316_26
+  - first:
+      213: 1436869827472532943
+    second: pngtree-3d-alarm-clock-png-image_19243316_27
+  - first:
+      213: 8262835554189446310
+    second: pngtree-3d-alarm-clock-png-image_19243316_28
+  - first:
+      213: -5731773452423513488
+    second: pngtree-3d-alarm-clock-png-image_19243316_29
+  - first:
+      213: -2126135257670409680
+    second: pngtree-3d-alarm-clock-png-image_19243316_30
+  - first:
+      213: 5808384400990428330
+    second: pngtree-3d-alarm-clock-png-image_19243316_31
+  - first:
+      213: 7445816869270987202
+    second: pngtree-3d-alarm-clock-png-image_19243316_32
+  - first:
+      213: -3777712673471055011
+    second: pngtree-3d-alarm-clock-png-image_19243316_33
+  - first:
+      213: -1252488739358781782
+    second: pngtree-3d-alarm-clock-png-image_19243316_34
+  - first:
+      213: -4415201680613228766
+    second: pngtree-3d-alarm-clock-png-image_19243316_35
+  - first:
+      213: -2060161935749870935
+    second: pngtree-3d-alarm-clock-png-image_19243316_36
+  - first:
+      213: 3432033606455263769
+    second: pngtree-3d-alarm-clock-png-image_19243316_37
+  - first:
+      213: -4949497506517599678
+    second: pngtree-3d-alarm-clock-png-image_19243316_38
+  - first:
+      213: -5215468579925622500
+    second: pngtree-3d-alarm-clock-png-image_19243316_39
+  - first:
+      213: 101808359414266437
+    second: pngtree-3d-alarm-clock-png-image_19243316_40
+  - first:
+      213: 1233984318650822624
+    second: pngtree-3d-alarm-clock-png-image_19243316_41
+  - first:
+      213: -4548274567909463527
+    second: pngtree-3d-alarm-clock-png-image_19243316_42
+  - first:
+      213: -8766809211299080003
+    second: pngtree-3d-alarm-clock-png-image_19243316_43
+  - first:
+      213: 2562815044604438193
+    second: pngtree-3d-alarm-clock-png-image_19243316_44
+  - first:
+      213: -7685572896546587630
+    second: pngtree-3d-alarm-clock-png-image_19243316_45
+  - first:
+      213: 713267936708629965
+    second: pngtree-3d-alarm-clock-png-image_19243316_46
+  - first:
+      213: -2596109488226670669
+    second: pngtree-3d-alarm-clock-png-image_19243316_47
+  - first:
+      213: 6603972440384730075
+    second: pngtree-3d-alarm-clock-png-image_19243316_48
+  - first:
+      213: 5080307754345933118
+    second: pngtree-3d-alarm-clock-png-image_19243316_49
+  - first:
+      213: -43521808465536123
+    second: pngtree-3d-alarm-clock-png-image_19243316_50
+  - first:
+      213: 4800926556219609076
+    second: pngtree-3d-alarm-clock-png-image_19243316_51
+  - first:
+      213: 8356078331291666263
+    second: pngtree-3d-alarm-clock-png-image_19243316_52
+  - first:
+      213: -5197199905230247242
+    second: pngtree-3d-alarm-clock-png-image_19243316_53
+  - first:
+      213: -5337675911447621744
+    second: pngtree-3d-alarm-clock-png-image_19243316_54
+  - first:
+      213: 8945783654331924617
+    second: pngtree-3d-alarm-clock-png-image_19243316_55
+  - first:
+      213: 8935542002683705316
+    second: pngtree-3d-alarm-clock-png-image_19243316_56
+  - first:
+      213: -8701665498271000301
+    second: pngtree-3d-alarm-clock-png-image_19243316_57
+  - first:
+      213: -3002399572321295583
+    second: pngtree-3d-alarm-clock-png-image_19243316_58
+  - first:
+      213: 8192518989891275749
+    second: pngtree-3d-alarm-clock-png-image_19243316_59
+  - first:
+      213: -7590728192353196662
+    second: pngtree-3d-alarm-clock-png-image_19243316_60
+  - first:
+      213: -7740393965269565030
+    second: pngtree-3d-alarm-clock-png-image_19243316_61
+  - first:
+      213: -169199922754832772
+    second: pngtree-3d-alarm-clock-png-image_19243316_62
+  - first:
+      213: 5576497099837663899
+    second: pngtree-3d-alarm-clock-png-image_19243316_63
+  - first:
+      213: 4819531960949627687
+    second: pngtree-3d-alarm-clock-png-image_19243316_64
+  - first:
+      213: 5286867011526300582
+    second: pngtree-3d-alarm-clock-png-image_19243316_65
+  - first:
+      213: -923509878424139886
+    second: pngtree-3d-alarm-clock-png-image_19243316_66
+  - first:
+      213: -3869968252933571728
+    second: pngtree-3d-alarm-clock-png-image_19243316_67
+  - first:
+      213: 5932819296388123021
+    second: pngtree-3d-alarm-clock-png-image_19243316_68
+  - first:
+      213: 5125597504116875130
+    second: pngtree-3d-alarm-clock-png-image_19243316_69
+  - first:
+      213: -262244869726000108
+    second: pngtree-3d-alarm-clock-png-image_19243316_70
+  - first:
+      213: -2224939992886893528
+    second: pngtree-3d-alarm-clock-png-image_19243316_71
+  - first:
+      213: -8098573545237277368
+    second: pngtree-3d-alarm-clock-png-image_19243316_72
+  - first:
+      213: 5025336106062686270
+    second: pngtree-3d-alarm-clock-png-image_19243316_73
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 351103f8aed29b200800000000000000
+      internalID: 196238544215216467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 111
+        width: 1808
+        height: 2382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0fa291434a6b2d00800000000000000
+      internalID: 948968983587106573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_2
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b056b40bf533f4b60800000000000000
+      internalID: 7732455571291071755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_3
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 2390
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a79c724f8ccf8210800000000000000
+      internalID: 1337512530020177827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_4
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 2397
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185e525e471b63150800000000000000
+      internalID: 5852059881433326977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_5
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 2308
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d889e0a95e55b60800000000000000
+      internalID: 7734340384911297930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_6
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 2346
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76831d37d0c7aac50800000000000000
+      internalID: 6677285794749692007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_7
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 2247
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb9d49216085bbac0800000000000000
+      internalID: -3838377474298422852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_8
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2162
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00e4e62eb7e21360800000000000000
+      internalID: 7139023163217993742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_9
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1914
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a51df3f2fdcfe860800000000000000
+      internalID: 7561488742737581472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_10
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c32389ab06f2750800000000000000
+      internalID: 6282346359738743821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_11
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 2111
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abcf683fd66d05750800000000000000
+      internalID: 6291764447162072250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_12
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 2028
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766aa8a399b246490800000000000000
+      internalID: -7754024721312995737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_13
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2065
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3261d979da8991fd0800000000000000
+      internalID: -2370695857493436893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_14
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e652221116a6f90800000000000000
+      internalID: -6959643547932463585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_15
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1999
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12cb836202ff89a80800000000000000
+      internalID: -8459731386470187999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_16
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1969
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81f0f0fb926a15310800000000000000
+      internalID: 1392076458063499032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_17
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1645
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce4c226706bad810800000000000000
+      internalID: 1790943944661290693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_18
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1764
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff5b392dc8465b40800000000000000
+      internalID: 5428606446838964211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_19
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 1789
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c42ea673fd9c9600800000000000000
+      internalID: 476429329588167877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_20
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1796
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6ab59a54bd9ab6b0800000000000000
+      internalID: -5279734215199049109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_21
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 1707
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735d619ee9fb44a60800000000000000
+      internalID: 7657455955673011511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_22
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1745
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85976ecbc100c5850800000000000000
+      internalID: 6366964096623343960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_23
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 1646
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a24e0eb2850e850800000000000000
+      internalID: 6404215615600732742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_24
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 1677
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f7d93d818ce2020800000000000000
+      internalID: 2319010867097468773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_25
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1561
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52747e362ec23d50800000000000000
+      internalID: 6715656658014728798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_26
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1313
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd4ca432cea272b80800000000000000
+      internalID: -8419713784653101860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_27
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1485
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc52af6ce79c0f310800000000000000
+      internalID: 1436869827472532943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_28
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1510
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac0eec782d7ba270800000000000000
+      internalID: 8262835554189446310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_29
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1427
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a384bc966a470b0800000000000000
+      internalID: -5731773452423513488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_30
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1465
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0322f167f337e72e0800000000000000
+      internalID: -2126135257670409680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_31
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1367
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac54fba6d68b9050800000000000000
+      internalID: 5808384400990428330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_32
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1368
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c122833efad45760800000000000000
+      internalID: 7445816869270987202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_33
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1044
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5b3442b65ed29bc0800000000000000
+      internalID: -3777712673471055011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_34
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1163
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaec755a0244e9ee0800000000000000
+      internalID: -1252488739358781782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_35
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 1188
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f3757d67d0ab2c0800000000000000
+      internalID: -4415201680613228766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_36
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1195
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa09d772a5d863e0800000000000000
+      internalID: -2060161935749870935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_37
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 1106
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91208f1a16801af20800000000000000
+      internalID: 3432033606455263769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_38
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1144
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24a365bcd3adf4bb0800000000000000
+      internalID: -4949497506517599678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_39
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1045
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c11825495feee97b0800000000000000
+      internalID: -5215468579925622500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_40
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 960
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a7d0ad922b96100800000000000000
+      internalID: 101808359414266437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_41
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 712
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0efa59b233eff1110800000000000000
+      internalID: 1233984318650822624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_42
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 884
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91a20d6d06841e0c0800000000000000
+      internalID: -4548274567909463527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_43
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 909
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db855ea8879065680800000000000000
+      internalID: -8766809211299080003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_44
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 826
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6aca664b2f09320800000000000000
+      internalID: 2562815044604438193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_45
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 863
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c78f5ab2c575590800000000000000
+      internalID: -7685572896546587630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_46
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 766
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5913dc86906e900800000000000000
+      internalID: 713267936708629965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_47
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 797
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b76a3cdc24c8fbd0800000000000000
+      internalID: -2596109488226670669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_48
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 767
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd3f997f1f506ab50800000000000000
+      internalID: 6603972440384730075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_49
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 443
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e39a3776cf0e08640800000000000000
+      internalID: 5080307754345933118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_50
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 562
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58bdd625521656ff0800000000000000
+      internalID: -43521808465536123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_51
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 587
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff8538344150a240800000000000000
+      internalID: 4800926556219609076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_52
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 594
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7578afb48f0c6f370800000000000000
+      internalID: 8356078331291666263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_53
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 505
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6baae0ed836dfd7b0800000000000000
+      internalID: -5197199905230247242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_54
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 543
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f410ce904cce5b0800000000000000
+      internalID: -5337675911447621744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_55
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 444
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98043f936dec52c70800000000000000
+      internalID: 8945783654331924617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_56
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 475
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e77b81eb1c610c70800000000000000
+      internalID: 8935542002683705316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_57
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 359
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319d84d25597d3780800000000000000
+      internalID: -8701665498271000301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_58
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 111
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12321021f755556d0800000000000000
+      internalID: -3002399572321295583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_59
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb8c109d9ca1b170800000000000000
+      internalID: 8192518989891275749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_60
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 308
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a85ae3c2de058a690800000000000000
+      internalID: -7590728192353196662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_61
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91c78ee2b8949490800000000000000
+      internalID: -7740393965269565030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_62
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 263
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76bc241191e6adf0800000000000000
+      internalID: -169199922754832772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_63
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 165
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ae1d61192b36d40800000000000000
+      internalID: 5576497099837663899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_64
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 166
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b5b0498ca62e240800000000000000
+      internalID: 4819531960949627687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_65
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a391c43989be5940800000000000000
+      internalID: 5286867011526300582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_66
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29707f598a80f23f0800000000000000
+      internalID: -923509878424139886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_67
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07bfadfb06c1b4ac0800000000000000
+      internalID: -3869968252933571728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_68
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d890cc577bb955250800000000000000
+      internalID: 5932819296388123021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_69
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7fd38ef5c7c12740800000000000000
+      internalID: 5125597504116875130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_70
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41c20df2ea15c5cf0800000000000000
+      internalID: -262244869726000108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_71
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 824aa6d5ddc6f11e0800000000000000
+      internalID: -2224939992886893528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_72
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84591c8c4461c9f80800000000000000
+      internalID: -8098573545237277368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-3d-alarm-clock-png-image_19243316_73
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 0
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38afc620949db540800000000000000
+      internalID: 5025336106062686270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pngtree-3d-alarm-clock-png-image_19243316_0: 196238544215216467
+      pngtree-3d-alarm-clock-png-image_19243316_1: 948968983587106573
+      pngtree-3d-alarm-clock-png-image_19243316_10: 6282346359738743821
+      pngtree-3d-alarm-clock-png-image_19243316_11: 6291764447162072250
+      pngtree-3d-alarm-clock-png-image_19243316_12: -7754024721312995737
+      pngtree-3d-alarm-clock-png-image_19243316_13: -2370695857493436893
+      pngtree-3d-alarm-clock-png-image_19243316_14: -6959643547932463585
+      pngtree-3d-alarm-clock-png-image_19243316_15: -8459731386470187999
+      pngtree-3d-alarm-clock-png-image_19243316_16: 1392076458063499032
+      pngtree-3d-alarm-clock-png-image_19243316_17: 1790943944661290693
+      pngtree-3d-alarm-clock-png-image_19243316_18: 5428606446838964211
+      pngtree-3d-alarm-clock-png-image_19243316_19: 476429329588167877
+      pngtree-3d-alarm-clock-png-image_19243316_2: 7732455571291071755
+      pngtree-3d-alarm-clock-png-image_19243316_20: -5279734215199049109
+      pngtree-3d-alarm-clock-png-image_19243316_21: 7657455955673011511
+      pngtree-3d-alarm-clock-png-image_19243316_22: 6366964096623343960
+      pngtree-3d-alarm-clock-png-image_19243316_23: 6404215615600732742
+      pngtree-3d-alarm-clock-png-image_19243316_24: 2319010867097468773
+      pngtree-3d-alarm-clock-png-image_19243316_25: 6715656658014728798
+      pngtree-3d-alarm-clock-png-image_19243316_26: -8419713784653101860
+      pngtree-3d-alarm-clock-png-image_19243316_27: 1436869827472532943
+      pngtree-3d-alarm-clock-png-image_19243316_28: 8262835554189446310
+      pngtree-3d-alarm-clock-png-image_19243316_29: -5731773452423513488
+      pngtree-3d-alarm-clock-png-image_19243316_3: 1337512530020177827
+      pngtree-3d-alarm-clock-png-image_19243316_30: -2126135257670409680
+      pngtree-3d-alarm-clock-png-image_19243316_31: 5808384400990428330
+      pngtree-3d-alarm-clock-png-image_19243316_32: 7445816869270987202
+      pngtree-3d-alarm-clock-png-image_19243316_33: -3777712673471055011
+      pngtree-3d-alarm-clock-png-image_19243316_34: -1252488739358781782
+      pngtree-3d-alarm-clock-png-image_19243316_35: -4415201680613228766
+      pngtree-3d-alarm-clock-png-image_19243316_36: -2060161935749870935
+      pngtree-3d-alarm-clock-png-image_19243316_37: 3432033606455263769
+      pngtree-3d-alarm-clock-png-image_19243316_38: -4949497506517599678
+      pngtree-3d-alarm-clock-png-image_19243316_39: -5215468579925622500
+      pngtree-3d-alarm-clock-png-image_19243316_4: 5852059881433326977
+      pngtree-3d-alarm-clock-png-image_19243316_40: 101808359414266437
+      pngtree-3d-alarm-clock-png-image_19243316_41: 1233984318650822624
+      pngtree-3d-alarm-clock-png-image_19243316_42: -4548274567909463527
+      pngtree-3d-alarm-clock-png-image_19243316_43: -8766809211299080003
+      pngtree-3d-alarm-clock-png-image_19243316_44: 2562815044604438193
+      pngtree-3d-alarm-clock-png-image_19243316_45: -7685572896546587630
+      pngtree-3d-alarm-clock-png-image_19243316_46: 713267936708629965
+      pngtree-3d-alarm-clock-png-image_19243316_47: -2596109488226670669
+      pngtree-3d-alarm-clock-png-image_19243316_48: 6603972440384730075
+      pngtree-3d-alarm-clock-png-image_19243316_49: 5080307754345933118
+      pngtree-3d-alarm-clock-png-image_19243316_5: 7734340384911297930
+      pngtree-3d-alarm-clock-png-image_19243316_50: -43521808465536123
+      pngtree-3d-alarm-clock-png-image_19243316_51: 4800926556219609076
+      pngtree-3d-alarm-clock-png-image_19243316_52: 8356078331291666263
+      pngtree-3d-alarm-clock-png-image_19243316_53: -5197199905230247242
+      pngtree-3d-alarm-clock-png-image_19243316_54: -5337675911447621744
+      pngtree-3d-alarm-clock-png-image_19243316_55: 8945783654331924617
+      pngtree-3d-alarm-clock-png-image_19243316_56: 8935542002683705316
+      pngtree-3d-alarm-clock-png-image_19243316_57: -8701665498271000301
+      pngtree-3d-alarm-clock-png-image_19243316_58: -3002399572321295583
+      pngtree-3d-alarm-clock-png-image_19243316_59: 8192518989891275749
+      pngtree-3d-alarm-clock-png-image_19243316_6: 6677285794749692007
+      pngtree-3d-alarm-clock-png-image_19243316_60: -7590728192353196662
+      pngtree-3d-alarm-clock-png-image_19243316_61: -7740393965269565030
+      pngtree-3d-alarm-clock-png-image_19243316_62: -169199922754832772
+      pngtree-3d-alarm-clock-png-image_19243316_63: 5576497099837663899
+      pngtree-3d-alarm-clock-png-image_19243316_64: 4819531960949627687
+      pngtree-3d-alarm-clock-png-image_19243316_65: 5286867011526300582
+      pngtree-3d-alarm-clock-png-image_19243316_66: -923509878424139886
+      pngtree-3d-alarm-clock-png-image_19243316_67: -3869968252933571728
+      pngtree-3d-alarm-clock-png-image_19243316_68: 5932819296388123021
+      pngtree-3d-alarm-clock-png-image_19243316_69: 5125597504116875130
+      pngtree-3d-alarm-clock-png-image_19243316_7: -3838377474298422852
+      pngtree-3d-alarm-clock-png-image_19243316_70: -262244869726000108
+      pngtree-3d-alarm-clock-png-image_19243316_71: -2224939992886893528
+      pngtree-3d-alarm-clock-png-image_19243316_72: -8098573545237277368
+      pngtree-3d-alarm-clock-png-image_19243316_73: 5025336106062686270
+      pngtree-3d-alarm-clock-png-image_19243316_8: 7139023163217993742
+      pngtree-3d-alarm-clock-png-image_19243316_9: 7561488742737581472
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
