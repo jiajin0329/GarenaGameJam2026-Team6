@@ -47,6 +47,12 @@ namespace GarenaGameJam2026Team6
         {
             beatCount = 0;
         }
+
+        public void Reset()
+        {
+            timer = 0f;
+            beatCount = 0;
+        }
     }
 }
 

@@ -58,6 +58,12 @@ namespace GarenaGameJam2026Team6
             _view.RsetBeatCount();
             Debug.Log(nameof(ResetBeat));
         }
+
+        public void Reset()
+        {
+            _model.Reset();
+            _view.Reset();
+        }
     }
 }
 
