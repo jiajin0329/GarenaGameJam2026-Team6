@@ -9,8 +9,13 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public float current { get; private set; }
 
-        public float max { get; private set; }
+        [NonSerialized]
+        public float max;
+
         public float normalizedCurrent { get; private set; }
+
+        [SerializeField]
+        private AffinityBar _affinityBar;
 
         private Action<float> setNormalizedCurrentEvent;
         public void AddSetNormalizedCurrentListener(Action<float> _listener) => setNormalizedCurrentEvent += _listener;
@@ -26,6 +31,7 @@ namespace GarenaGameJam2026Team6
         {
             current = _set;
             normalizedCurrent = current / max;
+            _affinityBar.SetTarget_AffinityValue(normalizedCurrent);
         }
 
         public void Change(float _change) => Set(current + _change);

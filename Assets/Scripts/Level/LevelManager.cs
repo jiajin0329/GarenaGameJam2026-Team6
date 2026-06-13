@@ -33,10 +33,9 @@ namespace GarenaGameJam2026Team6
         {
             beat.Initialize(_config);
 
-            affinityArrary = new Affinity[3];
-            affinityArrary[0] = new(0f, _config.affinityMax);
-            affinityArrary[1] = new(0f, _config.affinityMax);
-            affinityArrary[2] = new(0f, _config.affinityMax);
+            affinityArrary[0].max = _config.affinityMax;
+            affinityArrary[1].max = _config.affinityMax;
+            affinityArrary[2].max = _config.affinityMax;
 
             _destroyCancellationToken = destroyCancellationToken;
             question.Initialize(_config, affinityArrary, _destroyCancellationToken);
