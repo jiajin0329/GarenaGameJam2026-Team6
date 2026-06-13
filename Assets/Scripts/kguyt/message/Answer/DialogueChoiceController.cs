@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System;
 
 /// <summary>
 /// 掛在每個角色視窗（CharacterPanel）根物件上。
@@ -31,6 +32,9 @@ public class DialogueChoiceController : MonoBehaviour
     [SerializeField] private float typewriterInterval = 0.04f; // 逐字速度（秒/字）
     [SerializeField] private float fadeOutDuration = 0.4f;  // Option 淡出時長
     [SerializeField] private float fadeInDuration = 0.3f;  // Option 淡入時長
+
+    private Action onResolveComplete;
+    public void SetOnResolveComplete(Action callback) => onResolveComplete = callback;
 
     // ── 私有狀態 ────────────────────────────────────────────────────
     private Coroutine activeCoroutine;
@@ -205,6 +209,9 @@ public class DialogueChoiceController : MonoBehaviour
                 horizontalDrift: 20f));
 
             yield return StartCoroutine(FadeOut(otherGroup, fadeOutDuration));
+
+            onResolveComplete?.Invoke();
+            onResolveComplete = null;
         }
     }
 

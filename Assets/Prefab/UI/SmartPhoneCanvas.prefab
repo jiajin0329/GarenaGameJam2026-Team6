@@ -267,6 +267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2853610136388121520}
     m_Modifications:
+    - target: {fileID: 1157024869847027007, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
+      propertyPath: characterViewSwitcher
+      value: 
+      objectReference: {fileID: 8514907254735836213}
     - target: {fileID: 1488750658392541639, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -275,10 +279,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2041403400268880865, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
+      propertyPath: characterViewSwitcher
+      value: 
+      objectReference: {fileID: 8514907254735836213}
+    - target: {fileID: 2869108523045689422, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
+      propertyPath: characterViewSwitcher
+      value: 
+      objectReference: {fileID: 8514907254735836213}
+    - target: {fileID: 4039004683209578201, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
+      propertyPath: characterViewSwitcher
+      value: 
+      objectReference: {fileID: 8514907254735836213}
     - target: {fileID: 6613661569579922394, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
       propertyPath: m_Name
       value: ScreenRange
       objectReference: {fileID: 0}
+    - target: {fileID: 8796817856677053712, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
+      propertyPath: characterViewSwitcher
+      value: 
+      objectReference: {fileID: 8514907254735836213}
     - target: {fileID: 8883352158566326864, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -299,6 +319,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8963336774598201273, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
+      propertyPath: characterViewSwitcher
+      value: 
+      objectReference: {fileID: 8514907254735836213}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -309,3 +333,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8883352158566326864, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
   m_PrefabInstance: {fileID: 7730497380889221716}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8514907254735836213 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2117599335097060961, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
+  m_PrefabInstance: {fileID: 7730497380889221716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed86e72b5527504d99b78a6fdb97342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterViewSwitcher
