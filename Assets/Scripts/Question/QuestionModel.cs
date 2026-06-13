@@ -18,11 +18,14 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public bool isLastQuestionNoAnser { get; private set; }
 
-        public QuestionModel(int _questionCount, int _bpm, int _questionIntervalBeatAmount)
+        private LevelConfig _levelConfig;
+
+        public QuestionModel(LevelConfig _levelConfig)
         {
-            questionInterval = 60f / _bpm * _questionIntervalBeatAmount;
+            this._levelConfig = _levelConfig;
+            questionInterval = 60f / _levelConfig.bpm * _levelConfig.questionIntervalBeatAmount;
             timer = questionInterval;
-            questionCount = _questionCount;
+            questionCount = _levelConfig.questionCount;
         }
 
         public void Tick(float _deltaTime)
@@ -53,6 +56,13 @@ namespace GarenaGameJam2026Team6
 
         public void LastQuestionNoAnswer()
         {
+            isLastQuestionNoAnser = false;
+        }
+
+        public void Reset()
+        {
+            timer = 0f;
+            questionCount = _levelConfig.questionCount;
             isLastQuestionNoAnser = false;
         }
     }

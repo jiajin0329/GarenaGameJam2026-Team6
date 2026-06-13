@@ -21,8 +21,8 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public Timer _timer { get; private set; }
 
-        [SerializeField]
-        private bool _callQuestion = false;
+        [field: SerializeField]
+        public End end { get; private set; }
 
         private bool _isEnable = false;
         private float _deltaTime = 0f;
@@ -41,7 +41,9 @@ namespace GarenaGameJam2026Team6
             _destroyCancellationToken = destroyCancellationToken;
             question.Initialize(_config, affinityArrary, _destroyCancellationToken);
 
-            _timer.Initialize(_config);
+            _timer.Initialize(_config, end);
+
+            end.Initialize(affinityArrary);
 
             beat.AddBeatListener(question.TryAskQuestion);
             beat.AddOneTimeBeatListener(question.TryAskQuestion);
@@ -50,11 +52,21 @@ namespace GarenaGameJam2026Team6
             beat.AddOneTimeBeatListener(question.TryQuestionFinish);
 
             question.AddAskQuestionListener(beat.ResetBeat);
-            question.AddQuestionFinsihListener(() => _isEnable = false);
+
+            question.AddQuestionFinsihListener(IsEnableFalse);
+            question.AddQuestionFinsihListener(end.TryEnd);
 
             question.AddCalculateRemainingTimeListener(_timer.GetRemainingTime);
 
+            end.AddNextDayListener(Restart);
+
             StartGame().Forget();
+        }
+
+        private void IsEnableFalse()
+        {
+            _isEnable = false;
+            _timer.IsEnableFalse();
         }
 
         private async UniTask StartGame()
@@ -71,8 +83,17 @@ namespace GarenaGameJam2026Team6
             _deltaTime = Time.deltaTime;
 
             beat.Tick(_deltaTime);
-            question.Tick(_deltaTime);
             _timer.Tick(_deltaTime);
+            question.Tick(_deltaTime);
+        }
+
+        private void Restart()
+        {
+            beat.Reset();
+            question.Reset();
+            _timer.Reset();
+
+            StartGame().Forget();
         }
     }
 }

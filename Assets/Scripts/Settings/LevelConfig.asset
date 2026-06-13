@@ -24,3 +24,4 @@ MonoBehaviour:
   <affinityMax>k__BackingField: 10
   <addAffinity>k__BackingField: 1
   <subAffinity>k__BackingField: 0.5
+  <remainingBeatSliderSmoothDuration>k__BackingField: 0.2

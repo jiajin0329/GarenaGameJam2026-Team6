@@ -44,7 +44,7 @@ namespace GarenaGameJam2026Team6
 
         public void Initialize(LevelConfig _levelConfig, Affinity[] _affinityArrary, CancellationToken _cancellationToken)
         {
-            _model = new(_levelConfig.questionCount, _levelConfig.bpm, _levelConfig.questionIntervalBeatAmount);
+            _model = new(_levelConfig);
             _service = new(_model, _levelConfig, _affinityArrary);
             this._cancellationToken = _cancellationToken;
 
@@ -117,6 +117,11 @@ namespace GarenaGameJam2026Team6
 
             _questionFinsihEvent?.Invoke();
             Debug.Log(nameof(_service.CanQuestionFinish));
+        }
+
+        public void Reset()
+        {
+            _model.Reset();
         }
     }
 }
