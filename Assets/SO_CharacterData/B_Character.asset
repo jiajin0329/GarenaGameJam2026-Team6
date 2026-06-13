@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterData
   comment: "\u73A9\u5BB6\u662F\u5426\u89E3\u9396\u89D2\u8272\u8CC7\u8A0A\u76F8\u95DC\u8CC7\u6599\u4F4D\u65BC
     SaveSystem.SaveFile_instance.isKnow_characterName_A/B/C......"
-  _characterName: 
-  _characterNickName: 
-  _birthday: 
-  _starSign: 
-  _likeFood: 
-  _hateFood: 
-  _hobby1: 
-  _hobby2: 
+  _characterName: "\u9577\u984F\u7D62\u9999"
+  _characterNickName: NOA
+  _birthday: 7/29
+  _starSign: "\u7345\u5B50\u5EA7"
+  _likeFood: "\u8292\u679C"
+  _hateFood: "\u6D77\u9BAE"
+  _hobby1: "\u9577\u8DD1"
+  _hobby2: "\u716E\u98EF"
