@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.Events;
+using System;
 
 /// <summary>
 /// 管理 AllScreen 的滑動切換，以及向各 DialogueChoiceController 發送對話指令。
@@ -32,8 +34,37 @@ public class CharacterViewSwitcher : MonoBehaviour
     [SerializeField] private float avatarScaleNormal = 1.0f;
     [SerializeField] private float avatarScaleDuration = 0.25f;
 
+    [Header("Option Event")]
+    public UnityEvent OnOptionATrigger;
+    public UnityEvent OnOptionBTrigger;
+
+    [SerializeField]
+    private DraggableOption draggableOptionA1;
+    [SerializeField]
+    private DraggableOption draggableOptionB1;
+
+    [SerializeField]
+    private DraggableOption draggableOptionA2;
+    [SerializeField]
+    private DraggableOption draggableOptionB2;
+
+    [SerializeField]
+    private DraggableOption draggableOptionA3;
+    [SerializeField]
+    private DraggableOption draggableOptionB3;
+
+    public Action anserA1Event => draggableOptionA1.answerEvnet;
+    public Action anserB1Event => draggableOptionB1.answerEvnet;
+
+    public Action anserA2Event => draggableOptionA2.answerEvnet;
+    public Action anserB2Event => draggableOptionB2.answerEvnet;
+
+    public Action anserA3Event => draggableOptionA3.answerEvnet;
+    public Action anserB3Event => draggableOptionB3.answerEvnet;
+
+
     // ── 常數 ────────────────────────────────────────────────────────
-    private readonly float[] targetPositions = { 643f, 0f, -648f };
+    private readonly float[] targetPositions = { 650f, 0f, -648f };
 
     // ── 私有狀態 ────────────────────────────────────────────────────
     private DialogueChoiceController currentController;
@@ -170,7 +201,7 @@ public class CharacterViewSwitcher : MonoBehaviour
         Debug.Log("[Test] 觸發測試對話");
         PlayDialogue(
             text: "我們今晚一起去哪？",
-            characterIndex: Random.Range(0, 3),
+            characterIndex: UnityEngine.Random.Range(0, 3),
             optionAText: "去看電影吧",
             optionBText: "不了，我有事"
         );

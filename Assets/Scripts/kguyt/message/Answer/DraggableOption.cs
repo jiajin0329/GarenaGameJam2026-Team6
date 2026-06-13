@@ -20,6 +20,12 @@ public class DraggableOption : MonoBehaviour,
     private Vector2 originAnchoredPos;  // Editor 設定的原始位置（歸位用）
     private RectTransform rt;
 
+    public CharacterViewSwitcher characterViewSwitcher;
+
+    public bool isAnswerA;
+
+    public Action answerEvnet;
+
     // ═══════════════════════════════════════════════════════════════
     #region Unity Lifecycle
 
@@ -75,7 +81,10 @@ public class DraggableOption : MonoBehaviour,
         {
             // 有效放手 → 觸發回呼
             interactable = false;
+            Debug.Log(gameObject.name);
             onDropped?.Invoke();
+
+            answerEvnet?.Invoke();
         }
         else
         {
