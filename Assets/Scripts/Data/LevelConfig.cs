@@ -7,6 +7,9 @@ namespace GarenaGameJam2026Team6
     public class LevelConfig : ScriptableObject
     {
         [field: SerializeField]
+        public float startGameDelay { get; private set; } = 2f;
+
+        [field: SerializeField]
         public int bpm { get; private set; } = 120;
 
         [field: SerializeField]
@@ -18,10 +21,16 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public int questionCount { get; private set; } = 15;
 
-        [SerializeField]
-        public GoogleSheetDataGetterQuestions questions;
+        [field: SerializeField]
+        public GoogleSheetDataGetterQuestions questionsConfigA { get; private set; }
 
-        [SerializeField]
-        public GoogleSheetDataGetterWrongAnswers wrongAnswers;
+        [field: SerializeField]
+        public GoogleSheetDataGetterQuestions questionsConfigB { get; private set; }
+
+        [field: SerializeField]
+        public GoogleSheetDataGetterQuestions questionsConfigC { get; private set; }
+
+        [field: SerializeField]
+        public GoogleSheetDataGetterWrongAnswers wrongAnswerConfig { get; private set; }
     }
 }

@@ -35,7 +35,7 @@ namespace GarenaGameJam2026Team6
             timer -= questionInterval;
         }
 
-        public void Question()
+        public void AskQuestion()
         {
             questionCount--;
             isLastQuestionNoAnser = true;
