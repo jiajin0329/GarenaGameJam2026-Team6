@@ -53,14 +53,14 @@ public class CharacterViewSwitcher : MonoBehaviour
     [SerializeField]
     private DraggableOption draggableOptionB3;
 
-    public Action anserA1Event => draggableOptionA1.answerEvnet;
-    public Action anserB1Event => draggableOptionB1.answerEvnet;
+    public void AddAnswerA1Listener(Action _listener) => draggableOptionA1.answerEvnet += _listener;
+    public void AddAnswerB1Listener(Action _listener) => draggableOptionB1.answerEvnet += _listener;
 
-    public Action anserA2Event => draggableOptionA2.answerEvnet;
-    public Action anserB2Event => draggableOptionB2.answerEvnet;
+    public void AddAnswerA2Listener(Action _listener) => draggableOptionA2.answerEvnet += _listener;
+    public void AddAnswerB2Listener(Action _listener) => draggableOptionB2.answerEvnet += _listener;
 
-    public Action anserA3Event => draggableOptionA3.answerEvnet;
-    public Action anserB3Event => draggableOptionB3.answerEvnet;
+    public void AddAnswerA3Listener(Action _listener) => draggableOptionA3.answerEvnet += _listener;
+    public void AddAnswerB3Listener(Action _listener) => draggableOptionB3.answerEvnet += _listener;
 
 
     // ── 常數 ────────────────────────────────────────────────────────
