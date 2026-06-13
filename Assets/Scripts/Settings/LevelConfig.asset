@@ -16,7 +16,7 @@ MonoBehaviour:
   <bpm>k__BackingField: 120
   <oneTimeBeatAmount>k__BackingField: 4
   <questionIntervalBeatAmount>k__BackingField: 8
-  <questionCount>k__BackingField: 1
+  <questionCount>k__BackingField: 15
   <questionsConfigA>k__BackingField: {fileID: 11400000, guid: b94d10a2d0f71fd4a88aef729b0818a2, type: 2}
   <questionsConfigB>k__BackingField: {fileID: 11400000, guid: 3e6a46c8840450a4e85fedeb91d0acb1, type: 2}
   <questionsConfigC>k__BackingField: {fileID: 11400000, guid: 656a27fe73cb0fa4f9145bc6323372f4, type: 2}

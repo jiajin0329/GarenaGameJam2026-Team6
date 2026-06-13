@@ -112,7 +112,17 @@ MonoBehaviour:
       <isLastQuestionNoAnser>k__BackingField: 0
     _view:
       _characterViewSwitcher: {fileID: 2117599335097060961, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
-  <affinityArrary>k__BackingField: []
+      _maskFlashController: {fileID: 0}
+  <affinityArrary>k__BackingField:
+  - <current>k__BackingField: 0
+    max: 0
+    _affinityBar: {fileID: 0}
+  - <current>k__BackingField: 0
+    max: 0
+    _affinityBar: {fileID: 0}
+  - <current>k__BackingField: 0
+    max: 0
+    _affinityBar: {fileID: 0}
   <_timer>k__BackingField:
     <normalizedCurrentTime>k__BackingField: 0
     _pointerRectTransform: {fileID: 0}
