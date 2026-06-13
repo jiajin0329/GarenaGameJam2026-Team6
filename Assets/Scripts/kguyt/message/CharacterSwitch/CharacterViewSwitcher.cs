@@ -233,4 +233,6 @@ public class CharacterViewSwitcher : MonoBehaviour
 
         avatar.localScale = endScale;
     }
+
+
 }

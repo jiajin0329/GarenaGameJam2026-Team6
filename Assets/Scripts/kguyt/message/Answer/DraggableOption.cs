@@ -22,7 +22,6 @@ public class DraggableOption : MonoBehaviour,
 
     public CharacterViewSwitcher characterViewSwitcher;
 
-    public bool isAnswerA;
 
     public Action oneTimeAnswerEvnet;
 
