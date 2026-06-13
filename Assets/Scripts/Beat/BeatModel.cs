@@ -18,11 +18,18 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public float timer { get; private set; }
 
-        public BeatModel(int _bpm, int _oneTimeBeatAmount)
+        [field: SerializeField]
+        public int beatCount { get; private set; }
+
+        [field: SerializeField]
+        public int questionIntervalBeatAmount { get; private set; }
+
+        public BeatModel(LevelConfig _levelConfig)
         {
-            bpm = _bpm;
-            oneTimeBeatAmount = _oneTimeBeatAmount;
-            beatInterval = 60f / _bpm;
+            bpm = _levelConfig.bpm;
+            oneTimeBeatAmount = _levelConfig.oneTimeBeatAmount;
+            questionIntervalBeatAmount = _levelConfig.questionIntervalBeatAmount;
+            beatInterval = 60f / bpm;
         }
 
         public void Tick(float _deltaTime)
@@ -30,9 +37,15 @@ namespace GarenaGameJam2026Team6
             timer += _deltaTime;
         }
 
-        public void ClearTimer()
+        public void Beat()
         {
+            beatCount++;
             timer -= beatInterval;
+        }
+
+        public void ClearBeatCount()
+        {
+            beatCount = 0;
         }
     }
 }
