@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System;
 
 /// <summary>
 /// 掛在每個角色視窗（CharacterPanel）根物件上。
@@ -31,6 +32,9 @@ public class DialogueChoiceController : MonoBehaviour
     [SerializeField] private float typewriterInterval = 0.04f; // 逐字速度（秒/字）
     [SerializeField] private float fadeOutDuration = 0.4f;  // Option 淡出時長
     [SerializeField] private float fadeInDuration = 0.3f;  // Option 淡入時長
+
+    private Action onResolveComplete;
+    public void SetOnResolveComplete(Action callback) => onResolveComplete = callback;
 
     // ── 私有狀態 ────────────────────────────────────────────────────
     private Coroutine activeCoroutine;
@@ -181,30 +185,54 @@ public class DialogueChoiceController : MonoBehaviour
         // 被選中的 → 拋物線向上飛出並淡出
         if (chosenDrag != null)
         {
-           yield return StartCoroutine(FadeOut(chosenGroup, fadeOutDuration));
+            yield return StartCoroutine(FadeOut(chosenGroup, fadeOutDuration));
         }
 
         // 另一個（被淘汰的）→ 先 VFX，短暫停頓後才拋起淡出
         if (otherDrag != null)
         {
+            RectTransform otherRT = otherDrag.transform as RectTransform;
+
+            // ← 先讀角度，再 ResetPosition
+            float currentRotZ = otherRT.localEulerAngles.z;
+            if (currentRotZ > 180f) currentRotZ -= 360f;
+
             otherDrag.ResetPosition();
 
-            // 1) 先劈
+            // 根據目前 rotation.z 決定飛出斜度方向，再加隨機偏移
+            
+            // Unity 的 z 角度是 0~360，轉成 -180~180
+            if (currentRotZ > 180f) currentRotZ -= 360f;
+            // rotation.z 往 -20 = 右斜，往 +20 = 左斜；水平漂移方向與斜度相反
+            float drift = currentRotZ < 0f
+                ? UnityEngine.Random.Range(30f, 60f)    // 右斜 → 往右飛
+                : UnityEngine.Random.Range(-60f, -30f); // 左斜 → 往左飛
+
+            // VFX 角度：70 或 -70 附近隨機
+            float vfxAngle = (UnityEngine.Random.value > 0.5f ? 1f : -1f) * UnityEngine.Random.Range(60f, 80f);
+
             if (vfxManager != null)
             {
                 Vector2 worldPos = GetWorldPosition(otherDrag.transform as RectTransform);
-                vfxManager.SpawnSlashVFX(worldPos,90f);
+                vfxManager.SpawnSlashVFX(worldPos, vfxAngle);
             }
 
+            // 飛起來淡出，帶入計算好的水平漂移
+            float targetRot = drift > 0f
+    ? UnityEngine.Random.Range(15f, 25f)     // 往右飛 → 右斜（正角度在 Unity = 逆時針，視覺左斜）
+    : UnityEngine.Random.Range(-25f, -15f);  // 往左飛 → 左斜
 
-            // 3) 被劈後才飛起來淡出
             StartCoroutine(ThrowArcRoutine(
-                otherDrag.transform as RectTransform,
+                otherRT,
                 peakHeight: 300f,
                 duration: 0.5f,
-                horizontalDrift: 20f));
+                horizontalDrift: drift,
+                targetRotationZ: targetRot));
 
             yield return StartCoroutine(FadeOut(otherGroup, fadeOutDuration));
+
+            onResolveComplete?.Invoke();
+            onResolveComplete = null;
         }
     }
 
@@ -255,9 +283,9 @@ public class DialogueChoiceController : MonoBehaviour
         if (vfxManager != null)
         {
             if (optionADrag != null)
-                vfxManager.SpawnSlashVFX(GetWorldPosition(optionADrag.transform as RectTransform));
+                vfxManager.SpawnSlashVFX(GetWorldPosition(optionADrag.transform as RectTransform),-90f);
             if (optionBDrag != null)
-                vfxManager.SpawnSlashVFX(GetWorldPosition(optionBDrag.transform as RectTransform));
+                vfxManager.SpawnSlashVFX(GetWorldPosition(optionBDrag.transform as RectTransform),-90f);
         }
 
         yield return new WaitForSeconds(0.15f);
@@ -396,12 +424,15 @@ public class DialogueChoiceController : MonoBehaviour
     /// <param name="duration">整段拋物線時長（秒）</param>
     /// <param name="horizontalDrift">水平漂移量（正值 = 向右）</param>
     private IEnumerator ThrowArcRoutine(
-        RectTransform rt,
-        float peakHeight = 120f,
-        float duration = 0.6f,
-        float horizontalDrift = 0f)
+    RectTransform rt,
+    float peakHeight = 120f,
+    float duration = 0.6f,
+    float horizontalDrift = 0f,
+    float targetRotationZ = 0f)
     {
         Vector2 startPos = rt.anchoredPosition;
+        Quaternion startRot = rt.localRotation;
+        Quaternion targetRot = Quaternion.Euler(0f, 0f, targetRotationZ);
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -409,18 +440,17 @@ public class DialogueChoiceController : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
 
-            // 垂直：拋物線公式 y = 4h * t * (1-t)，t=0.5 時達到 peakHeight
             float yOffset = 4f * peakHeight * t * (1f - t);
-
-            // 水平：等速漂移
             float xOffset = horizontalDrift * t;
-
             rt.anchoredPosition = startPos + new Vector2(xOffset, yOffset);
+
+            rt.localRotation = Quaternion.Lerp(startRot, targetRot, t);
+
             yield return null;
         }
 
-        // 確保落回原始位置
         rt.anchoredPosition = startPos;
+        rt.localRotation = startRot;  // 歸回原始
     }
 
     #endregion

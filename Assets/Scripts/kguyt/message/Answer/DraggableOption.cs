@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
+using System.Collections;
 
 /// <summary>
 /// 掛在 optionA / optionB GameObject 上。
@@ -73,23 +74,20 @@ public class DraggableOption : MonoBehaviour,
     public void OnEndDrag(PointerEventData eventData)
     {
         if (!interactable) return;
-
-        // 拖曳距離超過閾值才算有效選擇，否則彈回原位
-        float dragDistance = Vector2.Distance(rt.anchoredPosition, startAnchoredPos);
-        if (dragDistance >= 40f)
-        {
-            // 有效放手 → 觸發回呼
+        
             interactable = false;
             Debug.Log(gameObject.name);
             onDropped?.Invoke();
 
-            oneTimeAnswerEvnet?.Invoke();
-        }
-        else
-        {
-            // 距離不足 → 彈回原位
-            rt.anchoredPosition = startAnchoredPos;
-        }
+        StartCoroutine(InvokeAfterDelay(1.5f));
+
+    }
+
+    private IEnumerator InvokeAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        oneTimeAnswerEvnet?.Invoke();
+        oneTimeAnswerEvnet = null;
     }
 
     #endregion
