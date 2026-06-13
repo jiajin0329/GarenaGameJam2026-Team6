@@ -51,15 +51,15 @@ public class CharacterViewSwitcher : MonoBehaviour
     }
 
     private void OnEnable()
-    {       
+    {
         keyTest.performed += _ => TriggerTestDialogue();
 
-        
+
         keyTest.Enable();
     }
 
     private void OnDisable()
-    {        
+    {
         keyTest.Disable();
     }
 

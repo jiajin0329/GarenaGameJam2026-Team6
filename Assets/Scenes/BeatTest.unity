@@ -415,6 +415,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794089302f2376345bdb11d067d97043, type: 3}
+--- !u!224 &1011822679 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2853610136388121520, guid: 794089302f2376345bdb11d067d97043, type: 3}
+  m_PrefabInstance: {fileID: 1011822678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2214521584934902151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,6 +428,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
+      propertyPath: <question>k__BackingField._view._canvasRectTransform
+      value: 
+      objectReference: {fileID: 1011822679}
     - target: {fileID: 2339847948732731480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
       propertyPath: m_Name
       value: System

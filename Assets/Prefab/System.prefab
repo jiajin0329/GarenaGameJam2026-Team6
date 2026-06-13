@@ -105,8 +105,9 @@ MonoBehaviour:
       <timer>k__BackingField: 0
       <questionCount>k__BackingField: 0
       <isLastQuestionNoAnser>k__BackingField: 0
-    _questions: {fileID: 11400000, guid: b94d10a2d0f71fd4a88aef729b0818a2, type: 2}
-    _wrongAnswers: {fileID: 11400000, guid: cc92dcc15397c1f4b9598b09b34ee294, type: 2}
+    _view:
+      _canvasRectTransform: {fileID: 0}
+      _characterViewSwitcher: {fileID: 2117599335097060961, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
 --- !u!1 &2339847948732731480
 GameObject:
   m_ObjectHideFlags: 0

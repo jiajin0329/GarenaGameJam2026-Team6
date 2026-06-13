@@ -9,7 +9,10 @@ namespace GarenaGameJam2026Team6
         [SerializeField]
         private QuestionModel _model;
 
+        [SerializeField]
         private QuestionView _view;
+
+        [SerializeField]
         private QuestionService _service;
 
         private Action _answerCorrectEvent;
@@ -28,11 +31,12 @@ namespace GarenaGameJam2026Team6
         public void AddQuestionFinsihListener(Action _listener) => _questionFinsihEvent += _listener;
         public void RemoveQuestionFinsihListener(Action _listener) => _questionFinsihEvent -= _listener;
 
-        public Question(LevelConfig _levelConfig)
+        public void Initialize(LevelConfig _levelConfig)
         {
             _model = new(_levelConfig.questionCount, _levelConfig.bpm, _levelConfig.questionIntervalBeatAmount);
-            _view = new();
-            _service = new(_model, _levelConfig.questions, _levelConfig.wrongAnswers);
+            _service = new(_model, _levelConfig);
+
+            _view.Initialize();
         }
 
         public void Tick(float _deltaTime)
@@ -40,18 +44,17 @@ namespace GarenaGameJam2026Team6
             _model.Tick(_deltaTime);
         }
 
-        public void TryQuestion()
+        public void TryAskQuestion()
         {
-            if (!_service.CanQuestion())
+            if (!_service.CanAskQuestion())
                 return;
 
             TryLastQuestionNoAnswer();
 
-            _model.Question();
+            _model.AskQuestion();
+            _service.AskQuestion(_view, AnswerCorrect, AnswerWrong);
 
-            _service.InstantiateQuestion(_view);
-
-            Debug.Log(nameof(_service.CanQuestion));
+            Debug.Log(nameof(_service.CanAskQuestion));
         }
 
         private void TryLastQuestionNoAnswer()

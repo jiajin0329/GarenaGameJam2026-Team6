@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d595d965bb4cc44a95a67f1c2c69729, type: 3}
-  m_Name: GoogleSheetDataGetterQuestions
+  m_Name: QuestionsConfigA
   m_EditorClassIdentifier: GoogleSheetDataGetter::Logy.UnityCommon.GoogleSheetDataGetterQuestions
   _loadGoogleSheetOnInitialize: 0
   _googleSheetURL: https://docs.google.com/spreadsheets/d/1N98yvCscCo0XWPABXG_dtcmIBcZGsczdkHlgNVg_TMI/edit?gid=0#gid=0

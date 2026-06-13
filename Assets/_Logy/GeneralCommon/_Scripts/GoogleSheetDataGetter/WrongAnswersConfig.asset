@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f737ac590367d449a6e8b88c6331309, type: 3}
+  m_Name: WrongAnswersConfig
+  m_EditorClassIdentifier: GoogleSheetDataGetter::Logy.UnityCommon.GoogleSheetDataGetterWrongAnswers
+  _loadGoogleSheetOnInitialize: 0
+  _googleSheetURL: https://docs.google.com/spreadsheets/d/1obsUM3lpAD0yP-DCgQy5WNJZ0ohTYI1nmylonB_GjhM/edit?gid=0#gid=0
+  _pageNumber: 1
+  _csvFile: {fileID: 0}
+  _dataArray:
+  - _characterName: RandomName
+    _characterNickName: "\u7F85\u5409"
+    _birthday: 6/7
+    _starSign: "\u7261\u7F8A\u5EA7"
+    _likeFood: "\u5C0F\u9EC3\u74DC"
+    _hateFood: "\u5C0F\u9EC3\u74DC"
+    _hobby1: "\u76EA\u97A6\u97C6"
+    _hobby2: a
+  - _characterName: RandomName
+    _characterNickName: Ankhra
+    _birthday: 6/7
+    _starSign: "\u91D1\u725B\u5EA7"
+    _likeFood: "\u7D05\u725B"
+    _hateFood: "\u7D05\u725B"
+    _hobby1: "\u5F48\u5409\u4ED6"
+    _hobby2: b
+  - _characterName: RandomName
+    _characterNickName: "\u9B5F\u9B5A"
+    _birthday: 6/7
+    _starSign: "\u96D9\u5B50\u5EA7"
+    _likeFood: "\u591A\u529B\u591A\u6ECB"
+    _hateFood: "\u591A\u529B\u591A\u6ECB"
+    _hobby1: "\u505A\u904A\u6232"
+    _hobby2: c
+  - _characterName: RandomName
+    _characterNickName: "\u6797\u767D\u7D19"
+    _birthday: 6/7
+    _starSign: "\u5DE8\u87F9\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9\u7687\u5BA4\u6230\u722D"
+    _hobby2: d
+  - _characterName: RandomName
+    _characterNickName: Timkoko
+    _birthday: 6/7
+    _starSign: "\u7345\u5B50\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9\u50B3\u8AAA\u5C0D\u6C7A"
+    _hobby2: e
+  - _characterName: RandomName
+    _characterNickName: "\u8AC7\u66F8\u73E9"
+    _birthday: 6/7
+    _starSign: "\u8655\u5973\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9cytusII"
+    _hobby2: f
+  - _characterName: RandomName
+    _characterNickName: Tony
+    _birthday: 6/7
+    _starSign: "\u5929\u5E73\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9cytusII"
+    _hobby2: g
+  - _characterName: RandomName
+    _characterNickName: Tony
+    _birthday: 6/7
+    _starSign: "\u5929\u880D\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9cytusII"
+    _hobby2: g
+  - _characterName: RandomName
+    _characterNickName: Tony
+    _birthday: 6/7
+    _starSign: "\u5C04\u624B\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9cytusII"
+    _hobby2: g
+  - _characterName: RandomName
+    _characterNickName: Tony
+    _birthday: 6/7
+    _starSign: "\u6469\u7FAF\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9cytusII"
+    _hobby2: g
+  - _characterName: RandomName
+    _characterNickName: Tony
+    _birthday: 6/7
+    _starSign: "\u6C34\u74F6\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9cytusII"
+    _hobby2: g
+  - _characterName: RandomName
+    _characterNickName: Tony
+    _birthday: 6/7
+    _starSign: "\u96D9\u9B5A\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9cytusII"
+    _hobby2: g
+  - _characterName: RandomName
+    _characterNickName: Tony
+    _birthday: 6/7
+    _starSign: "\u96D9\u9B5A\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9cytusII"
+    _hobby2: g
+  - _characterName: RandomName
+    _characterNickName: Tony
+    _birthday: 6/7
+    _starSign: "\u96D9\u9B5A\u5EA7"
+    _likeFood: "\u539A\u7247\u571F\u53F8"
+    _hateFood: "\u539A\u7247\u571F\u53F8"
+    _hobby1: "\u73A9cytusII"
+    _hobby2: g

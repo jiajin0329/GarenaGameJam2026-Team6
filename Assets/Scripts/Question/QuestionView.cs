@@ -7,11 +7,19 @@ namespace GarenaGameJam2026Team6
     public class QuestionView
     {
         [SerializeField]
+        private RectTransform _canvasRectTransform;
+
+        [SerializeField]
         private CharacterViewSwitcher _characterViewSwitcher;
 
-        public void Instantiate(string _questionText, string _selection1Text, string _selection2Text)
+        public void Initialize()
         {
-            Debug.Log($"Question: {_questionText}, Selection1: {_selection1Text}, Selection2: {_selection2Text}");
+            _characterViewSwitcher = GameObject.Instantiate(_characterViewSwitcher, _canvasRectTransform);
+        }
+
+        public void AskQuestion(string _questionText, string _selection1Text, string _selection2Text)
+        {
+            _characterViewSwitcher.PlayDialogue(_questionText, 1, _selection1Text, _selection2Text);
         }
     }
 }
