@@ -14,6 +14,9 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public Question question { get; private set; }
 
+        [field: SerializeField]
+        public Affinity[] affinityArrary { get; private set; }
+
         // private Timer _timer;
 
         [SerializeField]
@@ -24,7 +27,13 @@ namespace GarenaGameJam2026Team6
         public override void Initialize()
         {
             beat = new(_config);
-            question.Initialize(_config);
+            affinityArrary = new Affinity[3];
+            affinityArrary[0] = new(0f, _config.affinityMax);
+            affinityArrary[1] = new(0f, _config.affinityMax);
+            affinityArrary[2] = new(0f, _config.affinityMax);
+
+            question.Initialize(_config, affinityArrary);
+
             // _timer = new(_config.finishTime, _characterViewSwitcher);
 
             beat.AddBeatListener(question.TryAskQuestion);

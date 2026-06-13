@@ -31,10 +31,10 @@ namespace GarenaGameJam2026Team6
         public void AddQuestionFinsihListener(Action _listener) => _questionFinsihEvent += _listener;
         public void RemoveQuestionFinsihListener(Action _listener) => _questionFinsihEvent -= _listener;
 
-        public void Initialize(LevelConfig _levelConfig)
+        public void Initialize(LevelConfig _levelConfig, Affinity[] _affinityArrary)
         {
             _model = new(_levelConfig.questionCount, _levelConfig.bpm, _levelConfig.questionIntervalBeatAmount);
-            _service = new(_model, _levelConfig);
+            _service = new(_model, _levelConfig, _affinityArrary);
 
             _view.Initialize();
         }
