@@ -68,6 +68,10 @@ public class MaskFlashController : MonoBehaviour
     // שששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששששש
     #region ®ײ₪ß¬yµ{
 
+    private void Awake()
+    {
+        SetMaskAlpha(0f);
+    }
     private IEnumerator FlashRoutine(Color flashColor)
     {
         // 1) ¾B¸n±q¥״«e alpha ÷¥ֵÜ¨ל flashColor (alpha = 1)
