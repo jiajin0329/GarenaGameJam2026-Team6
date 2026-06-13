@@ -28,7 +28,7 @@ namespace GarenaGameJam2026Team6
 
         public override void Initialize()
         {
-            beat = new(_config);
+            beat.Initialize(_config);
 
             affinityArrary = new Affinity[3];
             affinityArrary[0] = new(0f, _config.affinityMax);
