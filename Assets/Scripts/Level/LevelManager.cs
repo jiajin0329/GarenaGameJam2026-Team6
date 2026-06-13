@@ -17,16 +17,19 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public Affinity[] affinityArrary { get; private set; }
 
-        // private Timer _timer;
+        [field: SerializeField]
+        public Timer _timer { get; private set; }
 
         [SerializeField]
         private bool _callQuestion = false;
 
         private bool _isEnable = false;
+        private float _deltaTime = 0f;
 
         public override void Initialize()
         {
             beat = new(_config);
+
             affinityArrary = new Affinity[3];
             affinityArrary[0] = new(0f, _config.affinityMax);
             affinityArrary[1] = new(0f, _config.affinityMax);
@@ -34,7 +37,7 @@ namespace GarenaGameJam2026Team6
 
             question.Initialize(_config, affinityArrary);
 
-            // _timer = new(_config.finishTime, _characterViewSwitcher);
+            _timer = new(_config);
 
             beat.AddBeatListener(question.TryAskQuestion);
             beat.AddOneTimeBeatListener(question.TryAskQuestion);
@@ -58,8 +61,11 @@ namespace GarenaGameJam2026Team6
             if (!_isEnable)
                 return;
 
-            beat.Tick(Time.deltaTime);
-            question.Tick(Time.deltaTime);
+            _deltaTime = Time.deltaTime;
+
+            beat.Tick(_deltaTime);
+            question.Tick(_deltaTime);
+            _timer.Tick(_deltaTime);
         }
     }
 }
