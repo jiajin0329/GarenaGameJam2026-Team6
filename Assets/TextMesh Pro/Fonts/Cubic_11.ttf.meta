@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cdd7ab27da9aad245b49238ed3dfb1f8
+guid: a8baff8631666154a9c860fa0bb7b750
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - BoutiqueBitmap9x9 1.92
+  - Cubic 11
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

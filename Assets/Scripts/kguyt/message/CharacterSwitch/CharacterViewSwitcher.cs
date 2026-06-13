@@ -33,10 +33,12 @@ public class CharacterViewSwitcher : MonoBehaviour
     [SerializeField] private float avatarScaleSelected = 1.5f;
     [SerializeField] private float avatarScaleNormal = 1.0f;
     [SerializeField] private float avatarScaleDuration = 0.25f;
-
+    [SerializeField] private float avatarStaggerDelay = 0.08f; // 每隔一個頭像延遲多少秒
     [Header("Option Event")]
     public UnityEvent OnOptionATrigger;
     public UnityEvent OnOptionBTrigger;
+
+
 
     [SerializeField]
     private DraggableOption draggableOptionA1;
@@ -52,6 +54,8 @@ public class CharacterViewSwitcher : MonoBehaviour
     private DraggableOption draggableOptionA3;
     [SerializeField]
     private DraggableOption draggableOptionB3;
+
+    public ChatacterShowLogic CharacterShowLogic;
 
     public void AddOneTimeAnswerA1Listener(Action _listener) => draggableOptionA1.oneTimeAnswerEvnet += _listener;
     public void AddOneTimeAnswerB1Listener(Action _listener) => draggableOptionB1.oneTimeAnswerEvnet += _listener;
@@ -73,6 +77,8 @@ public class CharacterViewSwitcher : MonoBehaviour
     // ── Input Actions（新版 Input System） ──────────────────────────
     private InputAction keyTest;
 
+
+
     // ═══════════════════════════════════════════════════════════════
     #region Unity Lifecycle
 
@@ -83,7 +89,6 @@ public class CharacterViewSwitcher : MonoBehaviour
 
     private void OnEnable()
     {
-        keyTest.performed += _ => TriggerTestDialogue();
 
 
         keyTest.Enable();
@@ -143,6 +148,9 @@ public class CharacterViewSwitcher : MonoBehaviour
     private IEnumerator SwitchAndPlay(string text, int index,
                                       string optionAText, string optionBText)
     {
+        CharacterShowLogic.SetCharacterImage(index);
+        CharacterShowLogic.currentCharacterIndex = index;
+
         // 先滑動到目標角色
         yield return StartCoroutine(SwitchCoroutine(index));
 
@@ -172,13 +180,20 @@ public class CharacterViewSwitcher : MonoBehaviour
         uiParent.anchoredPosition = endPos;
 
         // ── 新增：同步縮放所有頭像 ──────────────────────────
+        // ── 同步縮放所有頭像（階梯式） ──────────────────────────
         RectTransform[] avatars = { avatarA, avatarB, avatarC };
         for (int i = 0; i < avatars.Length; i++)
         {
             if (avatars[i] == null) continue;
             float targetScale = (i == index) ? avatarScaleSelected : avatarScaleNormal;
-            StartCoroutine(ScaleAvatarCoroutine(avatars[i], targetScale));
+
+            // 距離 index 越遠，延遲越久 → 形成階梯感
+            int distance = Mathf.Abs(i - index);
+            float delay = distance * avatarStaggerDelay;
+
+            StartCoroutine(ScaleAvatarCoroutine(avatars[i], targetScale, delay));
         }
+        // ───────────────────────
         // ────────────────────────────────────────────────────
 
         currentController = index switch
@@ -197,28 +212,12 @@ public class CharacterViewSwitcher : MonoBehaviour
 
     #endregion
 
-    // ═══════════════════════════════════════════════════════════════
-    #region 測試
 
-    /// <summary>
-    /// 按 T 觸發：切換到角色 B（index=1），顯示測試對話和兩個選項。
-    /// 模擬你提到的「我們今晚一起去哪, 1」情境。
-    /// </summary>
-    private void TriggerTestDialogue()
+    private IEnumerator ScaleAvatarCoroutine(RectTransform avatar, float targetScale, float delay = 0f)
     {
-        Debug.Log("[Test] 觸發測試對話");
-        PlayDialogue(
-            text: "我們今晚一起去哪？",
-            characterIndex: UnityEngine.Random.Range(0, 3),
-            optionAText: "去看電影吧",
-            optionBText: "不了，我有事"
-        );
-    }
+        if (delay > 0f)
+            yield return new WaitForSeconds(delay);
 
-    #endregion
-
-    private IEnumerator ScaleAvatarCoroutine(RectTransform avatar, float targetScale)
-    {
         Vector3 startScale = avatar.localScale;
         Vector3 endScale = Vector3.one * targetScale;
         float elapsed = 0f;
