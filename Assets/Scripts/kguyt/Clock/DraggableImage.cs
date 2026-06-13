@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.UI;
 
 /// <summary>
 /// 拖曳 UI Image，放手後觸發 OnDragReleased 事件，並讓 Image 返回原始位置。
@@ -13,6 +14,9 @@ public class DraggableImage : MonoBehaviour,
     [Header("返回動畫")]
     [Tooltip("返回原始位置所需時間（秒）")]
     [SerializeField] private float returnDuration = 0.4f;
+
+    [SerializeField] private Image timeStopImage;
+    [SerializeField] private float fillDuration = 0.3f;
 
     [Tooltip("返回動畫曲線（預設為 EaseOut）")]
     [SerializeField] private AnimationCurve returnCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
@@ -130,8 +134,34 @@ public class DraggableImage : MonoBehaviour,
 
     IEnumerator TimeStop()
     {
+        yield return StartCoroutine(FillImage(0f, 1f, fillDuration));
+
         Time.timeScale = 0f;
+
         yield return new WaitForSecondsRealtime(4f);
+
         Time.timeScale = 1f;
+
+        yield return StartCoroutine(FillImage(1f, 0f, fillDuration));
     }
+
+    private IEnumerator FillImage(float startValue, float endValue, float duration)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+
+            float t = elapsed / duration;
+
+            timeStopImage.fillAmount = Mathf.Lerp(startValue, endValue, t);
+
+            yield return null;
+        }
+
+        timeStopImage.fillAmount = endValue;
+    }
+
+    
 }
