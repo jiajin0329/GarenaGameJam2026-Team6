@@ -39,12 +39,23 @@ namespace GarenaGameJam2026Team6
             string _wrongAnswer = _getWrongAnswerService.GetWrongAnswer(_question);
 
             byte _selectionIndex = (byte)UnityEngine.Random.Range(0, 2);
+            int _characterIndex = JudgeCharacterIndex(_question);
 
             // 左右隨機
             if (_selectionIndex == 0)
-                _view.AskQuestion(_question.characterQuestionContext, _question.rightAnswer, _wrongAnswer);
+                _view.AskQuestion(_question.characterQuestionContext, _characterIndex, _question.rightAnswer, _wrongAnswer, _correctAction, _wrongAction);
             else
-                _view.AskQuestion(_question.characterQuestionContext, _wrongAnswer, _question.rightAnswer);
+                _view.AskQuestion(_question.characterQuestionContext, _characterIndex, _wrongAnswer, _question.rightAnswer, _wrongAction, _correctAction);
+        }
+
+        private int JudgeCharacterIndex(Questions _question)
+        {
+            if (_question.characterName == _config.questionsConfigA.dataArray[0].characterName)
+                return 0;
+            else if (_question.characterName == _config.questionsConfigB.dataArray[0].characterName)
+                return 1;
+            else
+                return 2;
         }
 
         public bool CheckAnswer(string _answer, string _correctAnswer)

@@ -14,6 +14,8 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public Question question { get; private set; }
 
+        // private Timer _timer;
+
         [SerializeField]
         private bool _callQuestion = false;
 
@@ -23,6 +25,7 @@ namespace GarenaGameJam2026Team6
         {
             beat = new(_config);
             question.Initialize(_config);
+            // _timer = new(_config.finishTime, _characterViewSwitcher);
 
             beat.AddBeatListener(question.TryAskQuestion);
             beat.AddOneTimeBeatListener(question.TryAskQuestion);
