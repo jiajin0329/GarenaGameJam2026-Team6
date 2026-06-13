@@ -13,6 +13,8 @@ public class StartSceneManager : MonoBehaviour
     [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private float duration = 0.25f;
 
+    public bool isPhoneGoingFlag = false;
+
 
     public void Start()
     {
@@ -21,6 +23,12 @@ public class StartSceneManager : MonoBehaviour
 
     public void Update()
     {
+
+        if (!isPhoneGoingFlag)
+        {
+            return;
+        }
+
         Debug.Log("Waht wver");
         if (Input.GetKeyDown(KeyCode.Space))
         {
