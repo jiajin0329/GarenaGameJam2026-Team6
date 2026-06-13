@@ -53,14 +53,14 @@ public class CharacterViewSwitcher : MonoBehaviour
     [SerializeField]
     private DraggableOption draggableOptionB3;
 
-    public void AddAnswerA1Listener(Action _listener) => draggableOptionA1.answerEvnet += _listener;
-    public void AddAnswerB1Listener(Action _listener) => draggableOptionB1.answerEvnet += _listener;
+    public void AddAnswerA1Listener(Action _listener) => draggableOptionA1.oneTimeAnswerEvnet += _listener;
+    public void AddAnswerB1Listener(Action _listener) => draggableOptionB1.oneTimeAnswerEvnet += _listener;
 
-    public void AddAnswerA2Listener(Action _listener) => draggableOptionA2.answerEvnet += _listener;
-    public void AddAnswerB2Listener(Action _listener) => draggableOptionB2.answerEvnet += _listener;
+    public void AddAnswerA2Listener(Action _listener) => draggableOptionA2.oneTimeAnswerEvnet += _listener;
+    public void AddAnswerB2Listener(Action _listener) => draggableOptionB2.oneTimeAnswerEvnet += _listener;
 
-    public void AddAnswerA3Listener(Action _listener) => draggableOptionA3.answerEvnet += _listener;
-    public void AddAnswerB3Listener(Action _listener) => draggableOptionB3.answerEvnet += _listener;
+    public void AddAnswerA3Listener(Action _listener) => draggableOptionA3.oneTimeAnswerEvnet += _listener;
+    public void AddAnswerB3Listener(Action _listener) => draggableOptionB3.oneTimeAnswerEvnet += _listener;
 
 
     // ── 常數 ────────────────────────────────────────────────────────

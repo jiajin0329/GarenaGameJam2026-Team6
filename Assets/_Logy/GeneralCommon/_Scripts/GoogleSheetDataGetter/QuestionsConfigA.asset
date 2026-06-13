@@ -49,3 +49,7 @@ MonoBehaviour:
     _characterQuestionType: _hobby2
     _characterQuestionContext: "\u8208\u8DA32"
     _rightAnswer: "\u6599\u7406"
+  - _characterName: CharacterA
+    _characterQuestionType: _hobby2
+    _characterQuestionContext: "\u6211\u5011\u5468\u672B\u53BB\u5E79\u561B\uFF1F"
+    _rightAnswer: "\u6599\u7406"

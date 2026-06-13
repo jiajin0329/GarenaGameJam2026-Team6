@@ -24,7 +24,7 @@ public class DraggableOption : MonoBehaviour,
 
     public bool isAnswerA;
 
-    public Action answerEvnet;
+    public Action oneTimeAnswerEvnet;
 
     // ═══════════════════════════════════════════════════════════════
     #region Unity Lifecycle
@@ -84,7 +84,8 @@ public class DraggableOption : MonoBehaviour,
             Debug.Log(gameObject.name);
             onDropped?.Invoke();
 
-            answerEvnet?.Invoke();
+            oneTimeAnswerEvnet?.Invoke();
+            oneTimeAnswerEvnet = null;
         }
         else
         {
