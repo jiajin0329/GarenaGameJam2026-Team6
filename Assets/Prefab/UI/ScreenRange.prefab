@@ -1088,7 +1088,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
   characterViewSwitcher: {fileID: 0}
-  isAnswerA: 0
 --- !u!1 &3263673270438854921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1597,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
   characterViewSwitcher: {fileID: 0}
-  isAnswerA: 0
 --- !u!1 &3737142149008161619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,7 +1887,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a6b12d89c6e241549b87cbebf8266516, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2109,7 +2107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
   characterViewSwitcher: {fileID: 0}
-  isAnswerA: 0
 --- !u!1 &4332230994486079730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,7 +2430,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
   characterViewSwitcher: {fileID: 0}
-  isAnswerA: 0
 --- !u!1 &4608363951824504010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3507,7 +3503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
   characterViewSwitcher: {fileID: 0}
-  isAnswerA: 0
 --- !u!1 &6613661569579922394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,6 +3588,7 @@ MonoBehaviour:
   avatarScaleSelected: 1.5
   avatarScaleNormal: 1
   avatarScaleDuration: 0.25
+  avatarStaggerDelay: 0.08
   OnOptionATrigger:
     m_PersistentCalls:
       m_Calls: []
@@ -3605,6 +3601,7 @@ MonoBehaviour:
   draggableOptionB2: {fileID: 2041403400268880865}
   draggableOptionA3: {fileID: 4039004683209578201}
   draggableOptionB3: {fileID: 2869108523045689422}
+  CharacterShowLogic: {fileID: 0}
 --- !u!1 &6833999614463543581
 GameObject:
   m_ObjectHideFlags: 0
@@ -4616,7 +4613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableOption
   characterViewSwitcher: {fileID: 0}
-  isAnswerA: 0
 --- !u!1 &8977501691704268228
 GameObject:
   m_ObjectHideFlags: 0
