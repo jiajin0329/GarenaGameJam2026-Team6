@@ -41,5 +41,8 @@ namespace GarenaGameJam2026Team6
 
         [field: SerializeField]
         public float subAffinity { get; private set; } = 0.5f;
+
+        [field: SerializeField]
+        public float remainingBeatSliderSmoothDuration { get; private set; } = 0.2f;
     }
 }

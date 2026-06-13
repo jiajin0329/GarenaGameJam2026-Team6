@@ -21,3 +21,6 @@ MonoBehaviour:
   <questionsConfigB>k__BackingField: {fileID: 11400000, guid: 3e6a46c8840450a4e85fedeb91d0acb1, type: 2}
   <questionsConfigC>k__BackingField: {fileID: 11400000, guid: 656a27fe73cb0fa4f9145bc6323372f4, type: 2}
   <wrongAnswerConfig>k__BackingField: {fileID: 11400000, guid: cc92dcc15397c1f4b9598b09b34ee294, type: 2}
+  <affinityMax>k__BackingField: 10
+  <addAffinity>k__BackingField: 1
+  <subAffinity>k__BackingField: 0.5
