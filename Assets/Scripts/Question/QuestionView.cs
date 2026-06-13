@@ -6,15 +6,15 @@ namespace GarenaGameJam2026Team6
     [Serializable]
     public class QuestionView
     {
-        [SerializeField]
-        private RectTransform _canvasRectTransform;
+        // // [SerializeField]
+        // private RectTransform _canvasRectTransform;
 
         [SerializeField]
         private CharacterViewSwitcher _characterViewSwitcher;
 
         public void Initialize()
         {
-            _characterViewSwitcher = GameObject.Instantiate(_characterViewSwitcher, _canvasRectTransform);
+            // _characterViewSwitcher = GameObject.Instantiate(_characterViewSwitcher, _canvasRectTransform);
         }
 
         public void AskQuestion(string _questionText, int _characterIndex, string _selection1Text, string _selection2Text, Action _onAnswerA, Action _onAnswerB)
