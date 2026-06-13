@@ -7,14 +7,16 @@ namespace GarenaGameJam2026Team6
     {
         private QuestionModel _model;
         private LevelConfig _config;
+        private Affinity[] _affinityArrary;
 
         private GetQuestionService _getQuestionService;
         private GetWrongAnswerService _getWrongAnswerService;
 
-        public QuestionService(QuestionModel _model, LevelConfig _config)
+        public QuestionService(QuestionModel _model, LevelConfig _config, Affinity[] _affinityArrary)
         {
             this._model = _model;
             this._config = _config;
+            this._affinityArrary = _affinityArrary;
 
             _getQuestionService = new(_config);
             _getWrongAnswerService = new(_config);
@@ -40,6 +42,9 @@ namespace GarenaGameJam2026Team6
 
             byte _selectionIndex = (byte)UnityEngine.Random.Range(0, 2);
             int _characterIndex = JudgeCharacterIndex(_question);
+
+            _correctAction += () => _affinityArrary[_characterIndex].Change(_config.addAffinity);
+            _wrongAction += () => _affinityArrary[_characterIndex].Change(-_config.subAffinity);
 
             // 左右隨機
             if (_selectionIndex == 0)
