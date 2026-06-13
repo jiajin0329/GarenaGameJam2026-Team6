@@ -175,24 +175,105 @@ public class DialogueChoiceController : MonoBehaviour
     }
 
     private IEnumerator ResolveChoice(
-        CanvasGroup chosenGroup, CanvasGroup otherGroup,
-        DraggableOption chosenDrag, DraggableOption otherDrag)
+    CanvasGroup chosenGroup, CanvasGroup otherGroup,
+    DraggableOption chosenDrag, DraggableOption otherDrag)
     {
-        // 被選中的 → 先彈回原位，再淡出到 0
-        chosenDrag?.ResetPosition();
-        yield return StartCoroutine(FadeOut(chosenGroup, fadeOutDuration));
-
-        // 另一個 → 先彈回原位，再 SpawnSlashVFX，再淡出到 0
-        otherDrag?.ResetPosition();
-
-        if (vfxManager != null && otherDrag != null)
+        // 被選中的 → 拋物線向上飛出並淡出
+        if (chosenDrag != null)
         {
-            Vector2 worldPos = GetWorldPosition(otherDrag.transform as RectTransform);
-            vfxManager.SpawnSlashVFX(worldPos);
+           yield return StartCoroutine(FadeOut(chosenGroup, fadeOutDuration));
+        }
+
+        // 另一個（被淘汰的）→ 先 VFX，短暫停頓後才拋起淡出
+        if (otherDrag != null)
+        {
+            otherDrag.ResetPosition();
+
+            // 1) 先劈
+            if (vfxManager != null)
+            {
+                Vector2 worldPos = GetWorldPosition(otherDrag.transform as RectTransform);
+                vfxManager.SpawnSlashVFX(worldPos,90f);
+            }
+
+
+            // 3) 被劈後才飛起來淡出
+            StartCoroutine(ThrowArcRoutine(
+                otherDrag.transform as RectTransform,
+                peakHeight: 300f,
+                duration: 0.5f,
+                horizontalDrift: 20f));
+
+            yield return StartCoroutine(FadeOut(otherGroup, fadeOutDuration));
+        }
+    }
+
+
+    /// <summary>
+    /// 兩個選項都播放 VFX 並淡出（例如：強制事件、無法選擇的結局）
+    /// 呼叫此方法後，兩個選項立即禁用拖曳互動。
+    /// </summary>
+    public void ResolveChoiceBothVFX()
+    {
+        if (!waitingForChoice) return; // 防止重複觸發
+        waitingForChoice = false;
+
+        // 立即停用兩個選項的拖曳互動
+        optionADrag?.SetInteractable(false);
+        optionBDrag?.SetInteractable(false);
+
+        StartCoroutine(ResolveBothVFX());
+    }
+
+    private IEnumerator ResolveBothVFX()
+    {
+        optionADrag?.ResetPosition();
+        optionBDrag?.ResetPosition();
+
+        // 兩個選項同時拋起來（parallel coroutines）
+        Coroutine arcA = null, arcB = null;
+
+        if (optionADrag != null)
+            arcA = StartCoroutine(ThrowArcRoutine(
+                optionADrag.transform as RectTransform,
+                peakHeight: 100f,
+                duration: 0.5f,
+                horizontalDrift: -30f));   // 稍微往左漂
+
+        if (optionBDrag != null)
+            arcB = StartCoroutine(ThrowArcRoutine(
+                optionBDrag.transform as RectTransform,
+                peakHeight: 100f,
+                duration: 0.5f,
+                horizontalDrift: 30f));    // 稍微往右漂
+
+        // 等拋物線動畫結束（等較長的那個）
+        if (arcA != null) yield return arcA;
+        if (arcB != null) yield return arcB;
+
+        // 拋到頂後生成 VFX
+        if (vfxManager != null)
+        {
+            if (optionADrag != null)
+                vfxManager.SpawnSlashVFX(GetWorldPosition(optionADrag.transform as RectTransform));
+            if (optionBDrag != null)
+                vfxManager.SpawnSlashVFX(GetWorldPosition(optionBDrag.transform as RectTransform));
         }
 
         yield return new WaitForSeconds(0.15f);
-        yield return StartCoroutine(FadeOut(otherGroup, fadeOutDuration));
+
+        // 同時淡出
+        float elapsed = 0f;
+        while (elapsed < fadeOutDuration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / fadeOutDuration);
+            if (optionAGroup) optionAGroup.alpha = alpha;
+            if (optionBGroup) optionBGroup.alpha = alpha;
+            yield return null;
+        }
+        SetOptionVisible(optionAGroup, false);
+        SetOptionVisible(optionBGroup, false);
     }
 
     #endregion
@@ -305,6 +386,41 @@ public class DialogueChoiceController : MonoBehaviour
         rt.GetWorldCorners(corners);
         // 四個角的平均 = 中心
         return (corners[0] + corners[1] + corners[2] + corners[3]) / 4f;
+    }
+
+    /// <summary>
+    /// 讓 UI RectTransform 做出向上拋再落下的效果（不需要 Rigidbody2D）
+    /// </summary>
+    /// <param name="rt">要播放動畫的 RectTransform</param>
+    /// <param name="peakHeight">最高點距離原點的高度（正值 = 向上，單位：px）</param>
+    /// <param name="duration">整段拋物線時長（秒）</param>
+    /// <param name="horizontalDrift">水平漂移量（正值 = 向右）</param>
+    private IEnumerator ThrowArcRoutine(
+        RectTransform rt,
+        float peakHeight = 120f,
+        float duration = 0.6f,
+        float horizontalDrift = 0f)
+    {
+        Vector2 startPos = rt.anchoredPosition;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            // 垂直：拋物線公式 y = 4h * t * (1-t)，t=0.5 時達到 peakHeight
+            float yOffset = 4f * peakHeight * t * (1f - t);
+
+            // 水平：等速漂移
+            float xOffset = horizontalDrift * t;
+
+            rt.anchoredPosition = startPos + new Vector2(xOffset, yOffset);
+            yield return null;
+        }
+
+        // 確保落回原始位置
+        rt.anchoredPosition = startPos;
     }
 
     #endregion
