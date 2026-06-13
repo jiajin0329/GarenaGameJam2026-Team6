@@ -14,38 +14,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: GoogleSheetDataGetter::Logy.UnityCommon.GoogleSheetDataGetterQuestions
   _loadGoogleSheetOnInitialize: 0
   _googleSheetURL: https://docs.google.com/spreadsheets/d/1N98yvCscCo0XWPABXG_dtcmIBcZGsczdkHlgNVg_TMI/edit?gid=0#gid=0
-  _pageNumber: 1
+  _pageNumber: 3
   _csvFile: {fileID: 0}
   _dataArray:
-  - _characterName: CharacterA
+  - _characterName: CharacterC
     _characterQuestionType: _characterName
     _characterQuestionContext: "\u6211\u7684\u540D\u5B57"
     _rightAnswer: "\u672C\u540D"
-  - _characterName: CharacterA
+  - _characterName: CharacterC
     _characterQuestionType: _characterNickName
     _characterQuestionContext: "\u6211\u7684\u66B1\u7A31"
     _rightAnswer: "\u96A8\u4FBF"
-  - _characterName: CharacterA
+  - _characterName: CharacterC
     _characterQuestionType: _birthday
     _characterQuestionContext: "\u5BF6\u8C9D\u6211\u5011\u5E7E\u865F\u904E\u751F\u65E5"
     _rightAnswer: 5/5
-  - _characterName: CharacterA
+  - _characterName: CharacterC
     _characterQuestionType: _starSign
     _characterQuestionContext: "\u6211\u7684\u661F\u5EA7"
     _rightAnswer: "\u91D1\u725B\u5EA7"
-  - _characterName: CharacterA
+  - _characterName: CharacterC
     _characterQuestionType: _likeFood
     _characterQuestionContext: "\u559C\u6B61\u7684\u98DF\u7269"
     _rightAnswer: "\u828B\u982D"
-  - _characterName: CharacterA
+  - _characterName: CharacterC
     _characterQuestionType: _hateFood
     _characterQuestionContext: "\u8A0E\u53AD\u7684\u98DF\u7269"
     _rightAnswer: "\u8FA3\u6912"
-  - _characterName: CharacterA
+  - _characterName: CharacterC
     _characterQuestionType: _hobby1
     _characterQuestionContext: "\u8208\u8DA31"
     _rightAnswer: "\u5065\u8EAB"
-  - _characterName: CharacterA
+  - _characterName: CharacterC
     _characterQuestionType: _hobby2
     _characterQuestionContext: "\u8208\u8DA32"
+    _rightAnswer: "\u6599\u7406"
+  - _characterName: CharacterC
+    _characterQuestionType: _hobby2
+    _characterQuestionContext: "\u6211\u5011\u5468\u672B\u53BB\u5E79\u561B\uFF1F"
     _rightAnswer: "\u6599\u7406"

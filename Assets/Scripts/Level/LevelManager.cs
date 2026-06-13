@@ -51,12 +51,6 @@ namespace GarenaGameJam2026Team6
 
             beat.Tick(Time.deltaTime);
             question.Tick(Time.deltaTime);
-
-            if (_callQuestion)
-            {
-                question.AnswerCorrect();
-                _callQuestion = false;
-            }
         }
     }
 }
