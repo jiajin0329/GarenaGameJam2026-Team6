@@ -377,9 +377,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2006967916}
     - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
+      propertyPath: <end>k__BackingField._view._endSliderArrary.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
       propertyPath: <question>k__BackingField._view._characterViewSwitcher
       value: 
       objectReference: {fileID: 6028140314242412818}
+    - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
+      propertyPath: '<end>k__BackingField._view._endSliderArrary.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1971131050}
+    - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
+      propertyPath: '<end>k__BackingField._view._endSliderArrary.Array.data[1]'
+      value: 
+      objectReference: {fileID: 334471204}
+    - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
+      propertyPath: '<end>k__BackingField._view._endSliderArrary.Array.data[2]'
+      value: 
+      objectReference: {fileID: 599207246}
     - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
       propertyPath: <beat>k__BackingField._view.<_remainingBeatSlider>k__BackingField.Array.size
       value: 3
@@ -1041,6 +1057,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &334471204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 90591092987350444, guid: 1637924340b68a4488323341c997b5d5, type: 3}
+  m_PrefabInstance: {fileID: 1761437055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12820ddd2149214fa72925b1150cfa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GarenaGameJam2026Team6.EndSplider
 --- !u!1 &344895333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,6 +1479,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &599207246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3206719809930773675, guid: 1637924340b68a4488323341c997b5d5, type: 3}
+  m_PrefabInstance: {fileID: 1761437055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12820ddd2149214fa72925b1150cfa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GarenaGameJam2026Team6.EndSplider
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,6 +3705,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1971131050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7205092141990762455, guid: 1637924340b68a4488323341c997b5d5, type: 3}
+  m_PrefabInstance: {fileID: 1761437055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12820ddd2149214fa72925b1150cfa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GarenaGameJam2026Team6.EndSplider
 --- !u!1 &2006967914
 GameObject:
   m_ObjectHideFlags: 0

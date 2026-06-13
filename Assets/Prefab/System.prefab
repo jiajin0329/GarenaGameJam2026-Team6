@@ -92,13 +92,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Level::GarenaGameJam2026Team6.LevelManager
   <_config>k__BackingField: {fileID: 11400000, guid: c97a33dd4602bad47a1e68d80d78dc0b, type: 2}
-  _callQuestion: 0
   <beat>k__BackingField:
-    _beatModel:
+    _model:
       <bpm>k__BackingField: 0
       <beatInterval>k__BackingField: 0
       <oneTimeBeatAmount>k__BackingField: 0
       <timer>k__BackingField: 0
+      <beatCount>k__BackingField: 0
+      <questionIntervalBeatAmount>k__BackingField: 0
+    _view:
+      <remainingBeatCount>k__BackingField: 0
+      <normalized>k__BackingField: 0
+      <_remainingBeatSlider>k__BackingField: []
   <question>k__BackingField:
     _model:
       <questionInterval>k__BackingField: 0
@@ -106,8 +111,19 @@ MonoBehaviour:
       <questionCount>k__BackingField: 0
       <isLastQuestionNoAnser>k__BackingField: 0
     _view:
-      _canvasRectTransform: {fileID: 0}
       _characterViewSwitcher: {fileID: 2117599335097060961, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
+  <affinityArrary>k__BackingField: []
+  <_timer>k__BackingField:
+    <normalizedCurrentTime>k__BackingField: 0
+    _pointerRectTransform: {fileID: 0}
+    _dayImageArrary: []
+    dayIndex: 0
+  <end>k__BackingField:
+    _view:
+      _endSliderArrary: []
+    _canvasGroup: {fileID: 0}
+    _nextDayButton: {fileID: 0}
+    _endButton: {fileID: 0}
 --- !u!1 &2339847948732731480
 GameObject:
   m_ObjectHideFlags: 0
