@@ -78,8 +78,9 @@ public class DraggableOption : MonoBehaviour,
             interactable = false;
             Debug.Log(gameObject.name);
             onDropped?.Invoke();
-            StartCoroutine(InvokeAfterDelay(1.5f));
-       
+
+        StartCoroutine(InvokeAfterDelay(1.5f));
+
     }
 
     private IEnumerator InvokeAfterDelay(float delay)

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1595231946416990657}
   - component: {fileID: 5601867942834445183}
   - component: {fileID: 5106517317208249162}
+  - component: {fileID: 796127459746364333}
   m_Layer: 0
   m_Name: VFX_Kill_Direction
   m_TagString: Untagged
@@ -140,6 +141,19 @@ MonoBehaviour:
   isSmallMovement: 1
   smallMovementSpeed: 40
   isBlack: 0
+--- !u!114 &796127459746364333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146487805790285754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715f2dfde021d4c43bb17605b0705517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::kys
+  killTime: 4
 --- !u!1 &6730248644416749431
 GameObject:
   m_ObjectHideFlags: 0
