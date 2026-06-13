@@ -21,7 +21,7 @@ namespace GarenaGameJam2026Team6
 
         public bool CanAllCharacterEnd()
         {
-            return _affinityArrary[0].current > 9 && _affinityArrary[1].current > 9 && _affinityArrary[2].current > 9;
+            return _affinityArrary[0].model.current > 9 && _affinityArrary[1].model.current > 9 && _affinityArrary[2].model.current > 9;
         }
 
         public bool CanCharacterAEnd()
@@ -35,9 +35,9 @@ namespace GarenaGameJam2026Team6
         {
             for (int i = 0; i < _affinityArrary.Length; i++)
             {
-                if (_affinityArrary[i].current > _biggestAffinity)
+                if (_affinityArrary[i].model.current > _biggestAffinity)
                 {
-                    _biggestAffinity = _affinityArrary[i].current;
+                    _biggestAffinity = _affinityArrary[i].model.current;
                     _biggestAffinityIndex = i;
                 }
             }

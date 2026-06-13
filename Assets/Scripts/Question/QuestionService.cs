@@ -8,7 +8,7 @@ namespace GarenaGameJam2026Team6
     {
         private QuestionModel _model;
         private LevelConfig _config;
-        private Affinity[] _affinityArrary;
+        private AffinityManager _affinityManager;
 
         private GetQuestionService _getQuestionService;
         private GetWrongAnswerService _getWrongAnswerService;
@@ -16,11 +16,11 @@ namespace GarenaGameJam2026Team6
         public Action<float> calculateRemainingTimeEvent;
 
 
-        public QuestionService(QuestionModel _model, LevelConfig _config, Affinity[] _affinityArrary)
+        public QuestionService(QuestionModel _model, LevelConfig _config, AffinityManager _affinityManager)
         {
             this._model = _model;
             this._config = _config;
-            this._affinityArrary = _affinityArrary;
+            this._affinityManager = _affinityManager;
 
             _getQuestionService = new(_config);
             _getWrongAnswerService = new(_config);
@@ -47,8 +47,10 @@ namespace GarenaGameJam2026Team6
             byte _selectionIndex = (byte)UnityEngine.Random.Range(0, 2);
             int _characterIndex = JudgeCharacterIndex(_question);
 
-            _correctAction += () => _affinityArrary[_characterIndex].Change(_config.addAffinity);
-            _wrongAction += () => _affinityArrary[_characterIndex].Change(-_config.subAffinity);
+            _correctAction += () => _affinityManager.Change(_characterIndex, _config.addAffinity);
+            _wrongAction += () => _affinityManager.Change(_characterIndex, -_config.subAffinity);
+
+            _affinityManager.ShowUI(_characterIndex);
 
             // 左右隨機
             if (_selectionIndex == 0)

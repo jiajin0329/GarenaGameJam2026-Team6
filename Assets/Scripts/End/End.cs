@@ -27,11 +27,11 @@ namespace GarenaGameJam2026Team6
         public void AddNextDayListener(Action _listener) => _nextDayEvent += _listener;
         public void RemoveNextDayListener(Action _listener) => _nextDayEvent -= _listener;
 
-        public void Initialize(Affinity[] _affinityArrary)
+        public void Initialize(AffinityManager _affinityManager)
         {
             model = new();
-            _view.Initialize(_affinityArrary);
-            _service = new(model, _affinityArrary);
+            _view.Initialize(_affinityManager.affinityArrary);
+            _service = new(model, _affinityManager.affinityArrary);
 
             _nextDayButton.onClick.AddListener(NextDay);
             _endButton.onClick.AddListener(EndJudge);
