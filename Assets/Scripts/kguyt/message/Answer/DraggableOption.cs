@@ -84,7 +84,6 @@ public class DraggableOption : MonoBehaviour,
             onDropped?.Invoke();
 
             oneTimeAnswerEvnet?.Invoke();
-            oneTimeAnswerEvnet = null;
         }
         else
         {

@@ -53,14 +53,14 @@ public class CharacterViewSwitcher : MonoBehaviour
     [SerializeField]
     private DraggableOption draggableOptionB3;
 
-    public void AddAnswerA1Listener(Action _listener) => draggableOptionA1.oneTimeAnswerEvnet += _listener;
-    public void AddAnswerB1Listener(Action _listener) => draggableOptionB1.oneTimeAnswerEvnet += _listener;
+    public void AddOneTimeAnswerA1Listener(Action _listener) => draggableOptionA1.oneTimeAnswerEvnet += _listener;
+    public void AddOneTimeAnswerB1Listener(Action _listener) => draggableOptionB1.oneTimeAnswerEvnet += _listener;
 
-    public void AddAnswerA2Listener(Action _listener) => draggableOptionA2.oneTimeAnswerEvnet += _listener;
-    public void AddAnswerB2Listener(Action _listener) => draggableOptionB2.oneTimeAnswerEvnet += _listener;
+    public void AddOneTimeAnswerA2Listener(Action _listener) => draggableOptionA2.oneTimeAnswerEvnet += _listener;
+    public void AddOneTimeAnswerB2Listener(Action _listener) => draggableOptionB2.oneTimeAnswerEvnet += _listener;
 
-    public void AddAnswerA3Listener(Action _listener) => draggableOptionA3.oneTimeAnswerEvnet += _listener;
-    public void AddAnswerB3Listener(Action _listener) => draggableOptionB3.oneTimeAnswerEvnet += _listener;
+    public void AddOneTimeAnswerA3Listener(Action _listener) => draggableOptionA3.oneTimeAnswerEvnet += _listener;
+    public void AddOneTimeAnswerB3Listener(Action _listener) => draggableOptionB3.oneTimeAnswerEvnet += _listener;
 
 
     // ── 常數 ────────────────────────────────────────────────────────
@@ -114,6 +114,14 @@ public class CharacterViewSwitcher : MonoBehaviour
             Debug.Log("[Switcher] 正在切換中，請稍後...");
             return;
         }
+
+        draggableOptionA1.oneTimeAnswerEvnet = null;
+        draggableOptionB1.oneTimeAnswerEvnet = null;
+        draggableOptionA2.oneTimeAnswerEvnet = null;
+        draggableOptionB2.oneTimeAnswerEvnet = null;
+        draggableOptionA3.oneTimeAnswerEvnet = null;
+        draggableOptionB3.oneTimeAnswerEvnet = null;
+
         StartCoroutine(SwitchAndPlay(text, characterIndex, optionAText, optionBText));
     }
 
