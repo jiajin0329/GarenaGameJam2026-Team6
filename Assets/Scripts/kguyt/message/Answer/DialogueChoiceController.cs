@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System;
 
 /// <summary>
 /// 掛在每個角色視窗（CharacterPanel）根物件上。
@@ -21,16 +22,20 @@ public class DialogueChoiceController : MonoBehaviour
     [SerializeField] private DraggableOption optionADrag;
     [SerializeField] private DraggableOption optionBDrag;
 
-    [Header("VFX")]
-    [SerializeField] private AK_VFX_Manager vfxManager;
-
     [Header("動畫")]
     [SerializeField] private Animator panelAnimator;          // 控制整個視窗的 Animator
 
     [Header("參數")]
     [SerializeField] private float typewriterInterval = 0.04f; // 逐字速度（秒/字）
-    [SerializeField] private float fadeOutDuration = 0.4f;  // Option 淡出時長
-    [SerializeField] private float fadeInDuration = 0.3f;  // Option 淡入時長
+    [SerializeField] private float fadeOutDuration = 0.4f;  // Option 淡出時長（保留給其他用途，掉落本身不淡出）
+
+    [Header("掉落效果參數")]
+    [SerializeField] private float dropFallDistance = 1200f;  // 掉出畫面的距離（px）
+    [SerializeField] private float dropDuration = 0.6f;       // 掉落動畫時長
+    [SerializeField] private float dropRotationSpeed = 180f;  // 掉落時每秒旋轉角度
+
+    private Action onResolveComplete;
+    public void SetOnResolveComplete(Action callback) => onResolveComplete = callback;
 
     // ── 私有狀態 ────────────────────────────────────────────────────
     private Coroutine activeCoroutine;
@@ -112,29 +117,23 @@ public class DialogueChoiceController : MonoBehaviour
         SetOptionLabel(optionADrag, optionAText);
         SetOptionLabel(optionBDrag, optionBText);
 
-        // 4) 程式碼 FadeIn 讓 Options 出現（不走 Animator，避免 enabled 重啟導致 clip 跳過）
+        // 4) 直接顯示 Options（不淡入）
         if (!string.IsNullOrEmpty(optionAText))
         {
-            optionAGroup.alpha = 0f;
-            optionAGroup.blocksRaycasts = false;
-            optionAGroup.interactable = false;
+            optionAGroup.alpha = 1f;
+            optionAGroup.blocksRaycasts = true;
+            optionAGroup.interactable = true;
         }
         if (!string.IsNullOrEmpty(optionBText))
         {
-            optionBGroup.alpha = 0f;
-            optionBGroup.blocksRaycasts = false;
-            optionBGroup.interactable = false;
+            optionBGroup.alpha = 1f;
+            optionBGroup.blocksRaycasts = true;
+            optionBGroup.interactable = true;
         }
 
         // 通知視窗 Animator 播 LoadIn（視窗本身的進場動畫，不控制 option alpha）
         if (panelAnimator != null && panelAnimator.enabled)
             panelAnimator.SetTrigger(ANIM_LOAD_IN);
-
-        // 同步淡入兩個 option
-        yield return StartCoroutine(FadeInOptions(
-            !string.IsNullOrEmpty(optionAText) ? optionAGroup : null,
-            !string.IsNullOrEmpty(optionBText) ? optionBGroup : null,
-            fadeInDuration));
 
         // 5) 啟用拖曳互動
         bool hasOptions = !string.IsNullOrEmpty(optionAText) || !string.IsNullOrEmpty(optionBText);
@@ -156,6 +155,9 @@ public class DialogueChoiceController : MonoBehaviour
         activeCoroutine = null;
     }
 
+    [Header("視覺回饋")]
+    [SerializeField] private MaskFlashController maskFlashController;
+
     // ─────────────────────────────────────────────────────────────
     /// <summary>玩家放開 option 後的處理</summary>
     /// <param name="chosen">被選中的那個 CanvasGroup</param>
@@ -174,68 +176,42 @@ public class DialogueChoiceController : MonoBehaviour
         StartCoroutine(ResolveChoice(chosenGroup, otherGroup, chosenDrag, otherDrag));
     }
 
+    /// <summary>
+    /// 玩家選擇後的處理：
+    /// 1) 先設定本次選項對應的 Image 給 MaskFlashController（供外部腳本判定後呼叫 PlayCorrectFlash/PlayWrongFlash）
+    /// 2) 被選中的 → 淡出變透明
+    /// 3) 另一個 → 掉出畫面外
+    /// </summary>
     private IEnumerator ResolveChoice(
         CanvasGroup chosenGroup, CanvasGroup otherGroup,
         DraggableOption chosenDrag, DraggableOption otherDrag)
     {
-        // 被選中的 → 先彈回原位，再淡出到 0
-        chosenDrag?.ResetPosition();
-        yield return StartCoroutine(FadeOut(chosenGroup, fadeOutDuration));
+        // 設定本次要變色的兩個 Image，供外部判定腳本呼叫 PlayCorrectFlash() / PlayWrongFlash()
+        Image chosenImage = chosenDrag != null ? chosenDrag.GetComponent<Image>() : null;
+        Image otherImage = otherDrag != null ? otherDrag.GetComponent<Image>() : null;
+        maskFlashController?.SetOptionImages(chosenImage, otherImage);
 
-        // 另一個 → 先彈回原位，再 SpawnSlashVFX，再淡出到 0
-        otherDrag?.ResetPosition();
-
-        if (vfxManager != null && otherDrag != null)
+        // 1) 被選中的 → 淡出變透明
+        if (chosenDrag != null)
         {
-            Vector2 worldPos = GetWorldPosition(otherDrag.transform as RectTransform);
-            vfxManager.SpawnSlashVFX(worldPos);
+            yield return StartCoroutine(FadeOut(chosenGroup, fadeOutDuration));
+            SetOptionVisible(chosenGroup, false);
+            chosenDrag.ResetPosition();
         }
 
-        yield return new WaitForSeconds(0.15f);
-        yield return StartCoroutine(FadeOut(otherGroup, fadeOutDuration));
+        // 2) 另一個 → 掉出畫面外
+        if (otherDrag != null)
+        {
+            yield return StartCoroutine(DropOutRoutine(otherDrag.transform as RectTransform));
+            SetOptionVisible(otherGroup, false);
+            otherDrag.ResetPosition();
+        }
+
+        onResolveComplete?.Invoke();
+        onResolveComplete = null;
     }
 
-    #endregion
-
-    // ═══════════════════════════════════════════════════════════════
-    #region 輔助方法
-
-    private IEnumerator TypewriterRoutine(string text)
-    {
-        dialogueText.text = string.Empty;
-        foreach (char c in text)
-        {
-            dialogueText.text += c;
-            yield return new WaitForSeconds(typewriterInterval);
-        }
-    }
-
-    /// <summary>同時將兩個 option CanvasGroup 從 0 淡入到 1，null 代表跳過</summary>
-    private IEnumerator FadeInOptions(CanvasGroup groupA, CanvasGroup groupB, float duration)
-    {
-        float elapsed = 0f;
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float alpha = Mathf.Lerp(0f, 1f, elapsed / duration);
-            if (groupA != null) groupA.alpha = alpha;
-            if (groupB != null) groupB.alpha = alpha;
-            yield return null;
-        }
-        if (groupA != null)
-        {
-            groupA.alpha = 1f;
-            groupA.blocksRaycasts = true;
-            groupA.interactable = true;
-        }
-        if (groupB != null)
-        {
-            groupB.alpha = 1f;
-            groupB.blocksRaycasts = true;
-            groupB.interactable = true;
-        }
-    }
-
+    /// <summary>淡出指定 CanvasGroup 至透明</summary>
     private IEnumerator FadeOut(CanvasGroup group, float duration)
     {
         if (group == null) yield break;
@@ -251,6 +227,61 @@ public class DialogueChoiceController : MonoBehaviour
         group.alpha = 0f;
         group.blocksRaycasts = false;
         group.interactable = false;
+    }
+
+    /// <summary>
+    /// 兩個選項同時掉出畫面（例如：強制事件、無法選擇的結局）
+    /// 呼叫此方法後，兩個選項立即禁用拖曳互動。
+    /// </summary>
+    public void ResolveChoiceBoth()
+    {
+        if (!waitingForChoice) return; // 防止重複觸發
+        waitingForChoice = false;
+
+        // 立即停用兩個選項的拖曳互動
+        optionADrag?.SetInteractable(false);
+        optionBDrag?.SetInteractable(false);
+
+        StartCoroutine(ResolveBothDrop());
+    }
+
+    private IEnumerator ResolveBothDrop()
+    {
+        Coroutine dropA = null, dropB = null;
+
+        if (optionADrag != null)
+            dropA = StartCoroutine(DropOutRoutine(optionADrag.transform as RectTransform));
+
+        if (optionBDrag != null)
+            dropB = StartCoroutine(DropOutRoutine(optionBDrag.transform as RectTransform));
+
+        if (dropA != null) yield return dropA;
+        if (dropB != null) yield return dropB;
+
+        SetOptionVisible(optionAGroup, false);
+        SetOptionVisible(optionBGroup, false);
+        optionADrag?.ResetPosition();
+        optionBDrag?.ResetPosition();
+
+        onResolveComplete?.Invoke();
+        onResolveComplete = null;
+    }
+
+
+   
+    #endregion
+
+    // ═══════════════════════════════════════════════════════════════
+    #region 輔助方法
+
+    private IEnumerator TypewriterRoutine(string text)
+    {
+        dialogueText.text = string.Empty;
+        foreach (char c in text)
+        {
+            dialogueText.text += c;
+            yield return new WaitForSeconds(typewriterInterval);
+        }
     }
 
     private static void SetOptionVisible(CanvasGroup group, bool visible)
@@ -297,14 +328,36 @@ public class DialogueChoiceController : MonoBehaviour
         return 0.5f;
     }
 
-    /// <summary>將 RectTransform 的中心轉換為世界座標（用於 VFX Spawn）</summary>
-    private static Vector2 GetWorldPosition(RectTransform rt)
+    /// <summary>
+    /// 讓 UI RectTransform 直接往下掉出畫面外（加速下墜 + 旋轉），不需要 Rigidbody2D。
+    /// 結束後不會自動歸位，由呼叫端決定何時 ResetPosition()。
+    /// </summary>
+    /// <param name="rt">要播放動畫的 RectTransform</param>
+    private IEnumerator DropOutRoutine(RectTransform rt)
     {
-        if (rt == null) return Vector2.zero;
-        var corners = new Vector3[4];
-        rt.GetWorldCorners(corners);
-        // 四個角的平均 = 中心
-        return (corners[0] + corners[1] + corners[2] + corners[3]) / 4f;
+        if (rt == null) yield break;
+
+        Vector2 startPos = rt.anchoredPosition;
+        float startRotZ = rt.localEulerAngles.z;
+
+        // 隨機決定旋轉方向，讓掉落更自然
+        float rotDir = UnityEngine.Random.value > 0.5f ? 1f : -1f;
+
+        float elapsed = 0f;
+        while (elapsed < dropDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / dropDuration;
+
+            // 加速下墜（ease-in）
+            float yOffset = -dropFallDistance * (t * t);
+            rt.anchoredPosition = startPos + new Vector2(0f, yOffset);
+
+            // 翻滾旋轉
+            rt.localRotation = Quaternion.Euler(0f, 0f, startRotZ + rotDir * dropRotationSpeed * elapsed);
+
+            yield return null;
+        }
     }
 
     #endregion

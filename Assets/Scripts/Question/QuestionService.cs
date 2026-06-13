@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace GarenaGameJam2026Team6
 {
@@ -7,14 +8,19 @@ namespace GarenaGameJam2026Team6
     {
         private QuestionModel _model;
         private LevelConfig _config;
+        private Affinity[] _affinityArrary;
 
         private GetQuestionService _getQuestionService;
         private GetWrongAnswerService _getWrongAnswerService;
 
-        public QuestionService(QuestionModel _model, LevelConfig _config)
+        public Action<float> calculateRemainingTimeEvent;
+
+
+        public QuestionService(QuestionModel _model, LevelConfig _config, Affinity[] _affinityArrary)
         {
             this._model = _model;
             this._config = _config;
+            this._affinityArrary = _affinityArrary;
 
             _getQuestionService = new(_config);
             _getWrongAnswerService = new(_config);
@@ -40,6 +46,9 @@ namespace GarenaGameJam2026Team6
 
             byte _selectionIndex = (byte)UnityEngine.Random.Range(0, 2);
             int _characterIndex = JudgeCharacterIndex(_question);
+
+            _correctAction += () => _affinityArrary[_characterIndex].Change(_config.addAffinity);
+            _wrongAction += () => _affinityArrary[_characterIndex].Change(-_config.subAffinity);
 
             // 左右隨機
             if (_selectionIndex == 0)
@@ -72,6 +81,14 @@ namespace GarenaGameJam2026Team6
                 return true;
 
             return false;
+        }
+
+        public void CalculateRemainingTime(QuestionModel _model)
+        {
+            float _remainingTime = _model.questionInterval - _model.timer;
+
+            calculateRemainingTimeEvent?.Invoke(_remainingTime);
+            Debug.Log(nameof(CalculateRemainingTime));
         }
     }
 }

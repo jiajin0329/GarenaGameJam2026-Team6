@@ -1,3 +1,4 @@
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -14,18 +15,35 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public Question question { get; private set; }
 
-        // private Timer _timer;
+        [field: SerializeField]
+        public Affinity[] affinityArrary { get; private set; }
 
-        [SerializeField]
-        private bool _callQuestion = false;
+        [field: SerializeField]
+        public Timer _timer { get; private set; }
+
+        [field: SerializeField]
+        public End end { get; private set; }
 
         private bool _isEnable = false;
+        private float _deltaTime = 0f;
+
+        private CancellationToken _destroyCancellationToken;
 
         public override void Initialize()
         {
-            beat = new(_config);
-            question.Initialize(_config);
-            // _timer = new(_config.finishTime, _characterViewSwitcher);
+            beat.Initialize(_config);
+
+            affinityArrary = new Affinity[3];
+            affinityArrary[0] = new(0f, _config.affinityMax);
+            affinityArrary[1] = new(0f, _config.affinityMax);
+            affinityArrary[2] = new(0f, _config.affinityMax);
+
+            _destroyCancellationToken = destroyCancellationToken;
+            question.Initialize(_config, affinityArrary, _destroyCancellationToken);
+
+            _timer.Initialize(_config, end);
+
+            end.Initialize(affinityArrary);
 
             beat.AddBeatListener(question.TryAskQuestion);
             beat.AddOneTimeBeatListener(question.TryAskQuestion);
@@ -33,14 +51,27 @@ namespace GarenaGameJam2026Team6
             beat.AddBeatListener(question.TryQuestionFinish);
             beat.AddOneTimeBeatListener(question.TryQuestionFinish);
 
-            question.AddQuestionFinsihListener(() => _isEnable = false);
+            question.AddAskQuestionListener(beat.ResetBeat);
+
+            question.AddQuestionFinsihListener(IsEnableFalse);
+            question.AddQuestionFinsihListener(end.TryEnd);
+
+            question.AddCalculateRemainingTimeListener(_timer.GetRemainingTime);
+
+            end.AddNextDayListener(Restart);
 
             StartGame().Forget();
         }
 
+        private void IsEnableFalse()
+        {
+            _isEnable = false;
+            _timer.IsEnableFalse();
+        }
+
         private async UniTask StartGame()
         {
-            await UniTask.Delay((int)(_config.startGameDelay * 1000f), cancellationToken: destroyCancellationToken);
+            await UniTask.Delay((int)(_config.startGameDelay * 1000f), cancellationToken: _destroyCancellationToken);
             _isEnable = true;
         }
 
@@ -49,8 +80,20 @@ namespace GarenaGameJam2026Team6
             if (!_isEnable)
                 return;
 
-            beat.Tick(Time.deltaTime);
-            question.Tick(Time.deltaTime);
+            _deltaTime = Time.deltaTime;
+
+            beat.Tick(_deltaTime);
+            _timer.Tick(_deltaTime);
+            question.Tick(_deltaTime);
+        }
+
+        private void Restart()
+        {
+            beat.Reset();
+            question.Reset();
+            _timer.Reset();
+
+            StartGame().Forget();
         }
     }
 }

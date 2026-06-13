@@ -32,5 +32,17 @@ namespace GarenaGameJam2026Team6
 
         [field: SerializeField]
         public GoogleSheetDataGetterWrongAnswers wrongAnswerConfig { get; private set; }
+
+        [field: SerializeField]
+        public float affinityMax { get; private set; } = 10f;
+
+        [field: SerializeField]
+        public float addAffinity { get; private set; } = 1f;
+
+        [field: SerializeField]
+        public float subAffinity { get; private set; } = 0.5f;
+
+        [field: SerializeField]
+        public float remainingBeatSliderSmoothDuration { get; private set; } = 0.2f;
     }
 }

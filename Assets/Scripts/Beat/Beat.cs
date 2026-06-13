@@ -7,10 +7,12 @@ namespace GarenaGameJam2026Team6
     public class Beat
     {
         [SerializeField]
-        private BeatModel _beatModel;
+        private BeatModel _model;
 
-        private BeatView _beatView;
-        private BeatService _beatService;
+        [SerializeField]
+        private BeatView _view;
+
+        private BeatService _service;
 
         private Action _onBeatEvent;
         public void AddBeatListener(Action _action) => _onBeatEvent += _action;
@@ -20,30 +22,47 @@ namespace GarenaGameJam2026Team6
         public void AddOneTimeBeatListener(Action _action) => _onOneTimeBeatEvent += _action;
         public void RemoveOneTimeBeatListener(Action _action) => _onOneTimeBeatEvent -= _action;
 
-        public Beat(LevelConfig _levelConfig)
+        public void Initialize(LevelConfig _levelConfig)
         {
-            _beatModel = new(_levelConfig.bpm, _levelConfig.oneTimeBeatAmount);
-            _beatView = new();
-            _beatService = new BeatService(_beatModel);
+            _model = new(_levelConfig);
+            _service = new BeatService(_model);
+            _view.Initialize(_levelConfig);
         }
 
         public void Tick(float _deltaTime)
         {
-            _beatModel.Tick(_deltaTime);
+            _model.Tick(_deltaTime);
 
-            if (_beatService.CanBeat())
-            {
-                _beatView.Beat();
+            if (!_service.CanBeat())
+                return;
+
+            _model.Beat();
+            _view.Beat(_model);
+            _view.TickRemainingBeatSlider(_model);
+
+            if (_model.beatCount != _model.oneTimeBeatAmount)
                 _onBeatEvent?.Invoke();
-                Debug.Log(nameof(_beatService.CanBeat));
-            }
 
-            if (_beatService.CanOneTimeBeat())
+            if (_service.CanOneTimeBeat())
             {
-                _beatView.OneTimeBeat();
+                _view.OneTimeBeat(_model);
                 _onOneTimeBeatEvent?.Invoke();
-                Debug.Log(nameof(_beatService.CanOneTimeBeat));
+                _model.ResetBeatCount();
+                Debug.Log(nameof(_service.CanOneTimeBeat));
             }
+        }
+
+        public void ResetBeat()
+        {
+            _model.ResetBeatCount();
+            _view.RsetBeatCount();
+            Debug.Log(nameof(ResetBeat));
+        }
+
+        public void Reset()
+        {
+            _model.Reset();
+            _view.Reset();
         }
     }
 }

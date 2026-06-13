@@ -6,15 +6,15 @@ namespace GarenaGameJam2026Team6
     [Serializable]
     public class QuestionView
     {
-        [SerializeField]
-        private RectTransform _canvasRectTransform;
+        // // [SerializeField]
+        // private RectTransform _canvasRectTransform;
 
         [SerializeField]
         private CharacterViewSwitcher _characterViewSwitcher;
 
         public void Initialize()
         {
-            _characterViewSwitcher = GameObject.Instantiate(_characterViewSwitcher, _canvasRectTransform);
+            // _characterViewSwitcher = GameObject.Instantiate(_characterViewSwitcher, _canvasRectTransform);
         }
 
         public void AskQuestion(string _questionText, int _characterIndex, string _selection1Text, string _selection2Text, Action _onAnswerA, Action _onAnswerB)
@@ -24,16 +24,16 @@ namespace GarenaGameJam2026Team6
             switch (_characterIndex)
             {
                 case 0:
-                    _characterViewSwitcher.AddAnswerA1Listener(_onAnswerA);
-                    _characterViewSwitcher.AddAnswerB1Listener(_onAnswerB);
+                    _characterViewSwitcher.AddOneTimeAnswerA1Listener(_onAnswerA);
+                    _characterViewSwitcher.AddOneTimeAnswerB1Listener(_onAnswerB);
                     break;
                 case 1:
-                    _characterViewSwitcher.AddAnswerA2Listener(_onAnswerA);
-                    _characterViewSwitcher.AddAnswerB2Listener(_onAnswerB);
+                    _characterViewSwitcher.AddOneTimeAnswerA2Listener(_onAnswerA);
+                    _characterViewSwitcher.AddOneTimeAnswerB2Listener(_onAnswerB);
                     break;
                 case 2:
-                    _characterViewSwitcher.AddAnswerA3Listener(_onAnswerA);
-                    _characterViewSwitcher.AddAnswerB3Listener(_onAnswerB);
+                    _characterViewSwitcher.AddOneTimeAnswerA3Listener(_onAnswerA);
+                    _characterViewSwitcher.AddOneTimeAnswerB3Listener(_onAnswerB);
                     break;
             }
         }
