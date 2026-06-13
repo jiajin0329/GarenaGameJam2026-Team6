@@ -26,7 +26,7 @@ namespace GarenaGameJam2026Team6
         {
             for (int i = 0; i < _affinityArrary.Length; i++)
             {
-                await _endSliderArrary[i].SetAffinity((int)_affinityArrary[i].current);
+                await _endSliderArrary[i].SetAffinity((int)_affinityArrary[i].model.current);
             }
         }
     }
