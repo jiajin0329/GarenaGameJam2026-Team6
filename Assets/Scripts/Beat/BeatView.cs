@@ -62,6 +62,12 @@ namespace GarenaGameJam2026Team6
 
             SFXPlayer.instance.PlayOneShot(AudioName.oneTimeBeat);
         }
+
+        public void RsetBeatCount()
+        {
+            _beatCount = 0;
+            SetRemainingBeatSlider(1f);
+        }
     }
 }
 

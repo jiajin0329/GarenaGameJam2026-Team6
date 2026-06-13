@@ -402,6 +402,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
+      propertyPath: <_timer>k__BackingField._pointerRectTransform
+      value: 
+      objectReference: {fileID: 739355207}
+    - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
       propertyPath: <question>k__BackingField._view._canvasRectTransform
       value: 
       objectReference: {fileID: 0}

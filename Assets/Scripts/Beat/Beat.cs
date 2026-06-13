@@ -47,9 +47,16 @@ namespace GarenaGameJam2026Team6
             {
                 _view.OneTimeBeat(_model);
                 _onOneTimeBeatEvent?.Invoke();
-                _model.ClearBeatCount();
+                _model.ResetBeatCount();
                 Debug.Log(nameof(_service.CanOneTimeBeat));
             }
+        }
+
+        public void ResetBeat()
+        {
+            _model.ResetBeatCount();
+            _view.RsetBeatCount();
+            Debug.Log(nameof(ResetBeat));
         }
     }
 }

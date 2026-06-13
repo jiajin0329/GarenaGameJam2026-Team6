@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace GarenaGameJam2026Team6
 {
@@ -11,6 +12,9 @@ namespace GarenaGameJam2026Team6
 
         private GetQuestionService _getQuestionService;
         private GetWrongAnswerService _getWrongAnswerService;
+
+        public Action<float> calculateRemainingTimeEvent;
+
 
         public QuestionService(QuestionModel _model, LevelConfig _config, Affinity[] _affinityArrary)
         {
@@ -77,6 +81,14 @@ namespace GarenaGameJam2026Team6
                 return true;
 
             return false;
+        }
+
+        public void CalculateRemainingTime(QuestionModel _model)
+        {
+            float _remainingTime = _model.questionInterval - _model.timer;
+
+            calculateRemainingTimeEvent?.Invoke(_remainingTime);
+            Debug.Log(nameof(CalculateRemainingTime));
         }
     }
 }
