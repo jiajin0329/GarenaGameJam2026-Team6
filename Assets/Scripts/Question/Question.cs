@@ -85,6 +85,7 @@ namespace GarenaGameJam2026Team6
             //要在_model.Answer()前執行，因為_model.Answer()會重置timer
             _service.CalculateRemainingTime(_model);
             _model.Answer();
+            _view.AnswerCorrect();
             _answerCorrectEvent?.Invoke();
             Debug.Log(nameof(AnswerCorrect));
 
@@ -102,6 +103,7 @@ namespace GarenaGameJam2026Team6
             //要在_model.Answer()前執行，因為_model.Answer()會重置timer
             _service.CalculateRemainingTime(_model);
             _model.Answer();
+            _view.AnswerWrong();
             _answerWrongEvent?.Invoke();
             Debug.Log(nameof(AnswerWrong));
 
