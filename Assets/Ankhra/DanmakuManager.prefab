@@ -127,6 +127,6 @@ MonoBehaviour:
   - {fileID: 95351716758570024, guid: 68bcef8a7cd71144b90fa0db814f84cd, type: 3}
   spawnArea_DL: {fileID: 6116479065024787930}
   spawnArea_TR: {fileID: 7887267860558960773}
-  danmakuRandomCD_Min: 0.4
-  danmakuRandomCD_Max: 1
+  danmakuRandomCD_Min: 0.8
+  danmakuRandomCD_Max: 1.2
   danmakuCountingDownCD: 0
