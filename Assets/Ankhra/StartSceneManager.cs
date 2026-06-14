@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.UIElements.Experimental;
+
 public class StartSceneManager : MonoBehaviour
 {
     public GameObject[] StoryGameObject = new GameObject[18];
@@ -15,6 +17,49 @@ public class StartSceneManager : MonoBehaviour
 
     public bool isPhoneGoingFlag = false;
 
+    public bool tutorialFlag = false;
+    public int currentTutorialIndex = 0;
+
+
+    [Header("±Ð¾Ç")]
+    public GameObject BlackFadeBg;
+    public GameObject[] TutorialImage;
+
+    public void StartTutorial()
+    {
+        BlackFadeBg.SetActive(true);
+        currentTutorialIndex = 0;
+        tutorialFlag = true;
+        TutorialImage[0].SetActive(true);
+    }
+
+    public void ReadNextTutorial()
+    {
+        if (currentTutorialIndex + 1 < TutorialImage.Length)
+        {
+            currentTutorialIndex++;
+            ReadTutorial(currentTutorialIndex);
+        }
+    }
+    public void ReadLastTutorial()
+    {
+        if (currentTutorialIndex - 1 >= 0)
+        {
+            currentTutorialIndex--;
+            ReadTutorial(currentTutorialIndex);
+        }
+    }
+
+
+    public void ReadTutorial(int index)
+    {
+        
+        for (int i = 0; i < TutorialImage.Length; i++)
+        {
+            TutorialImage[i].SetActive(false);
+        }
+        TutorialImage[index].SetActive(true);
+    }
 
     public void Start()
     {
