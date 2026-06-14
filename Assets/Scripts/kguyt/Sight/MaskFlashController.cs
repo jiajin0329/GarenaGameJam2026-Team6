@@ -35,6 +35,10 @@ public class MaskFlashController : MonoBehaviour
     [SerializeField] private CharacterAnimController characterAnim; 
     // 由外部（DialogueChoiceController）在 ResolveChoice 時設定
     private Image optionAImage;
+
+
+    [Header("立繪效果")]
+    [SerializeField] private CharacterJellyEffect characterJelly;
     private Image optionBImage;
 
     private Coroutine activeRoutine;
@@ -59,6 +63,8 @@ public class MaskFlashController : MonoBehaviour
         if (activeRoutine != null) StopCoroutine(activeRoutine);
         SFXPlayer.instance.PlayOneShot(AudioName.badFeedback);
         characterAnim?.PlayWrongAnim();   // ← 新增
+        characterJelly?.PlayWrongJelly();
+
         activeRoutine = StartCoroutine(FlashRoutine(wrongColor));
     }
 
