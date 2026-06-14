@@ -104,6 +104,7 @@ MonoBehaviour:
       <remainingBeatCount>k__BackingField: 0
       <normalized>k__BackingField: 0
       <_remainingBeatSlider>k__BackingField: []
+    _pumpingCircle: {fileID: 1482819035609232688, guid: 9a2161de7e769684f985dba237efcc46, type: 3}
   <question>k__BackingField:
     _model:
       <questionInterval>k__BackingField: 0
@@ -121,6 +122,7 @@ MonoBehaviour:
     _pointerRectTransform: {fileID: 0}
     _dayImageArrary: []
     dayIndex: 0
+  _danmakuManager: {fileID: 6337380594154207403, guid: d7cb780d9460b534e85e6e621f06c285, type: 3}
   <end>k__BackingField:
     _view:
       _endSliderArrary: []

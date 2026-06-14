@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d595d965bb4cc44a95a67f1c2c69729, type: 3}
+  m_Name: QuestionsConfig
+  m_EditorClassIdentifier: GoogleSheetDataGetter::Logy.UnityCommon.GoogleSheetDataGetterQuestions
+  _loadGoogleSheetOnInitialize: 0
+  _googleSheetURL: https://docs.google.com/spreadsheets/d/1N98yvCscCo0XWPABXG_dtcmIBcZGsczdkHlgNVg_TMI/edit?gid=0#gid=0
+  _pageNumber: 1
+  _csvFile: {fileID: 0}
+  _dataArray:
+  - _characterName: CharacterA
+    _characterQuestionType: _characterName
+    _characterQuestionContext: "\u81E8\u6642\u5C0F\u8003\uFF01\u6211\u7684\u771F\u540D\u662F~\uFF1F"
+    _rightAnswer: "\u590F\u66E6"
+  - _characterName: CharacterA
+    _characterQuestionType: _characterNickName
+    _characterQuestionContext: "\u66B1\u7A31\u5C31\u548C\u6211\u7684\u6027\u683C\u5F88\u76F8\u50CF..."
+    _rightAnswer: Sunny
+  - _characterName: CharacterA
+    _characterQuestionType: _birthday
+    _characterQuestionContext: "\u6211\u7684\u751F\u65E5\u90A3\u9EBC\u597D\u8A18...\u4F60\u4E0D\u6703\u5FD8\u4E86\u5427\uFF1F"
+    _rightAnswer: 1/1
+  - _characterName: CharacterA
+    _characterQuestionType: _starSign
+    _characterQuestionContext: "\u7A69\u5B9A\u53C8\u7406\u6027\u7684\u661F\u5EA7\u5594~\u4F60\u9084\u8A18\u5F97\u55CE\uFF1F"
+    _rightAnswer: "\u6469\u7FAF\u5EA7"
+  - _characterName: CharacterA
+    _characterQuestionType: _likeFood
+    _characterQuestionContext: "\u9019\u500B\u4E16\u754C\u4E0A\u6700\u597D\u5403\u7684\u751C\u98DF~\u4E0D\u63A5\u53D7\u7570\u8B70\uFF0C\u4F60\u77E5\u9053\u662F\u54EA\u500B\u7684\u5427\uFF1F"
+    _rightAnswer: "\u5DE7\u514B\u529B"
+  - _characterName: CharacterA
+    _characterQuestionType: _hateFood
+    _characterQuestionContext: "\u9019\u6839\u672C\u4E0D\u80FD\u7B97\u4F5C\u98DF\u7269\u5427\uFF1F\uFF1F"
+    _rightAnswer: "\u8FA3\u6912"
+  - _characterName: CharacterA
+    _characterQuestionType: _hobby1
+    _characterQuestionContext: "\u8D85\u7642\u80B2\u7684~\u4F60\u731C\u731C\u770B\u6211\u525B\u525B\u5728\u5E79\u561B~"
+    _rightAnswer: "\u6478\u5C0F\u72D7"
+  - _characterName: CharacterA
+    _characterQuestionType: _hobby2
+    _characterQuestionContext: "\u9019\u500B\u5468\u672B\u5F88\u9592\u6B38~\u8981\u4E0D\u8981\u4E00\u8D77..."
+    _rightAnswer: "\u6253\u96FB\u52D5"
+  - _characterName: CharacterB
+    _characterQuestionType: _characterName
+    _characterQuestionContext: "\u6211\u7684\u540D\u5B57"
+    _rightAnswer: Test
+  - _characterName: CharacterB
+    _characterQuestionType: _characterNickName
+    _characterQuestionContext: "\u6211\u7684\u66B1\u7A31"
+    _rightAnswer: Test
+  - _characterName: CharacterB
+    _characterQuestionType: _birthday
+    _characterQuestionContext: "\u5BF6\u8C9D\u6211\u5011\u5E7E\u865F\u904E\u751F\u65E5"
+    _rightAnswer: Test
+  - _characterName: CharacterB
+    _characterQuestionType: _starSign
+    _characterQuestionContext: "\u6211\u7684\u661F\u5EA7"
+    _rightAnswer: Test
+  - _characterName: CharacterB
+    _characterQuestionType: _likeFood
+    _characterQuestionContext: "\u559C\u6B61\u7684\u98DF\u7269"
+    _rightAnswer: Test
+  - _characterName: CharacterB
+    _characterQuestionType: _hateFood
+    _characterQuestionContext: "\u8A0E\u53AD\u7684\u98DF\u7269"
+    _rightAnswer: Test
+  - _characterName: CharacterB
+    _characterQuestionType: _hobby1
+    _characterQuestionContext: "\u8208\u8DA31"
+    _rightAnswer: Test
+  - _characterName: CharacterB
+    _characterQuestionType: _hobby2
+    _characterQuestionContext: "\u8208\u8DA32"
+    _rightAnswer: Test
+  - _characterName: CharacterC
+    _characterQuestionType: _characterName
+    _characterQuestionContext: "\u79D8\uFF01\u53EA\u6709\u5C3C\u77E5\u9053\u7684\u6211\u7684\u771F\u540D\uFF01\u558A\u51FA\u4F86\u5427\uFF01"
+    _rightAnswer: "\u611B\u6816\u6A58"
+  - _characterName: CharacterC
+    _characterQuestionType: _characterNickName
+    _characterQuestionContext: "\u6211\u7684\u7DB2\u540D\u8D85\u7D55\u53EF\u611B\uFF01\u5C3C\u4E5F\u5FF5\u4E00\u904D\uFF01"
+    _rightAnswer: ".\xB0\u029A Alice \u025E\xB0.\u2727\u02C8\u2027\u02DA\u207A"
+  - _characterName: CharacterC
+    _characterQuestionType: _birthday
+    _characterQuestionContext: "\u4F60\u662F\u4E0D\u662F\u5FD8\u8A18\u6211\u7684\u751F\u65E5\u4E86\u311A(
+      \uFF65\u0306\u2919\uFF65\u0306 )"
+    _rightAnswer: 6/7
+  - _characterName: CharacterC
+    _characterQuestionType: _starSign
+    _characterQuestionContext: "\u4EBA\u5BB6\u8981\u662F\u8DD1\u5230\u5929\u4E0A\u310C\uFF0C\u5C3C\u6703\u5728\u54EA\u500B\u661F\u5EA7\u88E1\u770B\u5230\u6211\u310B\u2282(
+      \u1D16 \u032B\u1D16 )\u2283"
+    _rightAnswer: "\u96D9\u5B50\u5EA7"
+  - _characterName: CharacterC
+    _characterQuestionType: _likeFood
+    _characterQuestionContext: "\u5E6B\u6211\u8CB7\u6211\u6700\u559C\u6B61\u7684\u90A3\u500B\uFF01\u5167\u500B\uFF01"
+    _rightAnswer: "\u7D05\u8C46\u9EB5\u5305"
+  - _characterName: CharacterC
+    _characterQuestionType: _hateFood
+    _characterQuestionContext: "\u5348\u9910\u4FBF\u7576\u4E0D\u597D\u5403\uFF01\u8A0E\u53AD\uFF01\u6211\u6700\u8A0E\u53AD\u90A3\u500B\u4E86(\u02C6\u0442
+      \xB7 \u0442\u02C6)\u2026\u2026"
+    _rightAnswer: "\u96DE\u8089"
+  - _characterName: CharacterC
+    _characterQuestionType: _hobby1
+    _characterQuestionContext: "\u9031\u672B\u8981\u51FA\u9580\u5566\uFF01\u731C\u731C\u7AA9\u8981\u53BB\u54EA\u3126\uFF5E"
+    _rightAnswer: "\u770B\u661F\u661F"
+  - _characterName: CharacterC
+    _characterQuestionType: _hobby2
+    _characterQuestionContext: "\u660E\u5929\u5728\u5BB6\u505A\u4EC0\u9EBC\u597D\uFF5E\uFF1F(\u2E1D\u2E1D\u25DC~\u25DD\u2E1D\u2E1D)"
+    _rightAnswer: "\u653E\u7A7A"

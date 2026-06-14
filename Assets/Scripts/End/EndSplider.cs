@@ -1,7 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Logy.UnityCommon;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +10,9 @@ namespace GarenaGameJam2026Team6
     [Serializable]
     public class EndSplider : MonoBehaviour
     {
+        [SerializeField]
+        private CharacterEnum _characterEnum;
+
         [SerializeField]
         private Slider _affinitySlider;
 
@@ -23,14 +25,11 @@ namespace GarenaGameJam2026Team6
         [SerializeField]
         private LevelConfig _levelConfig;
 
-        [SerializeField]
-        private GoogleSheetDataGetterQuestions _questions;
-
         private float _currentAffinity;
 
         public void Initialize()
         {
-            _nameText.text = _questions.dataArray[0].characterName;
+            _nameText.text = _characterEnum.ToString();
             _affinitySlider.value = 0;
             _affinitySlider.maxValue = _levelConfig.affinityMax;
             _valueText.text = "0";
