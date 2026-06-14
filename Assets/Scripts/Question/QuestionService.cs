@@ -61,9 +61,9 @@ namespace GarenaGameJam2026Team6
 
         private int JudgeCharacterIndex(Questions _question)
         {
-            if (_question.characterName == _config.questionsConfigA.dataArray[0].characterName)
+            if (_question.characterName == CharacterEnum.CharacterA.ToString())
                 return 0;
-            else if (_question.characterName == _config.questionsConfigB.dataArray[0].characterName)
+            else if (_question.characterName == CharacterEnum.CharacterB.ToString())
                 return 1;
             else
                 return 2;

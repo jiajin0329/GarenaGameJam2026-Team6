@@ -292,6 +292,10 @@ PrefabInstance:
       propertyPath: _questions
       value: 
       objectReference: {fileID: 11400000, guid: 656a27fe73cb0fa4f9145bc6323372f4, type: 2}
+    - target: {fileID: 2544945370040594773, guid: 61a12160c938d8d40ab924e371125c8c, type: 3}
+      propertyPath: _characterEnum
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5131437281447985318, guid: 61a12160c938d8d40ab924e371125c8c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -358,6 +362,10 @@ PrefabInstance:
       propertyPath: _questions
       value: 
       objectReference: {fileID: 11400000, guid: 3e6a46c8840450a4e85fedeb91d0acb1, type: 2}
+    - target: {fileID: 2544945370040594773, guid: 61a12160c938d8d40ab924e371125c8c, type: 3}
+      propertyPath: _characterEnum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5131437281447985318, guid: 61a12160c938d8d40ab924e371125c8c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

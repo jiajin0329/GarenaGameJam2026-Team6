@@ -32,6 +32,11 @@ namespace GarenaGameJam2026Team6
         [field: Space(10)]
 
         [field: SerializeField]
+        private DanmakuManager _danmakuManager
+        ;
+        [field: Space(10)]
+
+        [field: SerializeField]
         public End end { get; private set; }
 
         private bool _isEnable = false;
@@ -49,6 +54,8 @@ namespace GarenaGameJam2026Team6
             affinityManager.Initialize(_config);
 
             _timer.Initialize(_config, end);
+
+            Instantiate(_danmakuManager);
 
             end.Initialize(affinityManager);
 
