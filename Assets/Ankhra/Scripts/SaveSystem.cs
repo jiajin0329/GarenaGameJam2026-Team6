@@ -14,17 +14,10 @@ public class SaveSystem : MonoBehaviour
     {
         Debug.Log("¦Û°Ê¸ü¤J");
         LoadSF();
+
+        SFShowCase = SaveFile_instance;
     }
 
-    private void Update()
-    {
-        if (SFSync)
-        {
-            SFShowCase = SaveFile_instance;
-
-        }
-        SaveSF();
-    }
     static public void SaveSF()
     {
         string fullPath = Application.persistentDataPath + saveFilePath;
