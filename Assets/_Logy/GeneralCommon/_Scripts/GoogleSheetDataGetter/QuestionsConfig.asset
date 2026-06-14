@@ -51,36 +51,36 @@ MonoBehaviour:
     _rightAnswer: "\u6253\u96FB\u52D5"
   - _characterName: CharacterB
     _characterQuestionType: _characterName
-    _characterQuestionContext: "\u6211\u7684\u540D\u5B57"
-    _rightAnswer: Test
+    _characterQuestionContext: "\u9806\u4FBF\u5E6B\u6211\u9EDE\u540D\u4E00\u4E0B\uFF0C\u4F60\u8A72\u4E0D\u6703\u5FD8\u8A18\u6211\u672C\u540D\u4E86\u5427?"
+    _rightAnswer: "\u9577\u984F\u7D62\u9999"
   - _characterName: CharacterB
     _characterQuestionType: _characterNickName
-    _characterQuestionContext: "\u6211\u7684\u66B1\u7A31"
-    _rightAnswer: Test
+    _characterQuestionContext: "\u53EA\u6709\u4F60\u53EF\u4EE5\u9019\u6A23\u53EB\u6211\u5594!"
+    _rightAnswer: NOA
   - _characterName: CharacterB
     _characterQuestionType: _birthday
-    _characterQuestionContext: "\u5BF6\u8C9D\u6211\u5011\u5E7E\u865F\u904E\u751F\u65E5"
-    _rightAnswer: Test
+    _characterQuestionContext: "(\u3003\u2200\u3003)\u5BF6\u8C9D\u6211\u5011\u5E7E\u865F\u904E\u751F\u65E5\u554A?"
+    _rightAnswer: 7/29
   - _characterName: CharacterB
     _characterQuestionType: _starSign
-    _characterQuestionContext: "\u6211\u7684\u661F\u5EA7"
-    _rightAnswer: Test
+    _characterQuestionContext: "\u4F60\u662F\u4E0D\u662F\u5FD8\u8A18\u6211\u7684\u661F\u5EA7\u4E86!"
+    _rightAnswer: "\u7345\u5B50\u5EA7"
   - _characterName: CharacterB
     _characterQuestionType: _likeFood
-    _characterQuestionContext: "\u559C\u6B61\u7684\u98DF\u7269"
-    _rightAnswer: Test
+    _characterQuestionContext: "\u4F60\u89BA\u5F97\u86CB\u7CD5\u8981\u9078\u751A\u9EBC\u53E3\u5473\u5440~"
+    _rightAnswer: "\u8292\u679C"
   - _characterName: CharacterB
     _characterQuestionType: _hateFood
-    _characterQuestionContext: "\u8A0E\u53AD\u7684\u98DF\u7269"
-    _rightAnswer: Test
+    _characterQuestionContext: "\u4ECA\u5929\u805A\u9910\u5168\u90FD\u662F\u6211\u4E0D\u559C\u6B61\u5403\u7684\u90A3\u500B!"
+    _rightAnswer: "\u6D77\u9BAE"
   - _characterName: CharacterB
     _characterQuestionType: _hobby1
-    _characterQuestionContext: "\u8208\u8DA31"
-    _rightAnswer: Test
+    _characterQuestionContext: "\u5B89\u5B89\u525B\u5F9E\u5916\u9762\u56DE\u4F86\uFF0C\u4F60\u731C\u6211\u525B\u5728\u5E79\u561B?"
+    _rightAnswer: "\u6162\u8DD1"
   - _characterName: CharacterB
     _characterQuestionType: _hobby2
-    _characterQuestionContext: "\u8208\u8DA32"
-    _rightAnswer: Test
+    _characterQuestionContext: "\u665A\u4E0A\u8981\u4E0D\u8981\u4F86\u6211\u5BB6\u4E00\u8D77..."
+    _rightAnswer: " \u716E\u98EF"
   - _characterName: CharacterC
     _characterQuestionType: _characterName
     _characterQuestionContext: "\u79D8\uFF01\u53EA\u6709\u5C3C\u77E5\u9053\u7684\u6211\u7684\u771F\u540D\uFF01\u558A\u51FA\u4F86\u5427\uFF01"

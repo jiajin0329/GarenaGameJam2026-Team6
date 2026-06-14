@@ -50,7 +50,7 @@ public class ChatacterShowLogic : MonoBehaviour
     }
     public void SetCharacterByValue(int characterIndex, bool isRev = false)
     {
-                if (characterIndex == 0)
+        if (characterIndex == 0)
         {
             //characterShowImage.sprite = ChacterA_Sprite;
             SetNewCharacter(ChacterA_Sprite, isRev);
@@ -95,20 +95,20 @@ public class ChatacterShowLogic : MonoBehaviour
 
     public void LoadCharacterInfomation(int characterIndedx)
     {
-        SaveSystem.LoadSF();
         if (characterIndedx == 0)
         {
             LoadCharacterInformationA();
-        }else
+        }
+        else
         if (characterIndedx == 1)
         {
             LoadCharacterInformationB();
-        }else
+        }
+        else
         if (characterIndedx == 2)
         {
             LoadCharacterInformationC();
         }
-
     }
 
     #region AISHIT
@@ -216,5 +216,5 @@ public class ChatacterShowLogic : MonoBehaviour
             ? "愛好：" + CharacterData_C._hobby2
             : "愛好：???";
     }
-#endregion
+    #endregion
 }
