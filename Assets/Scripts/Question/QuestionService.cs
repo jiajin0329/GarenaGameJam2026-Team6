@@ -61,7 +61,7 @@ namespace GarenaGameJam2026Team6
 
             // 左右隨機
             if (_selectionIndex == 0)
-                _view.AskQuestion(_question.characterQuestionContext, _characterIndex, _question.rightAnswer, _wrongAnswer, _correctAction, _correctAction);
+                _view.AskQuestion(_question.characterQuestionContext, _characterIndex, _question.rightAnswer, _wrongAnswer, _correctAction, _wrongAction);
             else
                 _view.AskQuestion(_question.characterQuestionContext, _characterIndex, _wrongAnswer, _question.rightAnswer, _wrongAction, _correctAction);
         }

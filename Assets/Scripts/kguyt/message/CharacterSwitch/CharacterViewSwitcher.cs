@@ -115,18 +115,18 @@ public class CharacterViewSwitcher : MonoBehaviour
     public void PlayDialogue(string text, int characterIndex,
                              string optionAText = null, string optionBText = null)
     {
-        if (isSwitching)
-        {
-            Debug.Log("[Switcher] 正在切換中，請稍後...");
-            return;
-        }
-
         draggableOptionA1.oneTimeAnswerEvnet = null;
         draggableOptionB1.oneTimeAnswerEvnet = null;
         draggableOptionA2.oneTimeAnswerEvnet = null;
         draggableOptionB2.oneTimeAnswerEvnet = null;
         draggableOptionA3.oneTimeAnswerEvnet = null;
         draggableOptionB3.oneTimeAnswerEvnet = null;
+
+        if (isSwitching)
+        {
+            Debug.Log("[Switcher] 正在切換中，請稍後...");
+            return;
+        }
 
         StartCoroutine(SwitchAndPlay(text, characterIndex, optionAText, optionBText));
     }
@@ -156,14 +156,16 @@ public class CharacterViewSwitcher : MonoBehaviour
         yield return StartCoroutine(SwitchCoroutine(index));
 
         // 滑動完成後，要求目標 Controller 播放對話
-        if(index == 0)
+        if (index == 0)
         {
             SFXPlayer.instance.PlayOneShot(AudioName.diaOutA);
-        }else
+        }
+        else
         if (index == 1)
         {
             SFXPlayer.instance.PlayOneShot(AudioName.diaOutB);
-        }else
+        }
+        else
         if (index == 2)
         {
             SFXPlayer.instance.PlayOneShot(AudioName.diaOutC);
