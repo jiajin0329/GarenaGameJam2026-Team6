@@ -125,6 +125,9 @@ MonoBehaviour:
   - {fileID: 95351716758570024, guid: 8a74a639196efa94f882134d454892a9, type: 3}
   - {fileID: 95351716758570024, guid: ac250bc2ca8428443b06e6b7d1771aad, type: 3}
   - {fileID: 95351716758570024, guid: 68bcef8a7cd71144b90fa0db814f84cd, type: 3}
+  - {fileID: 95351716758570024, guid: 45c46161b7b2d784296137761ed643a2, type: 3}
+  - {fileID: 95351716758570024, guid: ae963ea97c971c34bbb21542f9eff006, type: 3}
+  - {fileID: 95351716758570024, guid: 4f9f3edf772c42949bd26bb10a28eef3, type: 3}
   spawnArea_DL: {fileID: 6116479065024787930}
   spawnArea_TR: {fileID: 7887267860558960773}
   danmakuRandomCD_Min: 0.8
