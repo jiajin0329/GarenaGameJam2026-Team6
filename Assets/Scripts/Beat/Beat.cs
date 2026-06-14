@@ -12,6 +12,9 @@ namespace GarenaGameJam2026Team6
         [SerializeField]
         private BeatView _view;
 
+        [SerializeField]
+        private PumpingCircle _pumpingCircle;
+
         private BeatService _service;
 
         private Action _onBeatEvent;
@@ -27,6 +30,7 @@ namespace GarenaGameJam2026Team6
             _model = new(_levelConfig);
             _service = new BeatService(_model);
             _view.Initialize(_levelConfig);
+            _pumpingCircle = GameObject.Instantiate(_pumpingCircle);
         }
 
         public void Tick(float _deltaTime)
@@ -41,13 +45,17 @@ namespace GarenaGameJam2026Team6
             _view.TickRemainingBeatSlider(_model);
 
             if (_model.beatCount != _model.oneTimeBeatAmount)
+            {
+                _pumpingCircle.CallPump();
                 _onBeatEvent?.Invoke();
+            }
 
             if (_service.CanOneTimeBeat())
             {
                 _view.OneTimeBeat(_model);
                 _onOneTimeBeatEvent?.Invoke();
                 _model.ResetBeatCount();
+                _pumpingCircle.CallPump_Big();
                 Debug.Log(nameof(_service.CanOneTimeBeat));
             }
         }

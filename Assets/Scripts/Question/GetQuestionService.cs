@@ -24,16 +24,6 @@ namespace GarenaGameJam2026Team6
             {
                 _questionsList.Add(_config.questionsConfigA.dataArray[i]);
             }
-
-            for (i = 0; i < _config.questionsConfigB.dataArray.Length; i++)
-            {
-                _questionsList.Add(_config.questionsConfigB.dataArray[i]);
-            }
-
-            for (i = 0; i < _config.questionsConfigC.dataArray.Length; i++)
-            {
-                _questionsList.Add(_config.questionsConfigC.dataArray[i]);
-            }
         }
 
         public Questions GetQuestion()
