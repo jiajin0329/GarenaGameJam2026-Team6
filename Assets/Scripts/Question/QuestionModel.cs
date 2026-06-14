@@ -61,7 +61,7 @@ namespace GarenaGameJam2026Team6
 
         public void Reset()
         {
-            timer = 0f;
+            timer = questionInterval;
             questionCount = _levelConfig.questionCount;
             isLastQuestionNoAnser = false;
         }
