@@ -25,9 +25,8 @@ namespace GarenaGameJam2026Team6
     
         void loadScene()
         {
-
             SceneManager.LoadScene("Game");
-            SFXPlayer.instance.Play(AudioName.Game);
+            SFXPlayer.instance.Play(AudioName.Game, _isLoop: true);
         }
     }
 
