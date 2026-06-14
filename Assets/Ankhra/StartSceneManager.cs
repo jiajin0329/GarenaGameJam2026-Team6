@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.UIElements.Experimental;
+using Logy.UnityCommonV01;
 
 public class StartSceneManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class StartSceneManager : MonoBehaviour
         currentTutorialIndex = 0;
         tutorialFlag = true;
         TutorialImage[0].SetActive(true);
+        SFXPlayer.instance.PlayOneShot(AudioName.loadTeach);
+
     }
 
     public void ReadNextTutorial()
@@ -39,6 +42,7 @@ public class StartSceneManager : MonoBehaviour
         {
             currentTutorialIndex++;
             ReadTutorial(currentTutorialIndex);
+            SFXPlayer.instance.PlayOneShot(AudioName.poba);
         }
     }
     public void ReadLastTutorial()
@@ -47,6 +51,7 @@ public class StartSceneManager : MonoBehaviour
         {
             currentTutorialIndex--;
             ReadTutorial(currentTutorialIndex);
+            SFXPlayer.instance.PlayOneShot(AudioName.poba);
         }
     }
 
@@ -93,6 +98,7 @@ public class StartSceneManager : MonoBehaviour
         {
             //Load next page
             StoryGameObject[currentIndex].SetActive(true);
+            SFXPlayer.instance.PlayOneShot(AudioName.mangaClick);
             ScrollToBottomSmooth();
         }
     }
