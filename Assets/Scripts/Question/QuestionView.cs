@@ -6,11 +6,12 @@ namespace GarenaGameJam2026Team6
     [Serializable]
     public class QuestionView
     {
-        // // [SerializeField]
-        // private RectTransform _canvasRectTransform;
 
         [SerializeField]
         private CharacterViewSwitcher _characterViewSwitcher;
+
+        [SerializeField]
+        private MaskFlashController _maskFlashController;
 
         public void Initialize()
         {
@@ -36,6 +37,16 @@ namespace GarenaGameJam2026Team6
                     _characterViewSwitcher.AddOneTimeAnswerB3Listener(_onAnswerB);
                     break;
             }
+        }
+
+        public void AnswerCorrect()
+        {
+            _maskFlashController.PlayCorrectFlash();
+        }
+
+        public void AnswerWrong()
+        {
+            _maskFlashController.PlayWrongFlash();
         }
     }
 }

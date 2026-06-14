@@ -9,17 +9,27 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public LevelConfig _config { get; private set; }
 
+        [field: Space(10)]
+
         [field: SerializeField]
         public Beat beat { get; private set; }
+
+        [field: Space(10)]
 
         [field: SerializeField]
         public Question question { get; private set; }
 
+        [field: Space(10)]
+
         [field: SerializeField]
-        public Affinity[] affinityArrary { get; private set; }
+        public AffinityManager affinityManager { get; private set; }
+
+        [field: Space(10)]
 
         [field: SerializeField]
         public Timer _timer { get; private set; }
+
+        [field: Space(10)]
 
         [field: SerializeField]
         public End end { get; private set; }
@@ -33,17 +43,14 @@ namespace GarenaGameJam2026Team6
         {
             beat.Initialize(_config);
 
-            affinityArrary = new Affinity[3];
-            affinityArrary[0] = new(0f, _config.affinityMax);
-            affinityArrary[1] = new(0f, _config.affinityMax);
-            affinityArrary[2] = new(0f, _config.affinityMax);
-
             _destroyCancellationToken = destroyCancellationToken;
-            question.Initialize(_config, affinityArrary, _destroyCancellationToken);
+            question.Initialize(_config, affinityManager, _destroyCancellationToken);
+
+            affinityManager.Initialize(_config);
 
             _timer.Initialize(_config, end);
 
-            end.Initialize(affinityArrary);
+            end.Initialize(affinityManager);
 
             beat.AddBeatListener(question.TryAskQuestion);
             beat.AddOneTimeBeatListener(question.TryAskQuestion);

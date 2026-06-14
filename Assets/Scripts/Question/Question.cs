@@ -42,10 +42,10 @@ namespace GarenaGameJam2026Team6
         public void AddCalculateRemainingTimeListener(Action<float> _listener) => _service.calculateRemainingTimeEvent += _listener;
         public void RemoveCalculateRemainingTimeListener(Action<float> _listener) => _service.calculateRemainingTimeEvent -= _listener;
 
-        public void Initialize(LevelConfig _levelConfig, Affinity[] _affinityArrary, CancellationToken _cancellationToken)
+        public void Initialize(LevelConfig _levelConfig, AffinityManager _affinityManager, CancellationToken _cancellationToken)
         {
             _model = new(_levelConfig);
-            _service = new(_model, _levelConfig, _affinityArrary);
+            _service = new(_model, _levelConfig, _affinityManager);
             this._cancellationToken = _cancellationToken;
 
             _view.Initialize();
@@ -85,6 +85,7 @@ namespace GarenaGameJam2026Team6
             //要在_model.Answer()前執行，因為_model.Answer()會重置timer
             _service.CalculateRemainingTime(_model);
             _model.Answer();
+            _view.AnswerCorrect();
             _answerCorrectEvent?.Invoke();
             Debug.Log(nameof(AnswerCorrect));
 
@@ -102,6 +103,7 @@ namespace GarenaGameJam2026Team6
             //要在_model.Answer()前執行，因為_model.Answer()會重置timer
             _service.CalculateRemainingTime(_model);
             _model.Answer();
+            _view.AnswerWrong();
             _answerWrongEvent?.Invoke();
             Debug.Log(nameof(AnswerWrong));
 

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace GarenaGameJam2026Team6
@@ -26,10 +27,11 @@ namespace GarenaGameJam2026Team6
         public void AddNextDayListener(Action _listener) => _nextDayEvent += _listener;
         public void RemoveNextDayListener(Action _listener) => _nextDayEvent -= _listener;
 
-        public void Initialize(Affinity[] _affinityArrary)
+        public void Initialize(AffinityManager _affinityManager)
         {
             model = new();
-            _service = new(model, _affinityArrary);
+            _view.Initialize(_affinityManager.affinityArrary);
+            _service = new(model, _affinityManager.affinityArrary);
 
             _nextDayButton.onClick.AddListener(NextDay);
             _endButton.onClick.AddListener(EndJudge);
@@ -56,6 +58,7 @@ namespace GarenaGameJam2026Team6
                 _canvasGroup.gameObject.SetActive(true);
                 _nextDayButton.gameObject.SetActive(false);
                 _endButton.gameObject.SetActive(true);
+                _view.UpdateAffinity().Forget();
                 return;
             }
             else
@@ -63,6 +66,7 @@ namespace GarenaGameJam2026Team6
                 _canvasGroup.gameObject.SetActive(true);
                 _nextDayButton.gameObject.SetActive(true);
                 _endButton.gameObject.SetActive(false);
+                _view.UpdateAffinity().Forget();
             }
         }
 
@@ -70,27 +74,34 @@ namespace GarenaGameJam2026Team6
         {
             if (_service.CanAllCharacterEnd())
             {
-                Debug.Log("End");
+                LoadEndCG.endType = LoadEndCG.EndType.AllCharacterEnd;
+                Debug.Log("All Character End");
             }
 
             else if (_service.CanCharacterAEnd())
             {
+                LoadEndCG.endType = LoadEndCG.EndType.CharacterAEnd;
                 Debug.Log("Character A End");
             }
 
             else if (_service.CanCharacterBEnd())
             {
+                LoadEndCG.endType = LoadEndCG.EndType.CharacterBEnd;
                 Debug.Log("Character B End");
             }
 
             else if (_service.CanCharacterCEnd())
             {
+                LoadEndCG.endType = LoadEndCG.EndType.CharacterCEnd;
                 Debug.Log("Character C End");
             }
             else
             {
+                LoadEndCG.endType = LoadEndCG.EndType.BadEnd;
                 Debug.Log("Bad End");
             }
+
+            SceneManager.LoadScene("EndScene");
         }
     }
 }
