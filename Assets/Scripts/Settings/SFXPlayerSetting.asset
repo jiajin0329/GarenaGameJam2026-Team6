@@ -48,7 +48,7 @@ MonoBehaviour:
     - <isEnable>k__BackingField: 1
       <preload>k__BackingField: 0
       <audioClip>k__BackingField: {fileID: 8300000, guid: 7a94b9c2fb1594042ac779f188c11059, type: 3}
-      <volume>k__BackingField: 0.2
+      <volume>k__BackingField: 0.8
   - <isEnable>k__BackingField: 1
     <name>k__BackingField: 5
     <audioClipDatas>k__BackingField:
@@ -146,7 +146,7 @@ MonoBehaviour:
     - <isEnable>k__BackingField: 1
       <preload>k__BackingField: 0
       <audioClip>k__BackingField: {fileID: 8300000, guid: 57109ed9aea52ef42a65fd3a7fa9ee34, type: 3}
-      <volume>k__BackingField: 0.2
+      <volume>k__BackingField: 0.8
   - <isEnable>k__BackingField: 1
     <name>k__BackingField: 19
     <audioClipDatas>k__BackingField:

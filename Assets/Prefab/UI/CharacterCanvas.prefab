@@ -146,6 +146,8 @@ GameObject:
   - component: {fileID: 5972846274250648309}
   - component: {fileID: 1412904014168863911}
   - component: {fileID: 5074948088443187807}
+  - component: {fileID: 5888194967866950257}
+  - component: {fileID: 5520135292080476034}
   m_Layer: 5
   m_Name: CharacterImage
   m_TagString: Untagged
@@ -210,6 +212,48 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5888194967866950257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655349578937784881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351b21759180d744297773ee8b20dad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterAnimController
+  characterImage: {fileID: 5074948088443187807}
+  bounceHeight: 30
+  bounceUpDuration: 0.15
+  bounceDownDuration: 0.2
+  bounceTimes: 2
+  shakeDistance: 23.51
+  shakeDuration: 1.47
+  shakeTimes: 4
+--- !u!114 &5520135292080476034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655349578937784881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d2e8225f9662c40b87589924aeb2b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterJellyEffect
+  pressDownY: -20
+  pressDownDuration: 0.1
+  pressSquash: {x: 1.1, y: 0.88, z: 1}
+  bounceUpY: 10
+  bounceUpDuration: 0.15
+  settleDuration: 0.12
+  swingAngle: 8
+  swingDuration: 0.12
+  swingCount: 6
+  damping: 0.65
 --- !u!1 &4558925756016124561
 GameObject:
   m_ObjectHideFlags: 0

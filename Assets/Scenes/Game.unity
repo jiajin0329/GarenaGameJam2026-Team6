@@ -828,6 +828,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &656923991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2655349578937784881, guid: 773e2932fbb91ad4e89bb939c95f2539, type: 3}
+  m_PrefabInstance: {fileID: 8188427356177983703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &656923994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5074948088443187807, guid: 773e2932fbb91ad4e89bb939c95f2539, type: 3}
+  m_PrefabInstance: {fileID: 8188427356177983703}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656923991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &656923995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656923991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351b21759180d744297773ee8b20dad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterAnimController
+  characterImage: {fileID: 656923994}
+  bounceHeight: 30
+  bounceUpDuration: 0.15
+  bounceDownDuration: 0.2
+  bounceTimes: 2
+  shakeDistance: 23.51
+  shakeDuration: 1.47
+  shakeTimes: 4
+--- !u!114 &656923996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656923991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d2e8225f9662c40b87589924aeb2b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterJellyEffect
+  pressDownY: -20
+  pressDownDuration: 0.1
+  pressSquash: {x: 1.1, y: 0.88, z: 1}
+  bounceUpY: 10
+  bounceUpDuration: 0.15
+  settleDuration: 0.12
+  swingAngle: 8
+  swingDuration: 0.12
+  swingCount: 6
+  damping: 0.65
 --- !u!1 &695505361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1479,8 @@ MonoBehaviour:
   optionFlashDuration: 0.3
   optionFlashHold: 0.2
   optionFlashBackDuration: 0.3
+  characterAnim: {fileID: 656923995}
+  characterJelly: {fileID: 656923996}
 --- !u!114 &1253723451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2492,7 +2552,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2655349578937784881, guid: 773e2932fbb91ad4e89bb939c95f2539, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 656923995}
+    - targetCorrespondingSourceObject: {fileID: 2655349578937784881, guid: 773e2932fbb91ad4e89bb939c95f2539, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 656923996}
   m_SourcePrefab: {fileID: 100100000, guid: 773e2932fbb91ad4e89bb939c95f2539, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
