@@ -30,6 +30,9 @@ public class MaskFlashController : MonoBehaviour
     [SerializeField] private float optionFlashHold = 0.2f;     // 選項變色後停留時間
     [SerializeField] private float optionFlashBackDuration = 0.3f; // 選項變回原色時長
 
+
+    [Header("立繪動畫")]
+    [SerializeField] private CharacterAnimController characterAnim; 
     // 由外部（DialogueChoiceController）在 ResolveChoice 時設定
     private Image optionAImage;
     private Image optionBImage;
@@ -55,14 +58,16 @@ public class MaskFlashController : MonoBehaviour
     {
         if (activeRoutine != null) StopCoroutine(activeRoutine);
         SFXPlayer.instance.PlayOneShot(AudioName.badFeedback);
+        characterAnim?.PlayWrongAnim();   // ← 新增
         activeRoutine = StartCoroutine(FlashRoutine(wrongColor));
     }
 
-    /// <summary>答對時呼叫：遮罩變綠後淡出，已設定的選項圖片短暫變綠</summary>
+    // PlayCorrectFlash() 裡加一行
     public void PlayCorrectFlash()
     {
         if (activeRoutine != null) StopCoroutine(activeRoutine);
         SFXPlayer.instance.PlayOneShot(AudioName.goodFeedback);
+        characterAnim?.PlayCorrectAnim(); // ← 新增
         activeRoutine = StartCoroutine(FlashRoutine(correctColor));
     }
 

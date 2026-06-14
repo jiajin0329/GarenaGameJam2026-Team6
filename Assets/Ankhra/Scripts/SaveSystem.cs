@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using Logy.UnityCommonV01;
 public class SaveSystem : MonoBehaviour
 {
     static public SaveFile SaveFile_instance;
@@ -41,6 +42,8 @@ public class SaveSystem : MonoBehaviour
     static public void ResetSF()
     {
         string fullPath = Application.persistentDataPath + saveFilePath;
+        SFXPlayer.instance.PlayOneShot(AudioName.poba);
+
 
         SaveFile sSF = new SaveFile();
         File.WriteAllText(fullPath, JsonUtility.ToJson(sSF));

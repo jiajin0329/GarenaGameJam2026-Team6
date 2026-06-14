@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Logy.UnityCommonV01;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -41,18 +42,23 @@ namespace GarenaGameJam2026Team6
             {
                 case EndType.AllCharacterEnd:
                     _image.sprite = _endCgConfig.allCharacterEndCg;
+                    SFXPlayer.instance.Play(AudioName.NormalEnd);
                     break;
                 case EndType.CharacterAEnd:
                     _image.sprite = _endCgConfig.characterAEndCg;
+                    SFXPlayer.instance.Play(AudioName.NormalEnd);
                     break;
                 case EndType.CharacterBEnd:
                     _image.sprite = _endCgConfig.characterBEndCg;
+                    SFXPlayer.instance.Play(AudioName.NormalEnd);
                     break;
                 case EndType.CharacterCEnd:
                     _image.sprite = _endCgConfig.characterCEndCg;
+                    SFXPlayer.instance.Play(AudioName.NormalEnd);
                     break;
                 case EndType.BadEnd:
                     _image.sprite = _endCgConfig.badEndCg;
+                    SFXPlayer.instance.Play(AudioName.Lost);
                     break;
             }
 
@@ -77,7 +83,10 @@ namespace GarenaGameJam2026Team6
             if (!_canReturnTitle)
                 return;
 
+            SFXPlayer.instance.PlayOneShot(AudioName.menuClick);
             SceneManager.LoadScene("StartScene");
         }
+
+       
     }
 }
