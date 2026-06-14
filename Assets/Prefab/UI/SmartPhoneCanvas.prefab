@@ -1440,6 +1440,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4293570923398327338, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: cc460e5b1c6c0bd498b44195a0c3da99, type: 2}
+    - target: {fileID: 4293570923398327338, guid: 40ab5cd6f06d48d42aa53f727196121e, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 3
       objectReference: {fileID: 0}

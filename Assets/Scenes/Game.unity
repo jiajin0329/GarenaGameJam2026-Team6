@@ -3941,54 +3941,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1251065370005069636, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltAngle
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1251065370005069636, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1251065370005069636, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1251065370005069636, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1251065370005069636, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropBounceDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1251065370005069636, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropImpactDistance
-      value: 26.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 1669732816694433261, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltAngle
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1669732816694433261, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1669732816694433261, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1669732816694433261, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1669732816694433261, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropBounceDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1669732816694433261, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropImpactDistance
-      value: 26.49
-      objectReference: {fileID: 0}
     - target: {fileID: 2851815477522367773, guid: 794089302f2376345bdb11d067d97043, type: 3}
       propertyPath: m_Name
       value: SmartPhoneCanvas
@@ -4073,53 +4025,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5519479552483672602, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltAngle
-      value: 12
+    - target: {fileID: 5140693723973622731, guid: 794089302f2376345bdb11d067d97043, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7
       objectReference: {fileID: 0}
-    - target: {fileID: 5519479552483672602, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5519479552483672602, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5519479552483672602, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5519479552483672602, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropBounceDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5519479552483672602, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropImpactDistance
-      value: 26.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000293565239250061, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltAngle
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000293565239250061, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000293565239250061, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000293565239250061, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000293565239250061, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropBounceDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000293565239250061, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropImpactDistance
-      value: 26.49
+    - target: {fileID: 5827071231188743806, guid: 794089302f2376345bdb11d067d97043, type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6026883820059900887, guid: 794089302f2376345bdb11d067d97043, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4133,62 +4045,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 8074926496760402860, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 8514907254735836213, guid: 794089302f2376345bdb11d067d97043, type: 3}
       propertyPath: CharacterShowLogic
       value: 
       objectReference: {fileID: 1549407127}
-    - target: {fileID: 8582941677926236597, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltAngle
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582941677926236597, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582941677926236597, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582941677926236597, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582941677926236597, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropBounceDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582941677926236597, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropImpactDistance
-      value: 26.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882978174246000491, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltAngle
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882978174246000491, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dragTiltSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882978174246000491, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882978174246000491, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropSquashScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882978174246000491, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropBounceDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882978174246000491, guid: 794089302f2376345bdb11d067d97043, type: 3}
-      propertyPath: dropImpactDistance
-      value: 26.49
-      objectReference: {fileID: 0}
     - target: {fileID: 9214686715273319315, guid: 794089302f2376345bdb11d067d97043, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
