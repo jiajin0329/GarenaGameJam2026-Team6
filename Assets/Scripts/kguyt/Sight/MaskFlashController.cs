@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Logy.UnityCommonV01;
 
 /// <summary>
 /// 視覺遮罩閃爍控制器。
@@ -53,6 +54,7 @@ public class MaskFlashController : MonoBehaviour
     public void PlayWrongFlash()
     {
         if (activeRoutine != null) StopCoroutine(activeRoutine);
+        SFXPlayer.instance.PlayOneShot(AudioName.badFeedback);
         activeRoutine = StartCoroutine(FlashRoutine(wrongColor));
     }
 
@@ -60,6 +62,7 @@ public class MaskFlashController : MonoBehaviour
     public void PlayCorrectFlash()
     {
         if (activeRoutine != null) StopCoroutine(activeRoutine);
+        SFXPlayer.instance.PlayOneShot(AudioName.goodFeedback);
         activeRoutine = StartCoroutine(FlashRoutine(correctColor));
     }
 

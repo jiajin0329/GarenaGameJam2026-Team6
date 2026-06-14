@@ -77,7 +77,7 @@ namespace GarenaGameJam2026Team6
             if (!_canReturnTitle)
                 return;
 
-            SceneManager.LoadScene("TitleScene");
+            SceneManager.LoadScene("StartScene");
         }
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.Events;
 using System;
+using Logy.UnityCommonV01;
 
 /// <summary>
 /// 管理 AllScreen 的滑動切換，以及向各 DialogueChoiceController 發送對話指令。
@@ -155,6 +156,18 @@ public class CharacterViewSwitcher : MonoBehaviour
         yield return StartCoroutine(SwitchCoroutine(index));
 
         // 滑動完成後，要求目標 Controller 播放對話
+        if(index == 0)
+        {
+            SFXPlayer.instance.PlayOneShot(AudioName.diaOutA);
+        }else
+        if (index == 1)
+        {
+            SFXPlayer.instance.PlayOneShot(AudioName.diaOutB);
+        }else
+        if (index == 2)
+        {
+            SFXPlayer.instance.PlayOneShot(AudioName.diaOutC);
+        }
         currentController?.PlayDialogue(text, optionAText, optionBText);
     }
 

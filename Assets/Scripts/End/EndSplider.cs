@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Logy.UnityCommonV01;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,6 +40,15 @@ namespace GarenaGameJam2026Team6
         {
             transform.DOScale(1.2f, 0.25f).SetEase(Ease.Linear);
 
+            if(_currentAffinity > _newAffinity)
+            {
+                SFXPlayer.instance.PlayOneShot(AudioName.resultScoreDown);
+            }
+            else
+            {
+                SFXPlayer.instance.PlayOneShot(AudioName.resultScoreUp);
+
+            }
             while (_currentAffinity < _newAffinity)
             {
                 _currentAffinity += Time.deltaTime * 2f;
@@ -46,6 +56,7 @@ namespace GarenaGameJam2026Team6
                 _valueText.text = _currentAffinity.ToString("F2");
                 await UniTask.Yield();
             }
+
 
             transform.DOScale(1f, 0.25f).SetEase(Ease.Linear);
 
