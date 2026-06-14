@@ -129,7 +129,28 @@ namespace Logy.UnityCommonV01
         /// <summary>
         /// 
         /// </summary>
-        resultScoreDown
+        resultScoreDown,
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Menu,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Game,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        NormalEnd,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Lost
 
 
     }

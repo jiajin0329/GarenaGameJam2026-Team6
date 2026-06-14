@@ -14,6 +14,7 @@ namespace GarenaGameJam2026Team6
         private void Start()
         {
             _startButton.onClick.AddListener(LoadGameScene);
+            SFXPlayer.instance.Play(AudioName.Menu);
         }
 
         private void LoadGameScene()
@@ -26,6 +27,7 @@ namespace GarenaGameJam2026Team6
         {
 
             SceneManager.LoadScene("Game");
+            SFXPlayer.instance.Play(AudioName.Game);
         }
     }
 
