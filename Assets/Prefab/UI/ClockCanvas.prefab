@@ -104,7 +104,7 @@ RectTransform:
   m_GameObject: {fileID: 569330675990200867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.7980084, y: 3.7980084, z: 3.7980084}
+  m_LocalScale: {x: 4.738015, y: 4.738015, z: 4.738015}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6815437367520294523}
@@ -112,7 +112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 676, y: 50}
+  m_AnchoredPosition: {x: 625, y: -229}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &615295742408381215
@@ -207,7 +207,7 @@ RectTransform:
   m_GameObject: {fileID: 2728960677337833656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5578645, y: 1.5578645, z: 1.5578645}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4342098672916280601}
@@ -215,7 +215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 831, y: 302}
+  m_AnchoredPosition: {x: 795, y: 144.00002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1236920129029091376
@@ -466,14 +466,14 @@ RectTransform:
   m_GameObject: {fileID: 4462778542671685391}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.8816662, y: 3.8816662, z: 3.8816662}
+  m_LocalScale: {x: 4.842378, y: 4.842378, z: 4.842378}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 436620451311892664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 675.99976, y: 64.1}
+  m_AnchoredPosition: {x: 624.99976, y: -214.90001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3097267659755862217
@@ -541,7 +541,7 @@ RectTransform:
   m_GameObject: {fileID: 5825709189012239409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5578645, y: 1.5578645, z: 1.5578645}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4005851497228183975}
@@ -549,7 +549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 541, y: 302}
+  m_AnchoredPosition: {x: 456, y: 144}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4239556786373507384
@@ -617,7 +617,7 @@ RectTransform:
   m_GameObject: {fileID: 7753821421297743709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5578645, y: 1.5578645, z: 1.5578645}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8336576493179027516}
@@ -625,7 +625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 688, y: 302}
+  m_AnchoredPosition: {x: 623, y: 144.00002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2122943233261901747
@@ -843,14 +843,14 @@ RectTransform:
   m_GameObject: {fileID: 8522918769090840711}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.7680852, y: 3.7680852, z: 3.7680855}
+  m_LocalScale: {x: 4.700686, y: 4.700686, z: 4.7006865}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 436620451311892664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 675.99976, y: 49.999916}
+  m_AnchoredPosition: {x: 624.99976, y: -229.00009}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7378406280496504400
