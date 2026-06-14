@@ -18,6 +18,8 @@ namespace GarenaGameJam2026Team6
         [field: SerializeField]
         public bool isLastQuestionNoAnser { get; private set; }
 
+        public bool isWillNextQuestion { get; private set; }
+
         private LevelConfig _levelConfig;
 
         public QuestionModel(LevelConfig _levelConfig)
@@ -33,15 +35,16 @@ namespace GarenaGameJam2026Team6
             timer += _deltaTime;
         }
 
-        public void ClearTimer()
-        {
-            timer -= questionInterval;
-        }
-
         public void AskQuestion()
         {
             questionCount--;
+            ClearTimer();
             isLastQuestionNoAnser = true;
+        }
+
+        private void ClearTimer()
+        {
+            timer = 0f;
         }
 
         public void Answer()
@@ -49,9 +52,15 @@ namespace GarenaGameJam2026Team6
             isLastQuestionNoAnser = false;
         }
 
+        public void WillNextQuestion()
+        {
+            isWillNextQuestion = true;
+        }
+
         public void NextQuestion()
         {
             timer = questionInterval;
+            isWillNextQuestion = false;
         }
 
         public void LastQuestionNoAnswer()
@@ -61,7 +70,6 @@ namespace GarenaGameJam2026Team6
 
         public void Reset()
         {
-            timer = questionInterval;
             questionCount = _levelConfig.questionCount;
             isLastQuestionNoAnser = false;
         }

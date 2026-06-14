@@ -11,7 +11,7 @@ namespace GarenaGameJam2026Team6
     public class EndSplider : MonoBehaviour
     {
         [SerializeField]
-        private CharacterEnum _characterEnum;
+        private SO_CharacterData _characterData;
 
         [SerializeField]
         private Slider _affinitySlider;
@@ -29,7 +29,7 @@ namespace GarenaGameJam2026Team6
 
         public void Initialize()
         {
-            _nameText.text = _characterEnum.ToString();
+            _nameText.text = _characterData._characterName;
             _affinitySlider.value = 0;
             _affinitySlider.maxValue = _levelConfig.affinityMax;
             _valueText.text = "0";

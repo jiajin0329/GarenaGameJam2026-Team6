@@ -389,6 +389,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
+      propertyPath: <question>k__BackingField._service._chatacterShowLogic
+      value: 
+      objectReference: {fileID: 1549407127}
+    - target: {fileID: 2074598795863680480, guid: 69deffbd27442724f9a6d00964d82ef3, type: 3}
       propertyPath: <question>k__BackingField._view._characterViewSwitcher
       value: 
       objectReference: {fileID: 6028140314242412818}
@@ -763,7 +767,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &153292303
 RectTransform:

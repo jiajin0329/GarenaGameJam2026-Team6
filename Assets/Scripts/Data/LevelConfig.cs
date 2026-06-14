@@ -25,12 +25,6 @@ namespace GarenaGameJam2026Team6
         public GoogleSheetDataGetterQuestions questionsConfigA { get; private set; }
 
         [field: SerializeField]
-        public GoogleSheetDataGetterQuestions questionsConfigB { get; private set; }
-
-        [field: SerializeField]
-        public GoogleSheetDataGetterQuestions questionsConfigC { get; private set; }
-
-        [field: SerializeField]
         public GoogleSheetDataGetterWrongAnswers wrongAnswerConfig { get; private set; }
 
         [field: SerializeField]

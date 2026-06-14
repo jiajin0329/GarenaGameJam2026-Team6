@@ -45,7 +45,7 @@ namespace GarenaGameJam2026Team6
         public void Initialize(LevelConfig _levelConfig, AffinityManager _affinityManager, CancellationToken _cancellationToken)
         {
             _model = new(_levelConfig);
-            _service = new(_model, _levelConfig, _affinityManager);
+            _service.Initialize(_model, _levelConfig, _affinityManager);
             this._cancellationToken = _cancellationToken;
 
             _view.Initialize();
@@ -94,6 +94,7 @@ namespace GarenaGameJam2026Team6
 
         private async UniTaskVoid WaitSomeTimeAndNextQuestion(int _timeMS)
         {
+            _model.WillNextQuestion();
             await UniTask.Delay(_timeMS, cancellationToken: _cancellationToken);
             _model.NextQuestion();
         }
