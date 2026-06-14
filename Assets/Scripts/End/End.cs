@@ -1,3 +1,4 @@
+using Logy.UnityCommonV01;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -42,6 +43,8 @@ namespace GarenaGameJam2026Team6
         {
             _nextDayEvent?.Invoke();
             _canvasGroup.gameObject.SetActive(false);
+            SFXPlayer.instance.PlayOneShot(AudioName.poba);
+
         }
 
         private void HideUI()
@@ -59,6 +62,7 @@ namespace GarenaGameJam2026Team6
                 _nextDayButton.gameObject.SetActive(false);
                 _endButton.gameObject.SetActive(true);
                 _view.UpdateAffinity().Forget();
+                SFXPlayer.instance.PlayOneShot(AudioName.resultOpen);
                 return;
             }
             else

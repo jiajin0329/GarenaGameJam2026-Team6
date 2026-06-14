@@ -28,3 +28,129 @@ MonoBehaviour:
       <preload>k__BackingField: 0
       <audioClip>k__BackingField: {fileID: 8300000, guid: 0851e0d30e2b4824590d6e8e392b6a3f, type: 3}
       <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 2
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 59e0096df61dae94aa0ccb31043e6185, type: 3}
+      <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 3
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: cab20af981a4d774c86782999c3932ef, type: 3}
+      <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 4
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 7a94b9c2fb1594042ac779f188c11059, type: 3}
+      <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 5
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 048ca1e3f10f8574fa0c7b86b013a0ed, type: 3}
+      <volume>k__BackingField: 0.6
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 6
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: a5c09d2f0ee6f2d45a8782e354d5bf1d, type: 3}
+      <volume>k__BackingField: 0.6
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 7
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: bc1e27232b7cc494ca84588155b6da6d, type: 3}
+      <volume>k__BackingField: 0.6
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 8
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: a39dd41824be7c048af0d3731a0169cb, type: 3}
+      <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 9
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 74f6b33b798c1c74b95e894ae195d4b5, type: 3}
+      <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 10
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: d8894c713b9248841aff9564b1bf1ffd, type: 3}
+      <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 11
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 0310ff9336e59da49835ef40700e4414, type: 3}
+      <volume>k__BackingField: 0.6
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 12
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 9e027d81974b4574aa3eb1cbb4456b96, type: 3}
+      <volume>k__BackingField: 0.6
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 13
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 82fd041e8f35de943a03267ddf2c633d, type: 3}
+      <volume>k__BackingField: 0.6
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 14
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 322a009a37dec9846b0c273183000b2e, type: 3}
+      <volume>k__BackingField: 1
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 15
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 43854ec6bfdab804aba41a238596b4b8, type: 3}
+      <volume>k__BackingField: 2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 16
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: c30239384a0f3f746bc032e57acd17ea, type: 3}
+      <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 17
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: d3609a0fa37383449b28990dec7bda04, type: 3}
+      <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 18
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 57109ed9aea52ef42a65fd3a7fa9ee34, type: 3}
+      <volume>k__BackingField: 0.2
+  - <isEnable>k__BackingField: 1
+    <name>k__BackingField: 19
+    <audioClipDatas>k__BackingField:
+    - <isEnable>k__BackingField: 1
+      <preload>k__BackingField: 0
+      <audioClip>k__BackingField: {fileID: 8300000, guid: 8fc707fb0ff8a294db377f8f7d0192a3, type: 3}
+      <volume>k__BackingField: 0.2

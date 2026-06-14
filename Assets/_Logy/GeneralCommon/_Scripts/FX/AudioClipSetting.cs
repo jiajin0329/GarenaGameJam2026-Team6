@@ -59,6 +59,99 @@ namespace Logy.UnityCommonV01
         /// <summary>
         /// 一節拍音效
         /// </summary>
-        oneTimeBeat
+        oneTimeBeat,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        menuClick,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        mangaClick,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        poba,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        loadTeach,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        po,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        catchEf,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        diaOutA,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        diaOutB,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        diaOutC,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        badFeedback,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        goodFeedback,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        resultOpen,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        resultScoreUp,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        resultScoreDown,
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Menu,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Game,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        NormalEnd,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Lost
+
+
     }
 }

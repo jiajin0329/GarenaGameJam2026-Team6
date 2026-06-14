@@ -42,6 +42,11 @@ namespace Logy.UnityCommonV01
         private StringBuilder _key = new();
         private AudioClipData _currentPlayAudioClipData;
 
+        private void Awake()
+        {
+            Initialize();
+        }
+
         public override void Initialize()
         {
             if (instance != null && instance != this)

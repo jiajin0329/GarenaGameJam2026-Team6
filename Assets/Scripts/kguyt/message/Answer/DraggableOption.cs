@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
 using System.Collections;
+using Logy.UnityCommonV01;
 /// <summary>
 /// 掛在 optionA / optionB GameObject 上。
 /// 需要同一 GameObject 上有 CanvasGroup（Inspector 自動抓取）。
@@ -62,6 +63,7 @@ public class DraggableOption : MonoBehaviour,
         startAnchoredPos = rt.anchoredPosition;
 
         // 開始拖曳時，疊加一個隨機方向的傾斜角度，模擬被抓起握歪的感覺
+        SFXPlayer.instance.PlayOneShot(AudioName.catchEf);
         float baseZ = originalLocalRotation.eulerAngles.z;
         if (baseZ > 180f) baseZ -= 360f;
 

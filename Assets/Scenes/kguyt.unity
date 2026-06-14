@@ -2142,7 +2142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChatacterShowLogic
   characterShowImage: {fileID: 243859405}
-  ChacterA_Sprite: {fileID: 21300000, guid: 09135c546c1aeb741940b5f9fbebc9f9, type: 3}
+  ChacterA_Sprite: {fileID: 21300000, guid: 970c3f7180d9d8f41a00805cd573cfe3, type: 3}
   CharacterData_A: {fileID: 11400000, guid: 8eb0616b42db26442a88478bd91bb901, type: 2}
   ChacterB_Sprite: {fileID: 21300000, guid: 967dedcf1be5db44f93752aac2dad673, type: 3}
   CharacterData_B: {fileID: 11400000, guid: f39817af8fcf3e7489d1dfef73096388, type: 2}
