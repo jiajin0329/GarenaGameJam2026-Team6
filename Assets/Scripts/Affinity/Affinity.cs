@@ -7,34 +7,28 @@ namespace GarenaGameJam2026Team6
     public class Affinity
     {
         [field: SerializeField]
-        public float current { get; private set; }
+        public AffinityModel model { get; private set; }
 
-        [NonSerialized]
-        public float max;
+        [field: SerializeField]
+        private AffinityBar _bar;
 
-        public float normalizedCurrent { get; private set; }
-
-        [SerializeField]
-        private AffinityBar _affinityBar;
-
-        private Action<float> setNormalizedCurrentEvent;
-        public void AddSetNormalizedCurrentListener(Action<float> _listener) => setNormalizedCurrentEvent += _listener;
-        public void RemoveSetNormalizedCurrentListener(Action<float> _listener) => setNormalizedCurrentEvent -= _listener;
-
-        public Affinity(float _current, float _max)
+        public Affinity(float _current, float _max, AffinityBar _bar)
         {
-            current = _current;
-            max = _max;
+            model = new AffinityModel(_current, _max);
+            this._bar = _bar;
         }
 
         public void Set(float _set)
         {
-            current = _set;
-            normalizedCurrent = current / max;
-            _affinityBar.SetTarget_AffinityValue(normalizedCurrent);
+            model.Set(_set);
+            _bar.SetAffinity(model.normalizedCurrent);
         }
 
-        public void Change(float _change) => Set(current + _change);
+        public void Change(float _change) => Set(model.current + _change);
+
+        public void ShowUI() => _bar.gameObject.SetActive(true);
+
+        public void HideUI() => _bar.gameObject.SetActive(false);
     }
 }
 
