@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d661e6df161a9b44bd3b0d26a63c99c, type: 3}
   m_Name: EndCgConfig
   m_EditorClassIdentifier: Data::GarenaGameJam2026Team6.EndCgConfig
-  <allCharacterEndCg>k__BackingField: {fileID: 21300000, guid: 0cf7d17fdfac96241aaf3ce8fd71fbe4, type: 3}
+  <allCharacterEndCg>k__BackingField: {fileID: 21300000, guid: f21db24030570464bbd830ccf36efd12, type: 3}
   <characterAEndCg>k__BackingField: {fileID: 2083647627278446427, guid: f121b6968e8ddd546b25720f02c51545, type: 3}
   <characterBEndCg>k__BackingField: {fileID: 21300000, guid: 9c1240ab46842e443b28a1f015b1ceba, type: 3}
   <characterCEndCg>k__BackingField: {fileID: 21300000, guid: 04378d1717a98ca4895f36a8e3891107, type: 3}
