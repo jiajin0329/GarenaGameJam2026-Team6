@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4077294759240624203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7887267860558960773}
+  m_Layer: 0
+  m_Name: SpawnTR
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7887267860558960773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077294759240624203}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.62, y: 4.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7696650385816276455}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4948574399400820661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6116479065024787930}
+  m_Layer: 0
+  m_Name: SpawnDL
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6116479065024787930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4948574399400820661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.41, y: -3.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7696650385816276455}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6667775038507074340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7696650385816276455}
+  - component: {fileID: 6337380594154207403}
+  m_Layer: 0
+  m_Name: DanmakuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7696650385816276455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6667775038507074340}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.82492, y: 0.23047, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6116479065024787930}
+  - {fileID: 7887267860558960773}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6337380594154207403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6667775038507074340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbf6ca88f688054686faea249ec6a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DanmakuManager
+  isSpawningDanmakuFlag: 1
+  Danmakus:
+  - {fileID: 95351716758570024, guid: 4bc3f2ed1d4f3de4897d33df9fb853da, type: 3}
+  - {fileID: 95351716758570024, guid: 0c3e64b2d4ec1f74a9774f14fb73b63e, type: 3}
+  - {fileID: 95351716758570024, guid: 135ec14174485d34980f0e315831e2fe, type: 3}
+  - {fileID: 95351716758570024, guid: ebf26aeca8c33ad40b06244ec8065584, type: 3}
+  - {fileID: 95351716758570024, guid: 7264e913c2a400b4180e3a78d8de8201, type: 3}
+  - {fileID: 95351716758570024, guid: 719197405668034419b014dd997c761b, type: 3}
+  - {fileID: 95351716758570024, guid: c179e353b3f219544a0a18df24be67a4, type: 3}
+  - {fileID: 95351716758570024, guid: f4808d2812e670c42a5405d2cd7b3b58, type: 3}
+  - {fileID: 95351716758570024, guid: 83dccf75a8bc0b94081ba06ed123f645, type: 3}
+  - {fileID: 95351716758570024, guid: c8c31b87ad8e3e9418a64365e8351dc5, type: 3}
+  - {fileID: 95351716758570024, guid: 2252723a7def42e4284dfb5ed6586183, type: 3}
+  - {fileID: 95351716758570024, guid: 8599198d956309640b7d30ba92d8ab02, type: 3}
+  - {fileID: 95351716758570024, guid: 8a74a639196efa94f882134d454892a9, type: 3}
+  - {fileID: 95351716758570024, guid: ac250bc2ca8428443b06e6b7d1771aad, type: 3}
+  - {fileID: 95351716758570024, guid: 68bcef8a7cd71144b90fa0db814f84cd, type: 3}
+  spawnArea_DL: {fileID: 6116479065024787930}
+  spawnArea_TR: {fileID: 7887267860558960773}
+  danmakuRandomCD_Min: 0.4
+  danmakuRandomCD_Max: 1
+  danmakuCountingDownCD: 0
